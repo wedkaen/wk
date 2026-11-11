@@ -99,22 +99,36 @@ a{color:#1f4fc4}a:hover{color:#163a94}
 
 
 @media (min-width:1000px){
-  main{width:min(1280px,calc(100% - 64px));margin:32px auto;border-radius:28px;overflow:hidden}
-  .board{width:auto!important;padding:44px 48px!important}
+  main{width:min(1240px,calc(100% - 64px));margin:32px auto;border-radius:28px;overflow:hidden}
+  .board{width:auto!important;padding:56px 64px!important}
   .board+.board{border-top:1.5px dashed #9fb3e6}
-  .ribbon{margin-left:-48px!important;margin-right:-48px!important}
-  .b-top{display:grid!important;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:36px 56px!important;align-items:center}
-  .b-top>header{grid-column:1;grid-row:1}
-  .b-top>section{grid-column:2;grid-row:1}
+  .b-top>.ribbon,.b-work>.ribbon{margin-left:-64px!important;margin-right:-64px!important}
+  .b-top{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px 64px!important;align-items:stretch}
+  .b-top>header{grid-column:1;grid-row:1;display:flex;flex-direction:column}
+  .b-top>header>div:last-child{flex:1;justify-content:center}
+  .b-top>section{grid-column:2;grid-row:1;justify-content:center}
   .b-top>.ribbon{grid-column:1/-1;grid-row:2}
-  .b-top>header h1{font-size:96px!important}
-  .b-work{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 26px!important;align-items:start}
+  .b-top>header h1{font-size:92px!important}
+  .b-work{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:44px 28px!important;align-items:stretch}
   .b-work>div,.b-work>p{grid-column:1/-1}
+  .b-work>div:first-child{align-items:center;text-align:center}
+  .b-work>div:first-child>span:first-child{text-align:center!important}
   .b-work>div:first-child h2{font-size:56px!important}
-  .b-more{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px!important;align-items:start}
-  .b-more>section{min-width:0}
+  .b-work .card{transform:none!important}
+  .b-work .card>div:last-child{margin-top:auto}
+  .b-more{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px 64px!important;align-items:start}
+  .sec-tools{grid-column:1;grid-row:1}
+  .sec-contact{grid-column:2;grid-row:1}
+  .sec-contact>div:last-child{width:360px;max-width:100%;margin:0 auto}
+  .sec-cert{grid-column:1/-1;grid-row:2;display:grid!important;grid-template-columns:repeat(30,minmax(0,1fr));gap:22px 18px!important;align-items:stretch}
+  .sec-cert>*{grid-column:span 10}
+  .sec-cert>span{grid-column:auto}
+  .sec-cert>div:first-child,.sec-cert>.ribbon{grid-column:1/-1}
+  .sec-cert>.ribbon{margin:0 0 8px!important}
+  .sec-cert>.cert-grid,.sec-cert>.cert-wide{display:contents!important}
+  .sec-cert .cert-grid>div,.sec-cert .cert-wide>div{grid-column:span 6}
+  .sec-cert>div:first-child h2{font-size:44px!important}
 }
-@media (min-width:1000px) and (max-width:1180px){.b-more{grid-template-columns:repeat(2,minmax(0,1fr))}.b-more>section:last-child{grid-column:1/-1;max-width:420px;justify-self:center;width:100%}}
 
 </style>
 </head>
@@ -196,7 +210,7 @@ a{color:#1f4fc4}a:hover{color:#163a94}
   <div class="ribbon" style="margin: -6px -18px 4px; background: #1f4fc4; color: #fffcf4; overflow: hidden; transform: rotate(-1.5deg)">
     <div class="wk-marquee" style="display: flex; gap: 12px; width: max-content; padding: 9px 0; font-family: 'Readex Pro', sans-serif; font-weight: 600; font-size: 14px; white-space: nowrap"><span>Excel</span><span style="color: #f6dc5a">✦</span><span>Power BI</span><span style="color: #f6dc5a">✦</span><span>جسر</span><span style="color: #f6dc5a">✦</span><span>Apps Script</span><span style="color: #f6dc5a">✦</span><span>توثيق</span><span style="color: #f6dc5a">✦</span><span>أرشفة</span><span style="color: #f6dc5a">✦</span><span>تقارير</span><span style="color: #f6dc5a">✦</span><span>تنسيق</span><span style="color: #f6dc5a">✦</span><span>مقترحات</span><span style="color: #f6dc5a">✦</span><span>تحسين عمليات</span><span style="color: #f6dc5a">✦</span><span>Excel</span><span style="color: #f6dc5a">✦</span><span>Power BI</span><span style="color: #f6dc5a">✦</span><span>جسر</span><span style="color: #f6dc5a">✦</span><span>Apps Script</span><span style="color: #f6dc5a">✦</span><span>توثيق</span><span style="color: #f6dc5a">✦</span><span>أرشفة</span><span style="color: #f6dc5a">✦</span><span>تقارير</span><span style="color: #f6dc5a">✦</span><span>تنسيق</span><span style="color: #f6dc5a">✦</span><span>مقترحات</span><span style="color: #f6dc5a">✦</span><span>تحسين عمليات</span><span style="color: #f6dc5a">✦</span><span>Excel</span><span style="color: #f6dc5a">✦</span><span>Power BI</span><span style="color: #f6dc5a">✦</span><span>جسر</span><span style="color: #f6dc5a">✦</span><span>Apps Script</span><span style="color: #f6dc5a">✦</span><span>توثيق</span><span style="color: #f6dc5a">✦</span><span>أرشفة</span><span style="color: #f6dc5a">✦</span><span>تقارير</span><span style="color: #f6dc5a">✦</span><span>تنسيق</span><span style="color: #f6dc5a">✦</span><span>مقترحات</span><span style="color: #f6dc5a">✦</span><span>تحسين عمليات</span><span style="color: #f6dc5a">✦</span><span>Excel</span><span style="color: #f6dc5a">✦</span><span>Power BI</span><span style="color: #f6dc5a">✦</span><span>جسر</span><span style="color: #f6dc5a">✦</span><span>Apps Script</span><span style="color: #f6dc5a">✦</span><span>توثيق</span><span style="color: #f6dc5a">✦</span><span>أرشفة</span><span style="color: #f6dc5a">✦</span><span>تقارير</span><span style="color: #f6dc5a">✦</span><span>تنسيق</span><span style="color: #f6dc5a">✦</span><span>مقترحات</span><span style="color: #f6dc5a">✦</span><span>تحسين عمليات</span><span style="color: #f6dc5a">✦</span></div>
   </div>
-    <article class="wk-lift" style="position: relative; background: #fffcf4; color: #1b2c66; border: 1.5px solid #1f4fc4; border-radius: 18px; padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 12px; transform: rotate(0deg)">
+    <article class="wk-lift card" style="position: relative; background: #fffcf4; color: #1b2c66; border: 1.5px solid #1f4fc4; border-radius: 18px; padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 12px; transform: rotate(0deg)">
       <span class="wk-wiggle" style="--r: -8deg; animation-delay: 0.8s; position: absolute; z-index: 3; top: -14px; left: 16px; background: #f6dc5a; border: 1.5px solid #1f4fc4; border-radius: 50%; padding: 4px 14px; font-family: 'Caveat', cursive; font-size: 18px; color: #1b2c66; direction: ltr; box-shadow: 0 0 0 4px #f6f1e4">Excel pro</span>
       <div style="display: flex; gap: 12px; align-items: flex-start">
         <span class="wk-num" style="width: 50px; height: 50px; flex: none; border-radius: 50%; border: 1.5px dotted #1f4fc4; display: flex; align-items: center; justify-content: center; font-family: 'Readex Pro', sans-serif; font-weight: 600; font-size: 19px; color: #1f4fc4">1</span>
@@ -206,7 +220,7 @@ a{color:#1f4fc4}a:hover{color:#163a94}
       <div style="display: flex; flex-direction: column; gap: 7px; border-top: 1.5px dashed #c3d1f2; padding-top: 10px"><div style="display: grid; grid-template-columns: 66px 1fr; gap: 8px"><b style="font-family: 'Readex Pro', sans-serif; font-weight: 600; font-size: 13.5px; color: #1f4fc4">المشكلة</b><span style="font-size: 14px; line-height: 1.7">تقرير شهري في Excel ياخذ وقت كبير في التجميع، وبعض أرقامه تحتاج مراجعة يدوية.</span></div><div style="display: grid; grid-template-columns: 66px 1fr; gap: 8px"><b style="font-family: &quot;Readex Pro&quot;, sans-serif; font-weight: 600; font-size: 13.5px; color: rgb(31, 79, 196)">ايش سويت</b><span style="font-size: 14px; line-height: 1.7">رتبت البيانات، وبنيت المؤشرات بمعادلات بدل الأرقام اليدوية، ووثقت المنهجية في تقرير نهائي للإدارة.</span></div><div style="display: grid; grid-template-columns: 66px 1fr; gap: 8px"><b style="font-family: 'Readex Pro', sans-serif; font-weight: 600; font-size: 13.5px; color: #1f4fc4">النتيجة</b><span style="font-size: 14px; line-height: 1.7">تقرير أوضح وأسرع، يتحدث مع البيانات، ومعه دليل يشرح كل رقم.</span></div></div>
       <div style="display: flex; flex-wrap: wrap; gap: 6px"><span class="wk-chip" style="font-size: 12px; border: 1px solid #1f4fc4; border-radius: 99px; padding: 0 10px; color: #1f4fc4">Excel</span><span class="wk-chip" style="font-size: 12px; border: 1px solid #1f4fc4; border-radius: 99px; padding: 0 10px; color: #1f4fc4">Power BI</span><span class="wk-chip" style="font-size: 12px; border: 1px solid #1f4fc4; border-radius: 99px; padding: 0 10px; color: #1f4fc4">وادي طيبة</span></div>
     </article>
-    <article class="wk-lift" style="position: relative; background: #fffcf4; color: #1b2c66; border: 1.5px solid #1f4fc4; border-radius: 18px; padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 12px; transform: rotate(-0.5deg)">
+    <article class="wk-lift card" style="position: relative; background: #fffcf4; color: #1b2c66; border: 1.5px solid #1f4fc4; border-radius: 18px; padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 12px; transform: rotate(-0.5deg)">
       <span class="wk-wiggle" style="--r: 10deg; animation-delay: 1.0s; position: absolute; z-index: 3; top: -18px; left: 12px; width: 76px; height: 76px; background: #f4c6c2; clip-path: polygon(50% 0,61% 13%,77% 6%,80% 22%,96% 24%,90% 39%,100% 50%,90% 61%,96% 76%,80% 78%,77% 94%,61% 87%,50% 100%,39% 87%,23% 94%,20% 78%,4% 76%,10% 61%,0 50%,10% 39%,4% 24%,20% 22%,23% 6%,39% 13%); display: flex; align-items: center; justify-content: center; text-align: center; font-family: 'Readex Pro', sans-serif; font-weight: 700; font-size: 11px; line-height: 1.25; color: #1b2c66">للمدير<br>التنفيذي</span>
       <div style="display: flex; gap: 12px; align-items: flex-start">
         <span class="wk-num" style="width: 50px; height: 50px; flex: none; border-radius: 50%; border: 1.5px dotted #1f4fc4; display: flex; align-items: center; justify-content: center; font-family: 'Readex Pro', sans-serif; font-weight: 600; font-size: 19px; color: #1f4fc4">2</span>
@@ -216,7 +230,7 @@ a{color:#1f4fc4}a:hover{color:#163a94}
       <div style="display: flex; flex-direction: column; gap: 7px; border-top: 1.5px dashed #c3d1f2; padding-top: 10px"><div style="display: grid; grid-template-columns: 66px 1fr; gap: 8px"><b style="font-family: 'Readex Pro', sans-serif; font-weight: 600; font-size: 13.5px; color: #1f4fc4">المشكلة</b><span style="font-size: 14px; line-height: 1.7">تعديلات البصمة واحتساب العمل الإضافي ما لها آلية واضحة.</span></div><div style="display: grid; grid-template-columns: 66px 1fr; gap: 8px"><b style="font-family: &quot;Readex Pro&quot;, sans-serif; font-weight: 600; font-size: 13.5px; color: rgb(31, 79, 196)">ايش سويت</b><span style="font-size: 14px; line-height: 1.7">كتبت مقترح من صفحة وحدة للمدير التنفيذي: نافذة لتعديل البصمة، وعدد مرات محدد، واحتساب الإضافي عبر جسر.</span></div><div style="display: grid; grid-template-columns: 66px 1fr; gap: 8px"><b style="font-family: 'Readex Pro', sans-serif; font-weight: 600; font-size: 13.5px; color: #1f4fc4">النتيجة</b><span style="font-size: 14px; line-height: 1.7">إجراء مكتوب وقابل للتطبيق، وصل لأعلى مستوى في الشركة.</span></div></div>
       <div style="display: flex; flex-wrap: wrap; gap: 6px"><span class="wk-chip" style="font-size: 12px; border: 1px solid #1f4fc4; border-radius: 99px; padding: 0 10px; color: #1f4fc4">سياسات</span><span class="wk-chip" style="font-size: 12px; border: 1px solid #1f4fc4; border-radius: 99px; padding: 0 10px; color: #1f4fc4">جسر</span><span class="wk-chip" style="font-size: 12px; border: 1px solid #1f4fc4; border-radius: 99px; padding: 0 10px; color: #1f4fc4">كتابة مقترحات</span></div>
     </article>
-    <article class="wk-lift" style="position: relative; background: #fffcf4; color: #1b2c66; border: 1.5px solid #1f4fc4; border-radius: 18px; padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 12px; transform: rotate(0.4deg)">
+    <article class="wk-lift card" style="position: relative; background: #fffcf4; color: #1b2c66; border: 1.5px solid #1f4fc4; border-radius: 18px; padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 12px; transform: rotate(0.4deg)">
       
       <div style="display: flex; gap: 12px; align-items: flex-start">
         <span class="wk-num" style="width: 50px; height: 50px; flex: none; border-radius: 50%; border: 1.5px dotted #1f4fc4; display: flex; align-items: center; justify-content: center; font-family: 'Readex Pro', sans-serif; font-weight: 600; font-size: 19px; color: #1f4fc4">3</span>
@@ -226,7 +240,7 @@ a{color:#1f4fc4}a:hover{color:#163a94}
       <div style="display: flex; flex-direction: column; gap: 7px; border-top: 1.5px dashed #c3d1f2; padding-top: 10px"><div style="display: grid; grid-template-columns: 66px 1fr; gap: 8px"><b style="font-family: 'Readex Pro', sans-serif; font-weight: 600; font-size: 13.5px; color: #1f4fc4">المشكلة</b><span style="font-size: 14px; line-height: 1.7">العملية كانت في ملاحظات اجتماعات وإيميلات متفرقة، وما فيه مرجع واحد.</span></div><div style="display: grid; grid-template-columns: 66px 1fr; gap: 8px"><b style="font-family: &quot;Readex Pro&quot;, sans-serif; font-weight: 600; font-size: 13.5px; color: rgb(31, 79, 196)">ايش سويت</b><span style="font-size: 14px; line-height: 1.7">جمعت الملفات والإيميلات وصور الأنظمة، ووثقت العملية خطوة بخطوة مع جدول زمني وإحصائيات.</span></div><div style="display: grid; grid-template-columns: 66px 1fr; gap: 8px"><b style="font-family: 'Readex Pro', sans-serif; font-weight: 600; font-size: 13.5px; color: #1f4fc4">النتيجة</b><span style="font-size: 14px; line-height: 1.7">مرجع رسمي ترجع له الإدارة في السنوات الجاية.</span></div></div>
       <div style="display: flex; flex-wrap: wrap; gap: 6px"><span class="wk-chip" style="font-size: 12px; border: 1px solid #1f4fc4; border-radius: 99px; padding: 0 10px; color: #1f4fc4">توثيق</span><span class="wk-chip" style="font-size: 12px; border: 1px solid #1f4fc4; border-radius: 99px; padding: 0 10px; color: #1f4fc4">أرشفة</span><span class="wk-chip" style="font-size: 12px; border: 1px solid #1f4fc4; border-radius: 99px; padding: 0 10px; color: #1f4fc4">Canva</span></div>
     </article>
-    <article class="wk-lift" style="position: relative; background: #fffcf4; color: #1b2c66; border: 1.5px solid #1f4fc4; border-radius: 18px; padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 12px; transform: rotate(-0.4deg)">
+    <article class="wk-lift card" style="position: relative; background: #fffcf4; color: #1b2c66; border: 1.5px solid #1f4fc4; border-radius: 18px; padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 12px; transform: rotate(-0.4deg)">
       <span class="wk-wiggle" style="--r: 6deg; animation-delay: 0.6s; position: absolute; z-index: 3; top: -14px; left: 16px; background: #dbe5f8; border: 1.5px solid #1f4fc4; border-radius: 50%; padding: 4px 14px; font-family: 'Caveat', cursive; font-size: 18px; color: #1b2c66; direction: ltr; box-shadow: 0 0 0 4px #f6f1e4">2 fairs · 2 days</span>
       <div style="display: flex; gap: 12px; align-items: flex-start">
         <span class="wk-num" style="width: 50px; height: 50px; flex: none; border-radius: 50%; border: 1.5px dotted #1f4fc4; display: flex; align-items: center; justify-content: center; font-family: 'Readex Pro', sans-serif; font-weight: 600; font-size: 19px; color: #1f4fc4">4</span>
@@ -236,7 +250,7 @@ a{color:#1f4fc4}a:hover{color:#163a94}
       <div style="display: flex; flex-direction: column; gap: 7px; border-top: 1.5px dashed #c3d1f2; padding-top: 10px"><div style="display: grid; grid-template-columns: 66px 1fr; gap: 8px"><b style="font-family: 'Readex Pro', sans-serif; font-weight: 600; font-size: 13.5px; color: #1f4fc4">المهمة</b><span style="font-size: 14px; line-height: 1.7">تجهيز مشاركة الشركة في معرضين بنفس الفترة، وكل معرض له فريق ومواعيد مختلفة.</span></div><div style="display: grid; grid-template-columns: 66px 1fr; gap: 8px"><b style="font-family: &quot;Readex Pro&quot;, sans-serif; font-weight: 600; font-size: 13.5px; color: rgb(31, 79, 196)">ايش سويت</b><span style="font-size: 14px; line-height: 1.7">جهزت قاعدة بيانات موحدة، ونظام لحجز المقابلات، واستقبلت المتقدمين يومين، وكتبت تقرير المشاركة.</span></div><div style="display: grid; grid-template-columns: 66px 1fr; gap: 8px"><b style="font-family: 'Readex Pro', sans-serif; font-weight: 600; font-size: 13.5px; color: #1f4fc4">النتيجة</b><span style="font-size: 14px; line-height: 1.7">حجوزات مرتبة وبيانات في مكان واحد، وتقرير جاهز للإدارة.</span></div></div>
       <div style="display: flex; flex-wrap: wrap; gap: 6px"><span class="wk-chip" style="font-size: 12px; border: 1px solid #1f4fc4; border-radius: 99px; padding: 0 10px; color: #1f4fc4">تنسيق</span><span class="wk-chip" style="font-size: 12px; border: 1px solid #1f4fc4; border-radius: 99px; padding: 0 10px; color: #1f4fc4">Google Workspace</span><span class="wk-chip" style="font-size: 12px; border: 1px solid #1f4fc4; border-radius: 99px; padding: 0 10px; color: #1f4fc4">تقارير</span></div>
     </article>
-    <article class="wk-lift" style="position: relative; background: #fffcf4; color: #1b2c66; border: 1.5px solid #1f4fc4; border-radius: 18px; padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 12px; transform: rotate(0.5deg)">
+    <article class="wk-lift card" style="position: relative; background: #fffcf4; color: #1b2c66; border: 1.5px solid #1f4fc4; border-radius: 18px; padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 12px; transform: rotate(0.5deg)">
       
       <div style="display: flex; gap: 12px; align-items: flex-start">
         <span class="wk-num" style="width: 50px; height: 50px; flex: none; border-radius: 50%; border: 1.5px dotted #1f4fc4; display: flex; align-items: center; justify-content: center; font-family: 'Readex Pro', sans-serif; font-weight: 600; font-size: 19px; color: #1f4fc4">5</span>
@@ -246,7 +260,7 @@ a{color:#1f4fc4}a:hover{color:#163a94}
       <div style="display: flex; flex-direction: column; gap: 7px; border-top: 1.5px dashed #c3d1f2; padding-top: 10px"><div style="display: grid; grid-template-columns: 66px 1fr; gap: 8px"><b style="font-family: 'Readex Pro', sans-serif; font-weight: 600; font-size: 13.5px; color: #1f4fc4">المشكلة</b><span style="font-size: 14px; line-height: 1.7">إنجازات الموظفين كانت تنجمع يدوياً آخر الشهر، وكثير منها ينسى.</span></div><div style="display: grid; grid-template-columns: 66px 1fr; gap: 8px"><b style="font-family: &quot;Readex Pro&quot;, sans-serif; font-weight: 600; font-size: 13.5px; color: rgb(31, 79, 196)">ايش سويت</b><span style="font-size: 14px; line-height: 1.7">بنيت أداة بسيطة يسجل فيها كل موظف إنجازه في نفس اليوم.</span></div><div style="display: grid; grid-template-columns: 66px 1fr; gap: 8px"><b style="font-family: 'Readex Pro', sans-serif; font-weight: 600; font-size: 13.5px; color: #1f4fc4">النتيجة</b><span style="font-size: 14px; line-height: 1.7">التقرير الشهري صار جاهز بدون تجميع في آخر الشهر.</span></div></div>
       <div style="display: flex; flex-wrap: wrap; gap: 6px"><span class="wk-chip" style="font-size: 12px; border: 1px solid #1f4fc4; border-radius: 99px; padding: 0 10px; color: #1f4fc4">تحسين عمليات</span><span class="wk-chip" style="font-size: 12px; border: 1px solid #1f4fc4; border-radius: 99px; padding: 0 10px; color: #1f4fc4">Apps Script</span></div>
     </article>
-    <article class="wk-lift" style="position: relative; background: #1f4fc4; color: #fffcf4; border: 1.5px solid #1f4fc4; border-radius: 18px; padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 12px; transform: rotate(-0.6deg)">
+    <article class="wk-lift card" style="position: relative; background: #1f4fc4; color: #fffcf4; border: 1.5px solid #1f4fc4; border-radius: 18px; padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 12px; transform: rotate(-0.6deg)">
       <span class="wk-wiggle" style="--r: -6deg; animation-delay: 0.6s; position: absolute; z-index: 3; top: -14px; left: 16px; background: #f6dc5a; border: 1.5px solid #1f4fc4; border-radius: 50%; padding: 4px 14px; font-family: 'Caveat', cursive; font-size: 18px; color: #1b2c66; direction: ltr; box-shadow: 0 0 0 4px #f6f1e4">my favorite ♡</span>
       <div style="display: flex; gap: 12px; align-items: flex-start">
         <span class="wk-num" style="width: 50px; height: 50px; flex: none; border-radius: 50%; border: 1.5px dotted #fffcf4; display: flex; align-items: center; justify-content: center; font-family: 'Readex Pro', sans-serif; font-weight: 600; font-size: 19px; color: #fffcf4">6</span>
@@ -272,7 +286,7 @@ a{color:#1f4fc4}a:hover{color:#163a94}
   
 
   <!-- STICKER SHEET -->
-  <section style="position: relative">
+  <section class="sec-tools" style="position: relative">
     <div style="background: #fffcf4; border: 1.5px solid #1f4fc4; border-radius: 6px 6px 22px 22px; overflow: hidden">
       <div style="height: 28px; border-bottom: 1.5px solid #1f4fc4; background: radial-gradient(circle at 50% 0, #1f4fc4 14px, transparent 14.5px) 0 0 / 32px 28px, #fffcf4"></div>
       <div style="padding: 20px 20px 22px; display: flex; flex-direction: column; gap: 4px">
@@ -304,7 +318,7 @@ a{color:#1f4fc4}a:hover{color:#163a94}
       </div>
     </div>
     <span class="wk-wiggle" style="--r: -12deg; position: absolute; top: 40px; left: -6px; background: #f4c6c2; border: 1.5px solid #1f4fc4; border-radius: 50%; padding: 5px 12px; font-family: 'Caveat', cursive; font-size: 18px; color: #1f4fc4; direction: ltr; box-shadow: 0 0 0 4px #fffcf4">my tools</span>
-  </section><section style="display: flex; flex-direction: column; gap: 14px; position: relative">
+  </section><section class="sec-cert" style="display: flex; flex-direction: column; gap: 14px; position: relative">
     <div style="display: flex; align-items: flex-end; justify-content: space-between; direction: ltr">
       <h2 style="margin: 0; font-family: 'Readex Pro', sans-serif; font-weight: 700; font-size: 36px; color: #1f4fc4; letter-spacing: -0.5px">Certificates</h2>
       <span class="wk-wiggle" style="--r: -6deg; display: inline-block; background: #f4c6c2; border: 1.5px solid #1f4fc4; border-radius: 50%; padding: 4px 12px; font-family: 'Caveat', cursive; font-size: 18px; color: #1f4fc4; box-shadow: 0 0 0 4px #fffcf4">always learning</span>
@@ -348,7 +362,7 @@ a{color:#1f4fc4}a:hover{color:#163a94}
       <span style="font-size: 11.5px; color: #55608a; line-height: 1.5">Career &amp; Professional Development Center<br>For conducting candidate interviews, on-site &amp; remote, on Job Interviews Day.</span>
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; padding: 8px 2px 0">
+    <div class="cert-grid" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; padding: 8px 2px 0">
         <div class="wk-bob" style="--r: -1.4deg; animation-delay: 0s; background: #dbe5f8; border: 1.5px solid #1f4fc4; border-radius: 16px; box-shadow: 0 0 0 4px #fffcf4, 0 10px 18px -14px rgba(27,44,102,0.7); padding: 12px 12px 12px; display: flex; flex-direction: column; gap: 5px; position: relative">
           <div style="display: flex; justify-content: space-between; align-items: center"><span style="width: 30px; height: 30px; border-radius: 50%; background: #fffcf4; border: 1.5px solid #1f4fc4; display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10 M10 20V5 M16 20v-7 M22 20H2" fill="none" stroke="#1f4fc4" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></svg></span><span style="font-family: 'Courier Prime', monospace; font-size: 12px; font-weight: 700; color: #1f4fc4">2026</span></div>
           <b style="font-family: 'Readex Pro', sans-serif; font-size: 15px; line-height: 1.25; direction: ltr; text-align: left; color: #1f4fc4">People Analytics</b>
@@ -374,7 +388,7 @@ a{color:#1f4fc4}a:hover{color:#163a94}
           <div style="display: flex; flex-wrap: wrap; gap: 4px; direction: ltr; margin-top: 2px"><span class="wk-chip" style="font-size: 10.5px; font-weight: 600; background: #fffcf4; border: 1px solid #1f4fc4; color: #1f4fc4; border-radius: 99px; padding: 1px 8px; direction: ltr; white-space: nowrap">KPIs</span><span class="wk-chip" style="font-size: 10.5px; font-weight: 600; background: #fffcf4; border: 1px solid #1f4fc4; color: #1f4fc4; border-radius: 99px; padding: 1px 8px; direction: ltr; white-space: nowrap">Templates</span></div>
         </div>
     </div>
-    <div style="padding: 0 2px"><div class="wk-bob" style="--r: 0.6deg; animation-delay: 2.4s; background: #dbe5f8; border: 1.5px solid #1f4fc4; border-radius: 16px; box-shadow: 0 0 0 4px #fffcf4, 0 10px 18px -14px rgba(27,44,102,0.7); padding: 12px 12px 12px; display: flex; flex-direction: column; gap: 5px; position: relative">
+    <div class="cert-wide" style="padding: 0 2px"><div class="wk-bob" style="--r: 0.6deg; animation-delay: 2.4s; background: #dbe5f8; border: 1.5px solid #1f4fc4; border-radius: 16px; box-shadow: 0 0 0 4px #fffcf4, 0 10px 18px -14px rgba(27,44,102,0.7); padding: 12px 12px 12px; display: flex; flex-direction: column; gap: 5px; position: relative">
           <div style="display: flex; justify-content: space-between; align-items: center"><span style="width: 30px; height: 30px; border-radius: 50%; background: #fffcf4; border: 1.5px solid #1f4fc4; display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9h-9z M15 2.5A9 9 0 0 1 21.5 9H15z" fill="none" stroke="#1f4fc4" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></svg></span><span style="font-family: 'Courier Prime', monospace; font-size: 12px; font-weight: 700; color: #1f4fc4">2026</span></div>
           <b style="font-family: 'Readex Pro', sans-serif; font-size: 15px; line-height: 1.25; direction: ltr; text-align: left; color: #1f4fc4">Power BI for HR</b>
           <span style="font-size: 11.5px; color: #55608a; direction: ltr; text-align: left">Udemy</span>
@@ -384,7 +398,7 @@ a{color:#1f4fc4}a:hover{color:#163a94}
     <span class="wk-twinkle" style="position: absolute; top: -6px; left: 214px"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c1 6 4 9 10 10-6 1-9 4-10 10-1-6-4-9-10-10 6-1 9-4 10-10z" fill="#f6dc5a" stroke="#1f4fc4" stroke-width="1"/></svg></span>
     <span class="wk-twinkle" style="position: absolute; bottom: 120px; left: -6px; animation-delay: 1s"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c1 6 4 9 10 10-6 1-9 4-10 10-1-6-4-9-10-10 6-1 9-4 10-10z" fill="#1f4fc4" stroke="#1f4fc4" stroke-width="1"/></svg></span>
     <span class="wk-pop" style="--r: 10deg; position: absolute; bottom: -18px; right: 10px; width: 64px; height: 64px; background: #f6dc5a; display: flex; align-items: center; justify-content: center; text-align: center; font-family: 'Caveat', cursive; font-weight: 700; font-size: 15px; line-height: 1; color: #1f4fc4; direction: ltr; clip-path: polygon(50% 0,61% 13%,77% 6%,80% 22%,96% 24%,90% 39%,100% 50%,90% 61%,96% 76%,80% 78%,77% 94%,61% 87%,50% 100%,39% 87%,23% 94%,20% 78%,4% 76%,10% 61%,0 50%,10% 39%,4% 24%,20% 22%,23% 6%,39% 13%)">8 &amp;<br>counting</span>
-  </section><section style="display: flex; flex-direction: column; gap: 10px; position: relative">
+  </section><section class="sec-contact" style="display: flex; flex-direction: column; gap: 10px; position: relative">
     <div style="display: flex; align-items: baseline; justify-content: space-between">
       <h2 style="margin: 0; font-family: 'Readex Pro', sans-serif; font-weight: 700; font-size: 32px; color: #1f4fc4">نشتغل سوا؟</h2>
       <span style="font-family: 'Caveat', cursive; font-size: 20px; color: #1f4fc4; direction: ltr">Get in touch</span>

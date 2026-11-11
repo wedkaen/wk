@@ -2,7 +2,8 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=390">
+<meta name="viewport" id="vp" content="width=390">
+<script>try{if(Math.min(screen.width,screen.height)>=700||screen.width>=1000)document.getElementById("vp").setAttribute("content","width=device-width,initial-scale=1")}catch(e){}</script>
 <title>ود كائن · مساعدة إدارية</title>
 <meta name="description" content="بورتفوليو ود كائن: مساعدة إدارية، تقارير Excel وPower BI، متابعة الحضور، أرشفة وتوثيق.">
 <meta property="og:title" content="ود كائن · مساعدة إدارية">
@@ -13,10 +14,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600&amp;family=Caveat:wght@600;700&amp;family=Courier+Prime:wght@400;700&amp;display=swap">
 <style>
 html,body{margin:0;background:#f6f1e4}
-body{background:radial-gradient(#e6dcc4 1px,transparent 1.2px) 0 0/18px 18px,#f6f1e4;overflow-x:hidden}
+body{background:radial-gradient(#e2d7bd 1px,transparent 1.2px) 0 0/18px 18px,#f6f1e4;overflow-x:hidden}
 main{width:390px;margin:0 auto;background:#f6f1e4;box-shadow:0 0 0 1.5px #1f4fc4,0 30px 60px -30px rgba(27,44,102,.5)}
-@media (max-width:420px){main{box-shadow:none}}
-main>div{overflow:visible!important}
+@media (max-width:999px){main{box-shadow:none}}
+.board{overflow:visible!important}
 
 
 a{color:#1f4fc4}a:hover{color:#163a94}
@@ -96,11 +97,30 @@ a{color:#1f4fc4}a:hover{color:#163a94}
 @media (prefers-reduced-motion: reduce){.wk-bob,.wk-wiggle,.wk-spin,.wk-twinkle,.wk-pop,.wk-marquee{animation:none}}
 
 
+
+@media (min-width:1000px){
+  main{width:min(1280px,calc(100% - 64px));margin:32px auto;border-radius:28px;overflow:hidden}
+  .board{width:auto!important;padding:44px 48px!important}
+  .board+.board{border-top:1.5px dashed #9fb3e6}
+  .ribbon{margin-left:-48px!important;margin-right:-48px!important}
+  .b-top{display:grid!important;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:36px 56px!important;align-items:center}
+  .b-top>header{grid-column:1;grid-row:1}
+  .b-top>section{grid-column:2;grid-row:1}
+  .b-top>.ribbon{grid-column:1/-1;grid-row:2}
+  .b-top>header h1{font-size:96px!important}
+  .b-work{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 26px!important;align-items:start}
+  .b-work>div,.b-work>p{grid-column:1/-1}
+  .b-work>div:first-child h2{font-size:56px!important}
+  .b-more{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px!important;align-items:start}
+  .b-more>section{min-width:0}
+}
+@media (min-width:1000px) and (max-width:1180px){.b-more{grid-template-columns:repeat(2,minmax(0,1fr))}.b-more>section:last-child{grid-column:1/-1;max-width:420px;justify-self:center;width:100%}}
+
 </style>
 </head>
 <body>
 <main>
-<div dir="rtl" style="width: 390px; box-sizing: border-box; background: #f6f1e4; color: #1b2c66; font-family: 'IBM Plex Sans Arabic', Tahoma, sans-serif; padding: 24px 18px; display: flex; flex-direction: column; gap: 34px; overflow: hidden">
+<div dir="rtl" class="board b-top" style="width: 390px; box-sizing: border-box; background: #f6f1e4; color: #1b2c66; font-family: 'IBM Plex Sans Arabic', Tahoma, sans-serif; padding: 24px 18px; display: flex; flex-direction: column; gap: 34px; overflow: hidden">
 
   <header style="position: relative; background: #fffcf4; border: 1.5px solid #1f4fc4; border-radius: 6px 6px 20px 20px; text-align: center">
     <div style="height: 30px; border-bottom: 1.5px solid #1f4fc4; background: radial-gradient(circle at 50% 0, #1f4fc4 15px, transparent 15.5px) 0 0 / 34px 30px, #fffcf4; border-radius: 5px 5px 0 0"></div>
@@ -131,8 +151,8 @@ a{color:#1f4fc4}a:hover{color:#163a94}
     </div>
   </header>
 
-  <div style="margin: 0 -18px; background: #1f4fc4; color: #fffcf4; overflow: hidden; transform: rotate(1.5deg)">
-    <div class="wk-marquee" style="display: flex; gap: 12px; width: max-content; padding: 9px 0; font-family: 'Readex Pro', sans-serif; font-weight: 600; font-size: 14px; white-space: nowrap"><span>تقارير Excel و powerBI</span><span style="color: #f6dc5a">✦</span><span>الحضور والانصراف</span><span style="color: #f6dc5a">✦</span><span>الأرشفة</span><span style="color: #f6dc5a">✦</span><span>متابعة سير العمل</span><span style="color: #f6dc5a">✦</span><span>السرية</span><span style="color: #f6dc5a">✦</span><span>المراسلات الرسمية</span><span style="color: #f6dc5a">✦</span><span>تنظيم المواعيد</span><span style="color: #f6dc5a">✦</span><span>تقارير Excel و powerBI</span><span style="color: #f6dc5a">✦</span><span>الحضور والانصراف</span><span style="color: #f6dc5a">✦</span><span>الأرشفة</span><span style="color: #f6dc5a">✦</span><span>متابعة سير العمل</span><span style="color: #f6dc5a">✦</span><span>السرية</span><span style="color: #f6dc5a">✦</span><span>المراسلات الرسمية</span><span style="color: #f6dc5a">✦</span><span>تنظيم المواعيد</span><span style="color: #f6dc5a">✦</span></div>
+  <div class="ribbon" style="margin: 0 -18px; background: #1f4fc4; color: #fffcf4; overflow: hidden; transform: rotate(1.5deg)">
+    <div class="wk-marquee" style="display: flex; gap: 12px; width: max-content; padding: 9px 0; font-family: 'Readex Pro', sans-serif; font-weight: 600; font-size: 14px; white-space: nowrap"><span>تقارير Excel و powerBI</span><span style="color: #f6dc5a">✦</span><span>الحضور والانصراف</span><span style="color: #f6dc5a">✦</span><span>الأرشفة</span><span style="color: #f6dc5a">✦</span><span>متابعة سير العمل</span><span style="color: #f6dc5a">✦</span><span>السرية</span><span style="color: #f6dc5a">✦</span><span>المراسلات الرسمية</span><span style="color: #f6dc5a">✦</span><span>تنظيم المواعيد</span><span style="color: #f6dc5a">✦</span><span>تقارير Excel و powerBI</span><span style="color: #f6dc5a">✦</span><span>الحضور والانصراف</span><span style="color: #f6dc5a">✦</span><span>الأرشفة</span><span style="color: #f6dc5a">✦</span><span>متابعة سير العمل</span><span style="color: #f6dc5a">✦</span><span>السرية</span><span style="color: #f6dc5a">✦</span><span>المراسلات الرسمية</span><span style="color: #f6dc5a">✦</span><span>تنظيم المواعيد</span><span style="color: #f6dc5a">✦</span><span>تقارير Excel و powerBI</span><span style="color: #f6dc5a">✦</span><span>الحضور والانصراف</span><span style="color: #f6dc5a">✦</span><span>الأرشفة</span><span style="color: #f6dc5a">✦</span><span>متابعة سير العمل</span><span style="color: #f6dc5a">✦</span><span>السرية</span><span style="color: #f6dc5a">✦</span><span>المراسلات الرسمية</span><span style="color: #f6dc5a">✦</span><span>تنظيم المواعيد</span><span style="color: #f6dc5a">✦</span><span>تقارير Excel و powerBI</span><span style="color: #f6dc5a">✦</span><span>الحضور والانصراف</span><span style="color: #f6dc5a">✦</span><span>الأرشفة</span><span style="color: #f6dc5a">✦</span><span>متابعة سير العمل</span><span style="color: #f6dc5a">✦</span><span>السرية</span><span style="color: #f6dc5a">✦</span><span>المراسلات الرسمية</span><span style="color: #f6dc5a">✦</span><span>تنظيم المواعيد</span><span style="color: #f6dc5a">✦</span></div>
   </div>
 
   <section style="position: relative; display: flex; flex-direction: column; gap: 14px">
@@ -165,7 +185,7 @@ a{color:#1f4fc4}a:hover{color:#163a94}
     </div>
   </section>
 </div>
-<div dir="rtl" style="width: 390px; box-sizing: border-box; background: #f6f1e4; color: #1b2c66; font-family: 'IBM Plex Sans Arabic', Tahoma, sans-serif; padding: 28px 18px; display: flex; flex-direction: column; gap: 30px; overflow: hidden">
+<div dir="rtl" class="board b-work" style="width: 390px; box-sizing: border-box; background: #f6f1e4; color: #1b2c66; font-family: 'IBM Plex Sans Arabic', Tahoma, sans-serif; padding: 28px 18px; display: flex; flex-direction: column; gap: 30px; overflow: hidden">
   <div style="position: relative; display: flex; flex-direction: column">
     <span style="font-family: 'Courier Prime', monospace; font-size: 12.5px; letter-spacing: 1px; color: #55608a; direction: ltr; text-align: right">SELECTED WORK</span>
     <h2 style="margin: 0; font-family: 'Readex Pro', sans-serif; font-weight: 700; font-size: 42px; color: #1f4fc4; line-height: 1.2">أعمالي</h2>
@@ -173,8 +193,8 @@ a{color:#1f4fc4}a:hover{color:#163a94}
     <span style="font-size: 13.5px; color: #55608a; margin-top: 6px">نبذه لاعمال مختارة مع تفاصيلها</span>
     
   </div>
-  <div style="margin: -6px -18px 4px; background: #1f4fc4; color: #fffcf4; overflow: hidden; transform: rotate(-1.5deg)">
-    <div class="wk-marquee" style="display: flex; gap: 12px; width: max-content; padding: 9px 0; font-family: 'Readex Pro', sans-serif; font-weight: 600; font-size: 14px; white-space: nowrap"><span>Excel</span><span style="color: #f6dc5a">✦</span><span>Power BI</span><span style="color: #f6dc5a">✦</span><span>جسر</span><span style="color: #f6dc5a">✦</span><span>Apps Script</span><span style="color: #f6dc5a">✦</span><span>توثيق</span><span style="color: #f6dc5a">✦</span><span>أرشفة</span><span style="color: #f6dc5a">✦</span><span>تقارير</span><span style="color: #f6dc5a">✦</span><span>تنسيق</span><span style="color: #f6dc5a">✦</span><span>مقترحات</span><span style="color: #f6dc5a">✦</span><span>تحسين عمليات</span><span style="color: #f6dc5a">✦</span><span>Excel</span><span style="color: #f6dc5a">✦</span><span>Power BI</span><span style="color: #f6dc5a">✦</span><span>جسر</span><span style="color: #f6dc5a">✦</span><span>Apps Script</span><span style="color: #f6dc5a">✦</span><span>توثيق</span><span style="color: #f6dc5a">✦</span><span>أرشفة</span><span style="color: #f6dc5a">✦</span><span>تقارير</span><span style="color: #f6dc5a">✦</span><span>تنسيق</span><span style="color: #f6dc5a">✦</span><span>مقترحات</span><span style="color: #f6dc5a">✦</span><span>تحسين عمليات</span><span style="color: #f6dc5a">✦</span></div>
+  <div class="ribbon" style="margin: -6px -18px 4px; background: #1f4fc4; color: #fffcf4; overflow: hidden; transform: rotate(-1.5deg)">
+    <div class="wk-marquee" style="display: flex; gap: 12px; width: max-content; padding: 9px 0; font-family: 'Readex Pro', sans-serif; font-weight: 600; font-size: 14px; white-space: nowrap"><span>Excel</span><span style="color: #f6dc5a">✦</span><span>Power BI</span><span style="color: #f6dc5a">✦</span><span>جسر</span><span style="color: #f6dc5a">✦</span><span>Apps Script</span><span style="color: #f6dc5a">✦</span><span>توثيق</span><span style="color: #f6dc5a">✦</span><span>أرشفة</span><span style="color: #f6dc5a">✦</span><span>تقارير</span><span style="color: #f6dc5a">✦</span><span>تنسيق</span><span style="color: #f6dc5a">✦</span><span>مقترحات</span><span style="color: #f6dc5a">✦</span><span>تحسين عمليات</span><span style="color: #f6dc5a">✦</span><span>Excel</span><span style="color: #f6dc5a">✦</span><span>Power BI</span><span style="color: #f6dc5a">✦</span><span>جسر</span><span style="color: #f6dc5a">✦</span><span>Apps Script</span><span style="color: #f6dc5a">✦</span><span>توثيق</span><span style="color: #f6dc5a">✦</span><span>أرشفة</span><span style="color: #f6dc5a">✦</span><span>تقارير</span><span style="color: #f6dc5a">✦</span><span>تنسيق</span><span style="color: #f6dc5a">✦</span><span>مقترحات</span><span style="color: #f6dc5a">✦</span><span>تحسين عمليات</span><span style="color: #f6dc5a">✦</span><span>Excel</span><span style="color: #f6dc5a">✦</span><span>Power BI</span><span style="color: #f6dc5a">✦</span><span>جسر</span><span style="color: #f6dc5a">✦</span><span>Apps Script</span><span style="color: #f6dc5a">✦</span><span>توثيق</span><span style="color: #f6dc5a">✦</span><span>أرشفة</span><span style="color: #f6dc5a">✦</span><span>تقارير</span><span style="color: #f6dc5a">✦</span><span>تنسيق</span><span style="color: #f6dc5a">✦</span><span>مقترحات</span><span style="color: #f6dc5a">✦</span><span>تحسين عمليات</span><span style="color: #f6dc5a">✦</span><span>Excel</span><span style="color: #f6dc5a">✦</span><span>Power BI</span><span style="color: #f6dc5a">✦</span><span>جسر</span><span style="color: #f6dc5a">✦</span><span>Apps Script</span><span style="color: #f6dc5a">✦</span><span>توثيق</span><span style="color: #f6dc5a">✦</span><span>أرشفة</span><span style="color: #f6dc5a">✦</span><span>تقارير</span><span style="color: #f6dc5a">✦</span><span>تنسيق</span><span style="color: #f6dc5a">✦</span><span>مقترحات</span><span style="color: #f6dc5a">✦</span><span>تحسين عمليات</span><span style="color: #f6dc5a">✦</span></div>
   </div>
     <article class="wk-lift" style="position: relative; background: #fffcf4; color: #1b2c66; border: 1.5px solid #1f4fc4; border-radius: 18px; padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 12px; transform: rotate(0deg)">
       <span class="wk-wiggle" style="--r: -8deg; animation-delay: 0.8s; position: absolute; z-index: 3; top: -14px; left: 16px; background: #f6dc5a; border: 1.5px solid #1f4fc4; border-radius: 50%; padding: 4px 14px; font-family: 'Caveat', cursive; font-size: 18px; color: #1b2c66; direction: ltr; box-shadow: 0 0 0 4px #f6f1e4">Excel pro</span>
@@ -246,7 +266,7 @@ a{color:#1f4fc4}a:hover{color:#163a94}
     </article>
   <p style="margin: 0; font-size: 12.5px; color: #55608a; text-align: center">أعمال وادي طيبة معروضة بوصف عام، بدون أي بيانات داخلية، احترامًا لسرية المعلومات.</p>
 </div>
-<div dir="rtl" style="width: 390px; box-sizing: border-box; background: #f6f1e4; color: #1b2c66; font-family: 'IBM Plex Sans Arabic', Tahoma, sans-serif; padding: 28px 18px; display: flex; flex-direction: column; gap: 46px; overflow: hidden; position: relative">
+<div dir="rtl" class="board b-more" style="width: 390px; box-sizing: border-box; background: #f6f1e4; color: #1b2c66; font-family: 'IBM Plex Sans Arabic', Tahoma, sans-serif; padding: 28px 18px; display: flex; flex-direction: column; gap: 46px; overflow: hidden; position: relative">
 
   <!-- MENU -->
   
@@ -290,8 +310,8 @@ a{color:#1f4fc4}a:hover{color:#163a94}
       <span class="wk-wiggle" style="--r: -6deg; display: inline-block; background: #f4c6c2; border: 1.5px solid #1f4fc4; border-radius: 50%; padding: 4px 12px; font-family: 'Caveat', cursive; font-size: 18px; color: #1f4fc4; box-shadow: 0 0 0 4px #fffcf4">always learning</span>
     </div>
 
-    <div style="margin: 0 -18px; background: #1f4fc4; color: #fffcf4; overflow: hidden; border-top: 1.5px solid #1f4fc4; border-bottom: 1.5px solid #1f4fc4; transform: rotate(-1.5deg)">
-      <div class="wk-marquee" style="display: flex; gap: 12px; width: max-content; padding: 8px 0; font-family: 'Readex Pro', sans-serif; font-weight: 600; font-size: 13px; direction: ltr; white-space: nowrap"><span>People Analytics</span><span style="color: #f6dc5a">✦</span><span>HR Metrics</span><span style="color: #f6dc5a">✦</span><span>Power BI</span><span style="color: #f6dc5a">✦</span><span>Excel</span><span style="color: #f6dc5a">✦</span><span>Dashboards</span><span style="color: #f6dc5a">✦</span><span>Generative AI</span><span style="color: #f6dc5a">✦</span><span>Reporting</span><span style="color: #f6dc5a">✦</span><span>Operations</span><span style="color: #f6dc5a">✦</span><span>Process Design</span><span style="color: #f6dc5a">✦</span><span>Interviewing</span><span style="color: #f6dc5a">✦</span><span>Recruitment</span><span style="color: #f6dc5a">✦</span><span>Data-driven HR</span><span style="color: #f6dc5a">✦</span><span>People Analytics</span><span style="color: #f6dc5a">✦</span><span>HR Metrics</span><span style="color: #f6dc5a">✦</span><span>Power BI</span><span style="color: #f6dc5a">✦</span><span>Excel</span><span style="color: #f6dc5a">✦</span><span>Dashboards</span><span style="color: #f6dc5a">✦</span><span>Generative AI</span><span style="color: #f6dc5a">✦</span><span>Reporting</span><span style="color: #f6dc5a">✦</span><span>Operations</span><span style="color: #f6dc5a">✦</span><span>Process Design</span><span style="color: #f6dc5a">✦</span><span>Interviewing</span><span style="color: #f6dc5a">✦</span><span>Recruitment</span><span style="color: #f6dc5a">✦</span><span>Data-driven HR</span><span style="color: #f6dc5a">✦</span></div>
+    <div class="ribbon" style="margin: 0 -18px; background: #1f4fc4; color: #fffcf4; overflow: hidden; border-top: 1.5px solid #1f4fc4; border-bottom: 1.5px solid #1f4fc4; transform: rotate(-1.5deg)">
+      <div class="wk-marquee" style="display: flex; gap: 12px; width: max-content; padding: 8px 0; font-family: 'Readex Pro', sans-serif; font-weight: 600; font-size: 13px; direction: ltr; white-space: nowrap"><span>People Analytics</span><span style="color: #f6dc5a">✦</span><span>HR Metrics</span><span style="color: #f6dc5a">✦</span><span>Power BI</span><span style="color: #f6dc5a">✦</span><span>Excel</span><span style="color: #f6dc5a">✦</span><span>Dashboards</span><span style="color: #f6dc5a">✦</span><span>Generative AI</span><span style="color: #f6dc5a">✦</span><span>Reporting</span><span style="color: #f6dc5a">✦</span><span>Operations</span><span style="color: #f6dc5a">✦</span><span>Process Design</span><span style="color: #f6dc5a">✦</span><span>Interviewing</span><span style="color: #f6dc5a">✦</span><span>Recruitment</span><span style="color: #f6dc5a">✦</span><span>Data-driven HR</span><span style="color: #f6dc5a">✦</span><span>People Analytics</span><span style="color: #f6dc5a">✦</span><span>HR Metrics</span><span style="color: #f6dc5a">✦</span><span>Power BI</span><span style="color: #f6dc5a">✦</span><span>Excel</span><span style="color: #f6dc5a">✦</span><span>Dashboards</span><span style="color: #f6dc5a">✦</span><span>Generative AI</span><span style="color: #f6dc5a">✦</span><span>Reporting</span><span style="color: #f6dc5a">✦</span><span>Operations</span><span style="color: #f6dc5a">✦</span><span>Process Design</span><span style="color: #f6dc5a">✦</span><span>Interviewing</span><span style="color: #f6dc5a">✦</span><span>Recruitment</span><span style="color: #f6dc5a">✦</span><span>Data-driven HR</span><span style="color: #f6dc5a">✦</span><span>People Analytics</span><span style="color: #f6dc5a">✦</span><span>HR Metrics</span><span style="color: #f6dc5a">✦</span><span>Power BI</span><span style="color: #f6dc5a">✦</span><span>Excel</span><span style="color: #f6dc5a">✦</span><span>Dashboards</span><span style="color: #f6dc5a">✦</span><span>Generative AI</span><span style="color: #f6dc5a">✦</span><span>Reporting</span><span style="color: #f6dc5a">✦</span><span>Operations</span><span style="color: #f6dc5a">✦</span><span>Process Design</span><span style="color: #f6dc5a">✦</span><span>Interviewing</span><span style="color: #f6dc5a">✦</span><span>Recruitment</span><span style="color: #f6dc5a">✦</span><span>Data-driven HR</span><span style="color: #f6dc5a">✦</span><span>People Analytics</span><span style="color: #f6dc5a">✦</span><span>HR Metrics</span><span style="color: #f6dc5a">✦</span><span>Power BI</span><span style="color: #f6dc5a">✦</span><span>Excel</span><span style="color: #f6dc5a">✦</span><span>Dashboards</span><span style="color: #f6dc5a">✦</span><span>Generative AI</span><span style="color: #f6dc5a">✦</span><span>Reporting</span><span style="color: #f6dc5a">✦</span><span>Operations</span><span style="color: #f6dc5a">✦</span><span>Process Design</span><span style="color: #f6dc5a">✦</span><span>Interviewing</span><span style="color: #f6dc5a">✦</span><span>Recruitment</span><span style="color: #f6dc5a">✦</span><span>Data-driven HR</span><span style="color: #f6dc5a">✦</span></div>
     </div>
 
     <div class="wk-bob" style="--r: 0.8deg; position: relative; background: #1f4fc4; color: #fffcf4; border-radius: 16px; padding: 14px 16px; margin-top: 4px; box-shadow: 0 0 0 4px #fffcf4, 0 0 0 5.5px #1f4fc4; direction: ltr; text-align: left; display: flex; gap: 12px; align-items: center">

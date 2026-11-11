@@ -247,6 +247,33 @@ nav.tabs button[aria-current="page"]::before{content:"";position:absolute;top:5p
   .spark{animation:pop .9s ease-out forwards}@keyframes pop{from{opacity:1;transform:translate(0,0) scale(1)}to{opacity:0;transform:translate(var(--dx),var(--dy)) scale(.4) rotate(90deg)}}
 }
 @media (max-width:370px){.two,.duo{grid-template-columns:1fr}.big{font-size:42px}}
+/* calm pass: fewer accents, one clear message */
+.stamp,.shift,.tw,.how::before{animation:none!important}
+.tag1{margin:0 0 12px;padding-bottom:10px;border-bottom:1.5px dashed var(--line);font-size:13px;color:var(--teal);font-weight:600}
+.hello #greet{font-size:12px}
+.band{border-radius:8px 8px 20px 20px}
+.band-in{padding:16px 18px 2px;gap:2px}
+.lbl{font-size:13px;color:var(--muted);font-weight:600}
+.big{font-size:56px}
+.big small{display:inline;font-size:13px;color:var(--muted);margin:0 8px 0 0;font-weight:500}
+.stats{margin:6px 0 0;font-size:13.5px;color:var(--ink)}
+.notes-h{margin-top:4px}
+.notes{gap:8px}
+.sticky,.sticky.hot,.sticky:nth-child(even),.sticky:nth-child(odd){transform:none;background:var(--paper);border:1.5px solid var(--line);border-radius:14px;box-shadow:none;padding:12px 14px}
+.sticky.hot{border-color:var(--bad-soft);background:#fff7f5}
+.sticky:hover{transform:none;border-color:var(--teal)}
+.sticky .nt{flex:1;min-width:0}
+.sticky .go{background:var(--sky);color:var(--teal);border-radius:99px;padding:3px 10px;font-size:12px}
+.linkbtn{border:0;background:none;color:var(--teal);font-weight:600;font-size:13px;padding:6px 0;min-height:36px}
+.mini-card,.mini-card:nth-child(2){background:var(--paper);color:var(--ink);border:1.5px solid var(--line);gap:0}
+.mini-card:nth-child(2) b{color:var(--teal)} .mini-card:nth-child(2) span{color:var(--muted)}
+.mini-card:hover{transform:none;border-color:var(--teal)}
+.mini-card .more,.mini-card:nth-child(2) .more{color:var(--teal);font-weight:600;font-size:12px;margin-top:6px}
+.drop{border:1.5px dashed var(--line);padding:10px 14px}
+.drop b{font-size:13.5px}
+.chip:hover{transform:none}
+#brChips{width:auto;align-self:flex-start;min-width:160px;background:var(--paper);border-color:var(--teal);color:var(--teal);font-weight:600}
+
 </style>
 
 <div class="wrap" dir="rtl" lang="ar">
@@ -258,39 +285,35 @@ nav.tabs button[aria-current="page"]::before{content:"";position:absolute;top:5p
       <button type="button" data-mode="mine" aria-pressed="false">بياناتي</button>
     </div>
   </header>
-  <div class="ribbon" aria-hidden="true"><div class="run"><span>الحضور</span><i>✦</i><span>الطلبات</span><i>✦</i><span>المهام</span><i>✦</i><span>الأرشيف</span><i>✦</i><span>خطابات التنبيه</span><i>✦</i><span>الساعات الإضافية</span><i>✦</i><span>التقرير الأسبوعي</span><i>✦</i><span>الحضور</span><i>✦</i><span>الطلبات</span><i>✦</i><span>المهام</span><i>✦</i><span>الأرشيف</span><i>✦</i><span>خطابات التنبيه</span><i>✦</i><span>الساعات الإضافية</span><i>✦</i><span>التقرير الأسبوعي</span><i>✦</i></div></div>
 
   <!-- TODAY -->
   <section class="view" id="v-today">
     <div class="band" aria-label="حضور اليوم">
       <div class="awn" aria-hidden="true"></div>
-      <svg class="tw" style="top:44px;left:120px;animation-delay:0s" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c1 6 4 9 10 10-6 1-9 4-10 10-1-6-4-9-10-10 6-1 9-4 10-10z" fill="var(--butter)" stroke="var(--teal)" stroke-width="1"/></svg>
-      <svg class="tw" style="top:70px;left:150px;width:12px;height:12px;animation-delay:0.8s" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c1 6 4 9 10 10-6 1-9 4-10 10-1-6-4-9-10-10 6-1 9-4 10-10z" fill="var(--teal)" stroke="var(--teal)" stroke-width="1"/></svg>
       <div class="band-in">
-        <div class="band-top">
-          <div><span class="latin" style="font-size:22px;color:var(--teal)">today ✦</span><div class="big num" id="rate">--</div></div>
-          <span class="shift"><i></i><span id="dayLbl"></span></span>
-        </div>
-        <div class="rings" id="rings"></div>
+        <p class="tag1">ارفعي ملف البصمة، والدفتر يقول لك وش يحتاجك اليوم ✦</p>
+        <span class="lbl">حضور اليوم</span>
+        <div class="big num" id="rate">--</div>
+        <p class="stats num" id="dayLbl"></p>
+        <div class="rings" id="rings" hidden></div>
       </div>
-    </div>
-
-    <div class="drop">
-      <div class="ic">XLS</div>
-      <div class="tx"><b>ملف البصمة</b><span id="src"></span></div>
-      <label class="btn teal sm">ارفعيه<input type="file" id="fileIn" accept=".xlsx,.xls,.csv" multiple></label>
     </div>
 
     <div class="notes-h"><h3>يحتاجك اليوم</h3><span class="what" id="leftCount"></span></div>
     <div class="notes" id="notes"></div>
-    <div class="bricks" id="bricks" aria-hidden="true"></div>
+    <div class="bricks" id="bricks" aria-hidden="true" hidden></div>
 
     <div class="duo">
-      <button type="button" class="mini-card" id="otCard"><span class="latin">overtime</span><b class="num" id="otNum">0</b><span>تجاوزوا 48 ساعة هالأسبوع</span></button>
-      <button type="button" class="mini-card" id="repCard"><span class="latin">weekly</span><b>التقرير</b><span>جاهز ينسخ ويرسل للإدارة</span></button>
+      <button type="button" class="mini-card" id="otCard"><b class="num" id="otNum">0</b><span>تجاوزوا حد الساعات هالأسبوع</span><span class="more">الكشف ←</span></button>
+      <button type="button" class="mini-card" id="repCard"><b>التقرير</b><span>ملخص الأسبوع جاهز للإدارة</span><span class="more">افتحيه ←</span></button>
     </div>
 
-    <div class="how" id="how">
+    <div class="drop">
+      <div class="tx"><b>ملف البصمة</b><span id="src"></span></div>
+      <label class="btn sm">رفع ملف<input type="file" id="fileIn" accept=".xlsx,.xls,.csv" multiple></label>
+    </div>
+
+    <div class="how" id="how" hidden>
       <button type="button" class="x" id="hideHow">إخفاء</button>
       <h3 style="font-size:18px">كيف يشتغل؟ في دقيقتين</h3>
       <ol>
@@ -304,7 +327,7 @@ nav.tabs button[aria-current="page"]::before{content:"";position:absolute;top:5p
   <!-- ATTENDANCE -->
   <section class="view" id="v-att" hidden>
     <div class="vh"><h2>الحضور</h2><p class="what">مين جا، مين تأخر، ومين غاب. <b>التأخير يُحسب بعد 10 دقائق من بداية الشفت.</b></p></div>
-    <div class="chips" id="brChips" role="group" aria-label="القسم"></div>
+    <select id="brChips" aria-label="القسم"></select>
     <div class="chips" id="stChips" role="group" aria-label="الحالة"></div>
     <div class="sheet-list" id="attList"></div>
   </section>
@@ -546,21 +569,21 @@ function alerts(){
 function renderToday(){
   const h=TD.getHours();$("#greet").textContent=(h<12?"صباح الخير":"مساء الخير")+" يا ود";
   const t=today(),c=stats(t);
-  $("#rate").innerHTML=t.length?`${c.rate}%<small>حضور ${dayAr(curDay())}</small>`:`—<small>ارفعي ملف البصمة عشان نبدأ</small>`;
+  $("#rate").innerHTML=t.length?`${c.rate}%<small>${dayAr(curDay())}</small>`:`—<small>ارفعي ملف البصمة عشان نبدأ</small>`;
   $("#dayLbl").textContent=t.length?`${c.present+c.late} حاضر · ${c.late} متأخر · ${c.absent} غائب`:"ما فيه بيانات";
   $("#rings").style.gridTemplateColumns=`repeat(${Math.min(5,Math.max(1,branches().length))},minmax(0,1fr))`;$("#rings").innerHTML=branches().map(b=>{const s=stats(t.filter(e=>e.br===b));const k=s.absent?"bad":s.late?"warn":"ok";
     const col=k==="bad"?"var(--bad)":k==="warn"?"#e0b10a":"var(--teal)";
     return `<button type="button" class="ring ${k}" data-br="${esc(b)}" aria-label="${esc(b)}">${ringSVG(s.rate,col)}<span class="n">${esc(b)}</span><span class="s">${s.absent?"ناقص "+s.absent:s.late?"تأخير "+s.late:"مكتمل"}</span></button>`}).join("");
   $("#src").textContent=S.src;
-  const al=alerts(),shown=notesAll?al:al.slice(0,5);
-  $("#notes").innerHTML=al.length?shown.map(a=>`<button type="button" class="sticky${a.hot?" hot":""}" data-go="${esc(a.go)}"><span class="dot" style="background:${a.col}"></span><span>${esc(a.t)}</span><span class="go">←</span></button>`).join("")
-    :(al.length>5?"":"")+`<div class="win"><svg width="40" height="40" viewBox="0 0 10 10" aria-hidden="true"><path fill="#f6dc5a" stroke="#1f4fc4" stroke-width=".4" d="M5 .5l1.3 2.9 3.2.3-2.4 2.1.7 3.1L5 7.3 2.2 8.9l.7-3.1L.5 3.7l3.2-.3z"/></svg><b>اليوم مرتب!</b><span>ولا شي معلّق. استاهلتي استراحة ✦</span></div>`;
-  $("#leftCount").innerHTML=al.length>5?`<button type="button" class="chip" id="moreNotes">${notesAll?"أقل":"كلها ("+al.length+")"}</button>`:(al.length?al.length+" ملاحظات":"");
+  const al=alerts(),shown=notesAll?al:al.slice(0,4);const verb=g=>g.startsWith("letter:")?"الخطاب":g.startsWith("br:")?"الحضور":g==="arc"?"الأرشيف":g==="req"?"راجعي":g==="tsk"?"المهام":"افتحي";
+  $("#notes").innerHTML=al.length?shown.map(a=>`<button type="button" class="sticky${a.hot?" hot":""}" data-go="${esc(a.go)}"><span class="dot" style="background:${a.col}"></span><span class="nt">${esc(a.t)}</span><span class="go">${verb(a.go)} ←</span></button>`).join("")
+    :`<div class="win"><svg width="40" height="40" viewBox="0 0 10 10" aria-hidden="true"><path fill="#f6dc5a" stroke="#1f4fc4" stroke-width=".4" d="M5 .5l1.3 2.9 3.2.3-2.4 2.1.7 3.1L5 7.3 2.2 8.9l.7-3.1L.5 3.7l3.2-.3z"/></svg><b>اليوم مرتب!</b><span>ولا شي معلّق. استاهلتي استراحة ✦</span></div>`;
+  $("#leftCount").innerHTML=al.length>4?`<button type="button" class="linkbtn" id="moreNotes">${notesAll?"أقل":"كلها ("+al.length+")"}</button>`:(al.length?al.length+" ملاحظات":"");
   const done=S.tasks.filter(x=>x.done).length,total=S.tasks.length||1,on=Math.round(done/total*10);
   $("#bricks").innerHTML=Array.from({length:10},(_,i)=>`<i class="${i<on?"on":""}"></i>`).join("");
   $("#otNum").textContent=overtime().length;
   const b=$("#bToday");b.hidden=!al.length;b.textContent=al.length;
-  $("#how").hidden=LS.get("daftari-how")==="0";
+  $("#how").hidden=true;
 }
 let notesAll=false;$("#leftCount").addEventListener("click",e=>{if(e.target.closest("#moreNotes")){notesAll=!notesAll;renderToday()}});
 $("#hideHow").addEventListener("click",()=>{LS.set("daftari-how","0");$("#how").hidden=true});
@@ -573,7 +596,7 @@ $("#notes").addEventListener("click",e=>{const b=e.target.closest("[data-go]");i
 /* ---------- ATTENDANCE ---------- */
 let brF="all",stF="all";
 function renderAtt(){
-  $("#brChips").innerHTML=[["all","كل الأقسام"],...branches().map(b=>[b,b])].map(([k,l])=>`<button type="button" class="chip" data-f="${esc(k)}" aria-pressed="${brF===k}">${esc(l)}</button>`).join("");
+  $("#brChips").innerHTML=[["all","كل الأقسام"],...branches().map(b=>[b,b])].map(([k,l])=>`<option value="${esc(k)}"${brF===k?" selected":""}>${esc(l)}</option>`).join("");
   const base=today().filter(e=>brF==="all"||e.br===brF),c=stats(base);
   $("#stChips").innerHTML=[["all","الكل",c.total],["present","حاضر",c.present],["late","متأخر",c.late],["absent","غائب",c.absent],["leave","إجازة",c.leave]]
     .map(([k,l,n])=>`<button type="button" class="chip" data-s="${k}" aria-pressed="${stF===k}">${l} <span class="num">${n}</span></button>`).join("");
@@ -588,7 +611,7 @@ function renderAtt(){
       ${needsLetter(e.id)?`<button type="button" class="btn sm" data-letter="${esc(e.id)}" style="color:var(--teal);border-color:var(--teal)">خطاب تنبيه</button>`:`<span class="pill ${s.c}">${s.t}</span>`}</div>`}).join("")});
   $("#attList").innerHTML=html;
 }
-$("#brChips").addEventListener("click",e=>{const b=e.target.closest("[data-f]");if(b){brF=b.dataset.f;renderAtt()}});
+$("#brChips").addEventListener("change",e=>{brF=e.target.value;renderAtt()});
 $("#stChips").addEventListener("click",e=>{const b=e.target.closest("[data-s]");if(b){stF=b.dataset.s;renderAtt()}});
 $("#attList").addEventListener("click",e=>{const b=e.target.closest("[data-letter]");if(b)openLetter(b.dataset.letter)});
 

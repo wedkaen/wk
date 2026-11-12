@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#2f4a99">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23f6dc5a' stroke='%231f4fc4' stroke-width='3' stroke-dasharray='6 4'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='monospace' font-weight='700' font-size='22' fill='%231f4fc4'%3EWK%3C/text%3E%3C/svg%3E">
-<title>Daftar · Wed Kaen</title>
+<title>AdminEase · Wed Kaen</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Courier+Prime:wght@400;700&display=swap">
@@ -486,16 +486,78 @@ h3,.notes-h h3{font-family:var(--f-body);font-weight:600;letter-spacing:-.2px}
 @media (min-width:960px){
   .wrap{padding:0 40px 40px 260px!important}
   nav.tabs{right:auto!important;left:max(0px,calc((100vw - 1080px)/2))!important;border-left:0!important;border-right:1.5px solid var(--line)!important}
-  nav.tabs::after{content:"organized, with a little joy 🫐"}
+  nav.tabs::after{content:"Admin, made easy."}
 }
 :root{--ink:#1f2d5c}
 .sticky .nt,.row .t,.letter p,.task .t,.folder .t,.card>div>b{color:#1f2d5c}
+/* ===== formal pass ===== */
+body{background:#f6f2e9}
+.awn{height:10px!important;background:var(--paper)!important;border-bottom:0!important;border-top:4px solid #2f4a99!important;box-shadow:inset 0 2.5px 0 #f0d88a}
+
+.stamp{transform:none!important;border-style:solid!important;border-width:1px!important;background:var(--paper)!important}
+.band,.export,.sticky,.card,.sheet-list,.lined,.folder,details.add,.col-b{border-radius:14px!important}
+.export{border:1px solid #c9d2ec!important;background:#eef1f8!important}
+.mode{border-radius:8px}.mode button{border-radius:6px}
+.btn{border-radius:8px!important}
+.chip{border-radius:8px!important}
+.sticky .go{border-radius:5px!important}
+nav.tabs button[aria-current="page"]{border-radius:8px}
+
+/* AdminEase polish */
+.hello h1{font-size:30px}
+.hello #greet{font-size:12px;letter-spacing:.01em}
+.vh h2{font-size:32px!important}
+.big{font-size:64px}
+.export b{font-size:15px}
+.sig{letter-spacing:.02em}
+@media (min-width:960px){nav.tabs::after{font-size:18px!important;transform:none;bottom:26px}}
+
+/* ===== clarity pass ===== */
+.mode{display:none!important}
+header.top::after{content:"Sample data";margin-inline-start:auto;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#6a7396;border:1px solid #cdd6ee;border-radius:99px;padding:4px 10px;background:var(--paper)}
+#bToday,#bArc{display:none!important}
+.tour{display:grid!important;order:-1;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:0;background:transparent;border:0;margin:2px 0 4px;counter-reset:none}
+.tour button[data-tour]{grid-auto-flow:column;justify-content:start;align-items:center;gap:12px;text-align:left;padding:12px 14px;background:var(--paper);border:1px solid #dfe3ef;border-radius:12px;font-size:13px;color:#44507e;line-height:1.35}
+.tour button[data-tour] strong{color:#1f2d5c;font-weight:600}
+.tour b{width:28px;height:28px;flex:none;border:1px solid #c9a64a;border-radius:50%;font-family:var(--f-latin);font-weight:400;font-size:15px;color:#c9a64a;background:transparent}
+.tour button[data-tour]:hover{border-color:#3a56a5;transform:none;background:var(--paper)}
+.tour button[data-tour]:hover b{background:#c9a64a;color:#fffdf8;border-style:solid}
+.tour em{font-style:normal}
+@media (max-width:600px){.tour{gap:6px}.tour button[data-tour]{padding:9px 8px;gap:7px;font-size:12.5px}.tour em{display:none}.tour b{width:24px;height:24px;font-size:13px}}
+/* attendance table */
+.row{padding:11px 18px}
+.row .c,.grp .c{display:none}
+@media (min-width:760px){
+  .grp,.row{display:grid!important;grid-template-columns:34px minmax(0,1.6fr) minmax(0,1fr) 90px 90px 120px;align-items:center;gap:14px}
+  .grp{padding-top:18px!important}
+  .grp>span:first-child{grid-column:1/3}
+  .grp .c-st{text-align:right}
+  .row .c,.grp .c{display:block}
+  .row .c{font-size:13px;color:#44507e}
+  .grp .c{font-size:10px}
+  .grp .c-st,.row>.pill,.row>.btn{justify-self:end}
+  .row .m{font-size:0;line-height:1;margin-top:3px}
+  .row .m .tag{font-size:11px}
+  .row .main .t{font-size:14px}
+}
+.tag{font-size:11.5px}
+
+/* nav emojis + refined polish */
+.nav-em{font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:19px;line-height:1;display:inline-grid;place-items:center;width:24px;height:24px;filter:saturate(.8);opacity:.72;transition:opacity .25s,transform .25s,filter .25s}
+nav.tabs button[aria-current="page"] .nav-em{opacity:1;filter:saturate(1);transform:translateY(-1px)}
+nav.tabs button{letter-spacing:.01em}
+nav.tabs button[aria-current="page"]::before{display:none!important}
+@media (max-width:959px){nav.tabs{box-shadow:0 -10px 24px -20px rgba(27,44,102,.35)}nav.tabs button{font-size:10.5px;gap:4px}nav.tabs button[aria-current="page"]{color:#2f4a99}nav.tabs button[aria-current="page"]::after{content:"";position:absolute;top:0;left:30%;right:30%;height:2px;border-radius:2px;background:#c9a64a}}
+@media (min-width:960px){nav.tabs button{gap:14px}nav.tabs button[aria-current="page"]{background:#eef1f8!important;box-shadow:inset 2px 0 0 #2f4a99}}
+.band,.export,.col-b,.card,.sheet-list,.lined,.folder,details.add{box-shadow:0 1px 2px rgba(27,44,102,.04),0 14px 30px -24px rgba(27,44,102,.4)!important}
+.notes-h h3,.vh h2{letter-spacing:-.3px}
+section.view{gap:16px}
 </style>
 
 <div class="wrap" dir="ltr" lang="en">
   <header class="top">
     <div class="stamp" aria-hidden="true">WK</div>
-    <div class="hello"><h1>Daftar<span class="blue-berry" aria-hidden="true">🫐</span></h1><p id="greet"></p></div>
+    <div class="hello"><h1>AdminEase<span class="blue-berry" aria-hidden="true">🫐</span></h1><p id="greet"></p></div>
     <div class="mode" role="group" aria-label="Data source">
       <button type="button" data-mode="demo" aria-pressed="true">Demo</button>
       <button type="button" data-mode="mine" aria-pressed="false">My data</button>
@@ -505,10 +567,9 @@ h3,.notes-h h3{font-family:var(--f-body);font-weight:600;letter-spacing:-.2px}
   <!-- TODAY -->
   <section class="view" id="v-today">
     <ol class="tour" id="tour" aria-label="How it works">
-      <li><button type="button" data-tour="up"><b>1</b><span>Upload attendance file</span></button></li>
-      <li><button type="button" data-tour="notes"><b>2</b><span>Sort today's priorities</span></button></li>
-      <li><button type="button" data-tour="exp"><b>3</b><span>Export the report</span></button></li>
-      <button type="button" class="tour-x" id="tourX" aria-label="Hide guide">✕</button>
+      <li><button type="button" data-tour="up"><b>1</b><span><strong>Upload</strong> <em>the fingerprint file</em></span></button></li>
+      <li><button type="button" data-tour="notes"><b>2</b><span><strong>Review</strong> <em>what needs attention</em></span></button></li>
+      <li><button type="button" data-tour="exp"><b>3</b><span><strong>Export</strong> <em>the weekly report</em></span></button></li>
     </ol>
 
     <div class="col-a">
@@ -579,7 +640,7 @@ h3,.notes-h h3{font-family:var(--f-body);font-weight:600;letter-spacing:-.2px}
   <section class="view" id="v-tsk" hidden>
     <div class="vh"><h2>My Tasks <span class="stk stk-h" style="--rt:3deg;background:var(--blush)">my list ♡</span></h2><p class="what">Sorted by priority, then due date.</p></div>
     <div class="lined" id="tskList"></div>
-    <details class="add" open>
+    <details class="add">
       <summary>+ New task</summary>
       <form class="f" id="tskForm">
         <div class="fld"><label for="tTitle">Task</label><input id="tTitle" required placeholder="e.g. Order supplies for Sales"></div>
@@ -626,16 +687,16 @@ h3,.notes-h h3{font-family:var(--f-body);font-weight:600;letter-spacing:-.2px}
         <button class="btn block" type="button" id="resetBtn">Reset demo data</button>
       </form>
     </details>
-    <p class="sig">Designed by Wed Kaen · <span class="latin">WK notebook 🫐</span></p>
+    <p class="sig"><span class="latin">AdminEase</span> · designed by Wed Kaen</p>
   </section>
 </div>
 
 <nav class="tabs" aria-label="Sections" dir="ltr"><div class="in">
-  <button type="button" data-v="today" aria-current="page"><svg viewBox="0 0 24 24"><path d="M4 11 12 4l8 7v9H4z"/><path d="M10 20v-5h4v5"/></svg>Today<span class="badge num" id="bToday" hidden></span></button>
-  <button type="button" data-v="att"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>Attendance</button>
-  <button type="button" data-v="req"><svg viewBox="0 0 24 24"><path d="M7 7h11l-3-3M17 17H6l3 3"/></svg>Requests<span class="badge num" id="bReq" hidden></span></button>
-  <button type="button" data-v="tsk"><svg viewBox="0 0 24 24"><path d="M5 5h14v14H5z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>Tasks</button>
-  <button type="button" data-v="arc"><svg viewBox="0 0 24 24"><path d="M3 7h7l2 2h9v10H3z"/></svg>Archive<span class="badge num" id="bArc" hidden></span></button>
+  <button type="button" data-v="today" aria-current="page"><span class="nav-em" aria-hidden="true">📅</span>Today<span class="badge num" id="bToday" hidden></span></button>
+  <button type="button" data-v="att"><span class="nav-em" aria-hidden="true">🕘</span>Attendance</button>
+  <button type="button" data-v="req"><span class="nav-em" aria-hidden="true">📨</span>Requests<span class="badge num" id="bReq" hidden></span></button>
+  <button type="button" data-v="tsk"><span class="nav-em" aria-hidden="true">✅</span>Tasks</button>
+  <button type="button" data-v="arc"><span class="nav-em" aria-hidden="true">🗂️</span>Archive<span class="badge num" id="bArc" hidden></span></button>
 </div></nav>
 
 <div class="scrim" id="shLetter" hidden dir="ltr" lang="en"><div class="sheet" role="dialog" aria-modal="true" aria-labelledby="lT">
@@ -827,11 +888,11 @@ function renderAtt(){
   const rows=base.filter(e=>stF==="all"||status(e).k===stF);
   if(!rows.length){$("#attList").innerHTML=`<div class="empty">${today().length?"No one in this group":"Upload an attendance file from Today"}</div>`;return}
   let html="";["Morning","Evening"].forEach(sh=>{const g=rows.filter(e=>e.sh===sh);if(!g.length)return;
-    html+=`<div class="grp">${sh} shift · starts ${fmt12(S.shifts[sh])}</div>`;
+    html+=`<div class="grp"><span>${sh} shift · starts ${fmt12(S.shifts[sh])}</span><span class="c">Department</span><span class="c">In</span><span class="c">Out</span><span class="c c-st">Status</span></div>`;
     html+=g.map(e=>{const s=status(e),n=monthLates(e.id).length;
       return `<div class="row"><div class="av">${esc(e.name.charAt(0))}</div><div class="main"><div class="t">${esc(e.name)}</div>
-      <div class="m num">${esc(e.br)} · in ${fmt12(e.in)}${e.out?" · out "+fmt12(e.out):""}</div>
-      ${n?`<div class="tags num"><span class="tag${n>=3?" hot":""}">Late this month: ${n}</span></div>`:""}</div>
+      <div class="m num">${esc(e.br)} · in ${fmt12(e.in)}${e.out?" · out "+fmt12(e.out):""}${n?` · <span class="tag${n>=3?" hot":""}">late ×${n} this month</span>`:""}</div></div>
+      <span class="c c-br">${esc(e.br)}</span><span class="c c-in num">${e.in?fmt12(e.in):"—"}</span><span class="c c-out num">${e.out?fmt12(e.out):"—"}</span>
       ${needsLetter(e.id)?`<button type="button" class="btn sm" data-letter="${esc(e.id)}" style="color:var(--teal);border-color:var(--teal)">Warning letter</button>`:`<span class="pill ${s.c}">${s.t}</span>`}</div>`}).join("")});
   $("#attList").innerHTML=html;
 }
@@ -864,7 +925,7 @@ function renderReq(){
     else body=`<div><b>${esc(p.name)}</b> <span class="what">· ${esc(p.br)} · ${dayAr(r.date)}${r.days>1?" · "+r.days+" days":""}</span>${r.note?`<div class="what">${esc(r.note)}</div>`:""}</div>`;
     return `<div class="card"><div class="hd"><span class="pill ${pc[r.type]}">${r.type}</span><span class="ref num">${r.ref}${r.type==="Shift swap"?" · "+dayAr(r.date):""}</span></div>${body}
       ${ck?`<div class="check ${ck.k}">${esc(ck.t)}</div><div class="acts"><button type="button" class="btn teal" data-a="ok" data-r="${r.ref}">Approve</button><button type="button" class="btn no" data-a="no" data-r="${r.ref}">Decline</button></div>`:""}</div>`}).join("")
-    :`<div class="card empty">${reqF==="Pending"?"No requests waiting 🫐":"Nothing here yet"}</div>`;
+    :`<div class="card empty">${reqF==="Pending"?"No requests waiting":"Nothing here yet"}</div>`;
   const n=S.reqs.filter(r=>r.st==="Pending").length,b=$("#bReq");b.hidden=!n;b.textContent=n;
   const ps=people();const opts=ps.map(p=>`<option value="${esc(p.id)}">${esc(p.name)} · ${esc(p.br)}</option>`).join("")||`<option value="">Upload an attendance file first</option>`;
   ["#rEmp","#rEmp2"].forEach(s=>{const v=$(s).value;$(s).innerHTML=opts;if(v)$(s).value=v});
@@ -888,7 +949,7 @@ function renderTasks(){
   if(!$("#tDue").value)$("#tDue").value=todayISO;
 }
 $("#tskList").addEventListener("change",e=>{const c=e.target.closest("[data-t]");if(!c)return;const x=S.tasks.find(y=>y.id==c.dataset.t);if(!x)return;
-  x.done=c.checked;save();renderAll();if(x.done){toast("Nicely done 🫐");sparkle(c)}});
+  x.done=c.checked;save();renderAll();if(x.done){toast("Task completed 🫐");sparkle(c)}});
 $("#tskForm").addEventListener("submit",e=>{e.preventDefault();const t=$("#tTitle").value.trim();if(!t)return;
   S.tasks.push({id:S.seq.task++,t,p:+$("#tPri").value,due:$("#tDue").value||todayISO,done:false});$("#tTitle").value="";save();renderAll();toast("Added and sorted by priority")});
 
@@ -982,7 +1043,7 @@ $("#fileIn").addEventListener("change",async e=>{const files=[...e.target.files]
     Object.entries(byDay).forEach(([d,m])=>{const prev={};(S.days[d]||[]).forEach(x=>prev[x.id]=x);S.days[d]=Object.values(Object.assign(prev,m))});
     const ds=Object.keys(byDay);S.src=`${files.length>1?files.length+" files":files[0].name} · ${sheets.length} sheets · ${ds.length>1?ds.length+" days":dayAr(ds[0])}`;
     save();renderAll();const c=stats(today());
-    $("#mT").textContent="All done 🫐";
+    $("#mT").textContent="All done";
     $("#mSum").innerHTML=`<b>${out.length} records · ${new Set(out.map(x=>x.e.br)).size} departments</b><span class="what">Present ${c.present+c.late} · Late ${c.late} · Absent ${c.absent} · Leave ${c.leave}</span>`;
     $("#mSum").hidden=false;$("#mDone").hidden=false;$("#mDone").focus();sparkle($("#mSum"))},sheets.length*step+200)});
 $("#mDone").addEventListener("click",()=>{closeSheets();$("#mT").textContent="Reading attendance files…";show("today")});
@@ -992,8 +1053,8 @@ let lastRate=null;
 function countUp(to,lbl){const el=$("#rate");const from=lastRate===null?0:lastRate;lastRate=to;
   if(from===to||matchMedia("(prefers-reduced-motion: reduce)").matches){el.innerHTML=`${to}%<small>${lbl}</small>`;return}
   const t0=performance.now(),d=1200;(function step(n){const k=Math.min(1,(n-t0)/d),v=Math.round(from+(to-from)*(1-Math.pow(1-k,3)));el.innerHTML=`${v}%<small>${lbl}</small>`;if(k<1)requestAnimationFrame(step)})(t0)}
-$("#tour").hidden=true;
-$("#tourX").addEventListener("click",()=>{LS.set("daftari-tour","0");$("#tour").hidden=true});
+
+
 $("#tour").addEventListener("click",e=>{const b=e.target.closest("[data-tour]");if(!b)return;const k=b.dataset.tour;
   if(k==="up")$("#fileIn").click();
   if(k==="notes"){const c=$("#colB");c.scrollIntoView({behavior:"smooth",block:"start"});c.classList.remove("flash");void c.offsetWidth;c.classList.add("flash")}
@@ -1010,7 +1071,7 @@ function exportXlsx(src){
   add("Requests",[["Ref","Type","Employee","Date","Status"],...S.reqs.map(r=>[r.ref,r.type,person(r.emp).name,r.date,r.st])]);
   add("Tasks",[["Task","Priority","Due","Status"],...S.tasks.map(x=>[x.t,PRI[x.p][0],x.due,x.done?"Done":"Open"])]);
   add("Renewals",[["Ref","Document","Department","Expires","Status"],...S.docs.filter(d=>{const s=docState(d);return s&&s.k!=="ok"}).map(d=>[d.ref,d.title,d.br,d.exp,docState(d).t])]);
-  try{XLSX.writeFile(wb,"Daftar-Report-"+curDay()+".xlsx");toast("Report exported ✓");sparkle(src)}catch(e){toast("Couldn't download the file here")}}
+  try{XLSX.writeFile(wb,"AdminEase-Report-"+curDay()+".xlsx");toast("Report exported ✓");sparkle(src)}catch(e){toast("Couldn't download the file here")}}
 $("#expBtn").addEventListener("click",e=>exportXlsx(e.currentTarget));
 $("#repExp").addEventListener("click",e=>exportXlsx(e.currentTarget));
 

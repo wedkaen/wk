@@ -323,14 +323,33 @@ html body .wk-marquee{animation:wk-marquee-ltr 30s linear infinite!important}
 .lang-tog{position:fixed;z-index:50;top:calc(12px + env(safe-area-inset-top,0px));right:calc(12px + env(safe-area-inset-right,0px));padding:7px 14px;border-radius:99px;background:#fffdf8;border:1px solid #cdd6ee;color:#2f4a99;font:600 12.5px/1 'WKAr','Inter',sans-serif;text-decoration:none;box-shadow:0 6px 16px -10px rgba(27,44,102,.45)}
 .lang-tog:hover{border-color:#2f4a99}
 html[dir=rtl] .lang-tog{right:auto;left:calc(12px + env(safe-area-inset-left,0px))}
+
+/* ===== professional pass ===== */
+span.wk-wiggle:not(.keep),.berry:not(.keep){display:none!important}
+.ribbon{transform:none!important}
+.topbar{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(246,241,228,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid #dfe3ef;padding-top:env(safe-area-inset-top,0px)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:61;background:#f6f1e4}
+.tb-in{max-width:1080px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px max(16px,env(safe-area-inset-right,0px)) 12px max(16px,env(safe-area-inset-left,0px))}
+.tb-name{font-family:'Instrument Serif',Georgia,serif;font-size:22px;line-height:1;color:#2f4a99;text-decoration:none;white-space:nowrap}
+.tb-links{display:flex;align-items:center;gap:20px}
+.tb-links a{font:500 13px/1 'WKAr','Inter',sans-serif;color:#44507e;text-decoration:none;white-space:nowrap}
+.tb-links a:hover{color:#2f4a99}
+.tb-links .tb-lang{padding:6px 12px;border-radius:99px;background:#2f4a99;color:#fffdf8;font-weight:600}
+.tb-links .tb-lang:hover{background:#243c82;color:#fffdf8}
+body{padding-top:calc(54px + env(safe-area-inset-top,0px))}
+#work,#certs,#contact{scroll-margin-top:72px}
+html{scroll-behavior:smooth}
+@media (max-width:600px){.tb-name{font-size:19px}.tb-links{gap:12px}.tb-links a{font-size:12px}.tb-links .tb-lang{padding:5px 10px}}
+@media (max-width:380px){.tb-links a:not(.tb-lang):nth-child(2){display:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<a class="lang-tog" href="ar.html" lang="ar">عربي</a>
+<span id="top"></span><nav class="topbar" aria-label="Main"><div class="tb-in"><a href="#top" class="tb-name">Wed Kaen</a><div class="tb-links"><a href="#work">Work</a><a href="#certs">Certificates</a><a href="#contact">Contact</a><a class="tb-lang" href="ar.html" lang="ar">عربي</a></div></div></nav>
 <main>
 <div dir="ltr" class="board b-top" style="width: 390px; box-sizing: border-box; background: #f6f1e4; color: #1b2c66; font-family: 'WKAr', 'Inter', 'IBM Plex Sans Arabic', Tahoma, sans-serif; padding: 24px 18px; display: flex; flex-direction: column; gap: 34px; overflow: hidden">
 
-  <header style="position: relative; background: #fffdf8; border: 1px solid #cdd6ee; border-radius: 6px 6px 20px 20px; text-align: center"><span class="berry" aria-hidden="true" style="--r:-14deg;font-size:34px;position:absolute;left:20px;top:64px">🫐</span>
+  <header style="position: relative; background: #fffdf8; border: 1px solid #cdd6ee; border-radius: 6px 6px 20px 20px; text-align: center"><span class="berry keep" aria-hidden="true" style="--r:-14deg;font-size:34px;position:absolute;left:20px;top:64px">🫐</span>
     <div style="height: 30px; border-bottom: 1.5px solid #3a56a5; background: radial-gradient(circle at 50% 0, #3a56a5 15px, transparent 15.5px) 0 0 / 34px 30px, #fffdf8; border-radius: 5px 5px 0 0"></div>
     
     <span class="wk-wiggle" style="--r: 8deg; animation-delay: .8s; position: absolute; top: 52px; right: 10px; background: #dce4f7; border: 1px solid #cdd6ee; border-radius: 50%; padding: 5px 14px; font-size: 12px; font-weight: 600; color: #3a56a5; direction: ltr">portfolio 2026</span>
@@ -377,7 +396,7 @@ html[dir=rtl] .lang-tog{right:auto;left:calc(12px + env(safe-area-inset-left,0px
     </div>
   </section>
 </div>
-<div dir="ltr" class="board b-work" style="width: 390px; box-sizing: border-box; background: #f6f1e4; color: #1b2c66; font-family: 'WKAr', 'Inter', 'IBM Plex Sans Arabic', Tahoma, sans-serif; padding: 28px 18px; display: flex; flex-direction: column; gap: 30px; overflow: hidden">
+<div dir="ltr" id="work" class="board b-work" style="width: 390px; box-sizing: border-box; background: #f6f1e4; color: #1b2c66; font-family: 'WKAr', 'Inter', 'IBM Plex Sans Arabic', Tahoma, sans-serif; padding: 28px 18px; display: flex; flex-direction: column; gap: 30px; overflow: hidden">
   <div style="position: relative; display: flex; flex-direction: column">
     
     <h2 style="margin: 0; font-family: 'WKAr', 'Inter', 'Readex Pro', sans-serif; font-weight: 700; font-size: 42px; color: #3a56a5; line-height: 1.2"><span dir="ltr">Selected Work</span><span class="berry" aria-hidden="true" style="--r:12deg;font-size:26px;margin-inline:8px;vertical-align:super">🫐</span></h2>
@@ -387,7 +406,7 @@ html[dir=rtl] .lang-tog{right:auto;left:calc(12px + env(safe-area-inset-left,0px
   </div>
   
     <article class="feat2">
-  <span class="wk-wiggle f2-stk" style="--r:-6deg">my favorite ♡</span>
+  <span class="wk-wiggle f2-stk keep" style="--r:-6deg">my favorite ♡</span>
   <div class="f2-txt">
     <span class="f2-eye">Personal learning project</span>
     <h3 class="f2-t">AdminEase</h3>
@@ -402,7 +421,7 @@ html[dir=rtl] .lang-tog{right:auto;left:calc(12px + env(safe-area-inset-left,0px
 </article>
 <div class="idx">
   <details class="idx-row" open>
-    <summary><span class="idx-n">01</span><span class="idx-main"><span class="idx-t">Employee &amp; payroll records in Excel<span class="wk-wiggle idx-stk" style="--r:-6deg;background:#f0d88a">Excel pro</span></span><span class="idx-r">One clean workbook, ready for finance.</span></span><span class="idx-cat">Excel · Payroll<em>Taibah Valley · 2026</em></span><span class="idx-x" aria-hidden="true"></span></summary>
+    <summary><span class="idx-n">01</span><span class="idx-main"><span class="idx-t">Employee &amp; payroll records in Excel<span class="wk-wiggle idx-stk keep" style="--r:-6deg;background:#f0d88a">Excel pro</span></span><span class="idx-r">One clean workbook, ready for finance.</span></span><span class="idx-cat">Excel · Payroll<em>Taibah Valley · 2026</em></span><span class="idx-x" aria-hidden="true"></span></summary>
     <dl class="idx-body"><div><dt>Challenge</dt><dd>Attendance, employee and salary data in separate files.</dd></div><div><dt>What I did</dt><dd>Organized the HR sheets and built formulas for GOSI and payroll figures.</dd></div><div><dt>Result</dt><dd>One clean workbook, ready for finance.</dd></div></dl>
   </details>
   <details class="idx-row">
@@ -456,7 +475,7 @@ html[dir=rtl] .lang-tog{right:auto;left:calc(12px + env(safe-area-inset-left,0px
       </div>
     </div>
     <span class="wk-wiggle" style="--r: -12deg; position: absolute; top: 40px; left: -6px; background: #f2d3cd; border: 1px solid #cdd6ee; border-radius: 50%; padding: 5px 12px; font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: 18px; color: #3a56a5; direction: ltr; box-shadow: 0 0 0 4px #fffdf8">my tools</span>
-  </section><section class="sec-cert" style="display: flex; flex-direction: column; gap: 14px; position: relative">
+  </section><section id="certs" class="sec-cert" style="display: flex; flex-direction: column; gap: 14px; position: relative">
     <div style="display: flex; align-items: flex-end; justify-content: space-between; direction: ltr">
       <h2 style="margin: 0; font-family: 'WKAr', 'Inter', 'Readex Pro', sans-serif; font-weight: 700; font-size: 36px; color: #3a56a5; letter-spacing: -0.5px"><span style="white-space:nowrap">Certificates<span class="berry" aria-hidden="true" style="--r:-10deg;font-size:26px;margin-inline:10px;vertical-align:middle">🫐</span></span></h2>
       <span class="wk-wiggle" style="--r: -6deg; display: inline-block; background: #f2d3cd; border: 1px solid #cdd6ee; border-radius: 50%; padding: 4px 12px; font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: 18px; color: #3a56a5; box-shadow: 0 0 0 4px #fffdf8">always learning</span>
@@ -487,7 +506,7 @@ html[dir=rtl] .lang-tog{right:auto;left:calc(12px + env(safe-area-inset-left,0px
       <span style="font-size: 12.5px; color: #1b2c66; line-height: 1.55">Organizing crowd flow at the Haram gates.</span>
       <span style="font-size: 11.5px; color: #44507e">Certificate &amp; gift from Taibah University</span>
       <div style="display: flex; flex-wrap: wrap; gap: 4px; margin-top: 2px"><span class="wk-chip" style="font-size: 10.5px; font-weight: 600; background: #fffdf8; border: 1px solid #3a56a5; color: #3a56a5; border-radius: 99px; padding: 1px 8px; white-space: nowrap">Operations planning</span><span class="wk-chip" style="font-size: 10.5px; font-weight: 600; background: #fffdf8; border: 1px solid #3a56a5; color: #3a56a5; border-radius: 99px; padding: 1px 8px; white-space: nowrap">Process design</span><span class="wk-chip" style="font-size: 10.5px; font-weight: 600; background: #fffdf8; border: 1px solid #3a56a5; color: #3a56a5; border-radius: 99px; padding: 1px 8px; white-space: nowrap">Crowd management</span></div>
-      <span class="wk-wiggle" style="--r: -7deg; position: absolute; top: -14px; right: 14px; background: #3a56a5; color: #fffdf8; border-radius: 50%; padding: 2px 12px; font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: 17px; box-shadow: 0 0 0 3px #fffdf8">winner ♡</span>
+      <span class="wk-wiggle keep" style="--r: -7deg; position: absolute; top: -14px; right: 14px; background: #3a56a5; color: #fffdf8; border-radius: 50%; padding: 2px 12px; font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: 17px; box-shadow: 0 0 0 3px #fffdf8">winner ♡</span>
     </div>
 
     <div class="wk-bob" style="--r: -1deg; position: relative; background: #fffdf8; border: 1px dashed #bfcae8; border-radius: 14px; padding: 12px 14px 12px 70px; margin-top: 6px; box-shadow: 0 10px 24px -18px rgba(40,60,120,.45); direction: ltr; text-align: left; display: flex; flex-direction: column; gap: 3px">
@@ -536,7 +555,7 @@ html[dir=rtl] .lang-tog{right:auto;left:calc(12px + env(safe-area-inset-left,0px
     
     
     
-  </section><section class="sec-contact" style="display: flex; flex-direction: column; gap: 10px; position: relative">
+  </section><section id="contact" class="sec-contact" style="display: flex; flex-direction: column; gap: 10px; position: relative">
     <div style="display: flex; align-items: baseline; justify-content: space-between">
       <h2 style="margin: 0; font-family: 'WKAr', 'Inter', 'Readex Pro', sans-serif; font-weight: 700; font-size: 32px; color: #3a56a5"><span dir="ltr">Let&#39;s Work Together</span></h2>
     </div>

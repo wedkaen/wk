@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" id="vp" content="width=390">
+<script>try{if(Math.min(screen.width,screen.height)>=700||screen.width>=1000)document.getElementById("vp").setAttribute("content","width=device-width,initial-scale=1")}catch(e){}</script>
+<title>Wed Kaen · ملف الأعمال</title>
+<meta name="description" content="Wed Kaen · Reports, attendance tracking, organizing and archiving.">
+<meta property="og:title" content="Wed Kaen · mis">
+<meta property="og:description" content="management information systems ✦">
+<meta name="theme-color" content="#3a56a5">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23f6dc5a' stroke='%231f4fc4' stroke-width='3' stroke-dasharray='6 4'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='monospace' font-weight='700' font-size='22' fill='%231f4fc4'%3EWK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600&amp;family=Inter:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;family=Courier+Prime:wght@400;700&amp;display=swap">
+<style>
+@font-face{font-family:"WKAr";src:local("SST Arabic"),local("SSTArabic-Roman"),local("SST Arabic Roman");font-weight:400 500;unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:"WKAr";src:local("SST Arabic Medium"),local("SSTArabic-Medium"),local("SST Arabic Bold"),local("SSTArabic-Bold");font-weight:600 800;unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF}
+html,body{margin:0;background:#f6f1e4}
+body{background:radial-gradient(#e2d7bd 1px,transparent 1.2px) 0 0/18px 18px,#f6f1e4;overflow-x:hidden}
+main{width:390px;margin:0 auto;background:#f6f1e4;box-shadow:0 0 0 1px #dfe4f2,0 30px 60px -36px rgba(40,60,120,.35)}
+@media (max-width:999px){main{box-shadow:none}}
+.board{overflow:visible!important}
+
+
+a{color:#3a56a5}a:hover{color:#2b4389}
+@keyframes wk-bob{0%,100%{transform:translateY(0) rotate(var(--r,0deg))}50%{transform:translateY(-6px) rotate(calc(var(--r,0deg) * -1))}}
+@keyframes wk-wiggle{0%,100%{transform:rotate(var(--r,-6deg))}50%{transform:rotate(calc(var(--r,-6deg) * -1))}}
+@keyframes wk-twinkle{0%,100%{transform:scale(1) rotate(0);opacity:1}50%{transform:scale(.6) rotate(45deg);opacity:.5}}
+@keyframes wk-marquee{from{transform:translateX(0)}to{transform:translateX(50%)}}
+@keyframes wk-pop{0%,100%{transform:scale(1) rotate(var(--r,0deg))}50%{transform:scale(1.08) rotate(var(--r,0deg))}}
+@keyframes wk-draw{0%{stroke-dashoffset:320}35%,80%{stroke-dashoffset:0}100%{stroke-dashoffset:-320}}
+@keyframes wk-fill{0%,8%{fill:transparent}14%,82%{fill:#f0d88a}90%,100%{fill:transparent}}
+@keyframes wk-beat{0%,60%,100%{transform:scale(1)}20%{transform:scale(1.18)}40%{transform:scale(.96)}}
+@keyframes wk-blink{0%,100%{opacity:1}50%{opacity:.35}}
+.wk-bob{animation:wk-bob 4s ease-in-out infinite}
+.wk-wiggle{animation:wk-wiggle 2.6s ease-in-out infinite}
+.wk-twinkle{animation:wk-twinkle 2.2s ease-in-out infinite}
+.wk-pop{animation:wk-pop 2.4s ease-in-out infinite}
+.wk-marquee{animation:wk-marquee 20s linear infinite}
+.wk-draw{stroke-dasharray:320;animation:wk-draw 5s ease-in-out infinite}
+.wk-fill{animation:wk-fill 7s ease-in-out infinite}
+.wk-beat{animation:wk-beat 1.6s ease-in-out infinite;transform-origin:center}
+.wk-blink{animation:wk-blink 1.8s ease-in-out infinite}
+.wk-lift{transition:transform .3s cubic-bezier(.3,1.6,.5,1),box-shadow .3s}
+.wk-lift:hover{transform:translateY(-6px) rotate(0)!important;box-shadow:0 18px 26px -18px rgba(27,44,102,.7)}
+.wk-lift:hover .wk-num{background:#f0d88a;transform:rotate(-12deg) scale(1.1)}
+.wk-num{transition:transform .3s,background .3s}
+.wk-chip{transition:transform .2s,background .2s}
+.wk-chip:hover{transform:translateY(-2px) rotate(-3deg);background:#f0d88a!important;color:#1b2c66!important}
+@media (prefers-reduced-motion: reduce){.wk-bob,.wk-wiggle,.wk-twinkle,.wk-pop,.wk-marquee,.wk-draw,.wk-fill,.wk-beat,.wk-blink{animation:none}}
+
+
+
+a{color:#3a56a5}a:hover{color:#2b4389}
+@keyframes wk-bob{0%,100%{transform:translateY(0) rotate(var(--r,0deg))}50%{transform:translateY(-6px) rotate(calc(var(--r,0deg) * -1))}}
+@keyframes wk-wiggle{0%,100%{transform:rotate(var(--r,-6deg))}50%{transform:rotate(calc(var(--r,-6deg) * -1))}}
+@keyframes wk-twinkle{0%,100%{transform:scale(1) rotate(0);opacity:1}50%{transform:scale(.6) rotate(45deg);opacity:.5}}
+@keyframes wk-marquee{from{transform:translateX(0)}to{transform:translateX(50%)}}
+@keyframes wk-pop{0%,100%{transform:scale(1) rotate(var(--r,0deg))}50%{transform:scale(1.08) rotate(var(--r,0deg))}}
+@keyframes wk-draw{0%{stroke-dashoffset:320}35%,80%{stroke-dashoffset:0}100%{stroke-dashoffset:-320}}
+@keyframes wk-fill{0%,8%{fill:transparent}14%,82%{fill:#f0d88a}90%,100%{fill:transparent}}
+@keyframes wk-beat{0%,60%,100%{transform:scale(1)}20%{transform:scale(1.18)}40%{transform:scale(.96)}}
+@keyframes wk-blink{0%,100%{opacity:1}50%{opacity:.35}}
+.wk-bob{animation:wk-bob 4s ease-in-out infinite}
+.wk-wiggle{animation:wk-wiggle 2.6s ease-in-out infinite}
+.wk-twinkle{animation:wk-twinkle 2.2s ease-in-out infinite}
+.wk-pop{animation:wk-pop 2.4s ease-in-out infinite}
+.wk-marquee{animation:wk-marquee 20s linear infinite}
+.wk-draw{stroke-dasharray:320;animation:wk-draw 5s ease-in-out infinite}
+.wk-fill{animation:wk-fill 7s ease-in-out infinite}
+.wk-beat{animation:wk-beat 1.6s ease-in-out infinite;transform-origin:center}
+.wk-blink{animation:wk-blink 1.8s ease-in-out infinite}
+.wk-lift{transition:transform .3s cubic-bezier(.3,1.6,.5,1),box-shadow .3s}
+.wk-lift:hover{transform:translateY(-6px) rotate(0)!important;box-shadow:0 18px 26px -18px rgba(27,44,102,.7)}
+.wk-lift:hover .wk-num{background:#f0d88a;transform:rotate(-12deg) scale(1.1)}
+.wk-num{transition:transform .3s,background .3s}
+.wk-chip{transition:transform .2s,background .2s}
+.wk-chip:hover{transform:translateY(-2px) rotate(-3deg);background:#f0d88a!important;color:#1b2c66!important}
+@media (prefers-reduced-motion: reduce){.wk-bob,.wk-wiggle,.wk-twinkle,.wk-pop,.wk-marquee,.wk-draw,.wk-fill,.wk-beat,.wk-blink{animation:none}}
+
+
+
+a{color:#3a56a5}a:hover{color:#2b4389}
+@keyframes wk-bob{0%,100%{transform:translateY(0) rotate(var(--r,0deg))}50%{transform:translateY(-6px) rotate(calc(var(--r,0deg) * -1))}}
+@keyframes wk-wiggle{0%,100%{transform:rotate(var(--r,-6deg))}50%{transform:rotate(calc(var(--r,-6deg) * -1))}}
+@keyframes wk-spin{to{transform:rotate(360deg)}}
+@keyframes wk-twinkle{0%,100%{transform:scale(1) rotate(0);opacity:1}50%{transform:scale(.6) rotate(45deg);opacity:.5}}
+@keyframes wk-marquee{from{transform:translateX(0)}to{transform:translateX(50%)}}
+@keyframes wk-pop{0%,100%{transform:scale(1) rotate(var(--r,0deg))}50%{transform:scale(1.08) rotate(var(--r,0deg))}}
+.wk-bob{animation:wk-bob 4s ease-in-out infinite;transition:box-shadow .25s}
+.wk-bob:hover{animation-play-state:paused;transform:translateY(-8px) scale(1.04) rotate(0)!important;z-index:2}
+.wk-wiggle{animation:wk-wiggle 2.6s ease-in-out infinite}
+.wk-spin{animation:wk-spin 14s linear infinite}
+.wk-twinkle{animation:wk-twinkle 2.2s ease-in-out infinite}
+.wk-pop{animation:wk-pop 2.4s ease-in-out infinite}
+.wk-marquee{animation:wk-marquee 18s linear infinite}
+.wk-chip{transition:transform .2s,background .2s}
+.wk-chip:hover{transform:translateY(-2px) rotate(-3deg);background:#f0d88a!important}
+@media (prefers-reduced-motion: reduce){.wk-bob,.wk-wiggle,.wk-spin,.wk-twinkle,.wk-pop,.wk-marquee{animation:none}}
+
+
+
+@media (min-width:1000px){
+  main{width:min(1240px,calc(100% - 64px));margin:32px auto;border-radius:28px;overflow:hidden}
+  .board{width:auto!important;padding:56px 64px!important}
+  .board+.board{border-top:1.5px dashed #bcc7e6}
+  .b-top>.ribbon,.b-work>.ribbon{margin-left:-64px!important;margin-right:-64px!important}
+  .b-top{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px 64px!important;align-items:stretch}
+  .b-top>header{grid-column:1;grid-row:1;display:flex;flex-direction:column}
+  .b-top>header>div:last-child{flex:1;justify-content:center}
+  .b-top>section{grid-column:2;grid-row:1;justify-content:center}
+  .b-top>.ribbon{grid-column:1/-1;grid-row:2}
+  .b-top>header h1{font-size:76px!important}
+  .b-work{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:44px 28px!important;align-items:stretch}
+  .b-work>div,.b-work>p{grid-column:1/-1}
+  .b-work>div:first-child{align-items:center;text-align:center}
+  .b-work>div:first-child>span:first-child{text-align:center!important}
+  .b-work>div:first-child h2{font-size:56px!important}
+  .b-work .card{transform:none!important}
+  .b-work .card>div:last-child{margin-top:auto}
+  .b-more{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px 64px!important;align-items:start}
+  .sec-tools{grid-column:1;grid-row:1}
+  .sec-contact{grid-column:2;grid-row:1}
+  .sec-contact>div:last-child{width:360px;max-width:100%;margin:0 auto}
+  .sec-cert{grid-column:1/-1;grid-row:2;display:grid!important;grid-template-columns:repeat(30,minmax(0,1fr));gap:22px 18px!important;align-items:stretch}
+  .sec-cert>*{grid-column:span 10}
+  .sec-cert>span{grid-column:auto}
+  .sec-cert>div:first-child,.sec-cert>.ribbon{grid-column:1/-1}
+  .sec-cert>.ribbon{margin:0 0 8px!important}
+  .sec-cert>.cert-grid,.sec-cert>.cert-wide{display:contents!important}
+  .sec-cert .cert-grid>div,.sec-cert .cert-wide>div{grid-column:span 6}
+  .sec-cert>div:first-child h2{font-size:44px!important}
+}
+
+
+/* lighter motion: same look, softer movement */
+@keyframes wk-bob{0%,100%{transform:translateY(0) rotate(var(--r,0deg))}50%{transform:translateY(-3px) rotate(var(--r,0deg))}}
+@keyframes wk-wiggle{0%,100%{transform:rotate(var(--r,-6deg))}50%{transform:rotate(calc(var(--r,-6deg) * .55))}}
+@keyframes wk-pop{0%,100%{transform:scale(1) rotate(var(--r,0deg))}50%{transform:scale(1.03) rotate(var(--r,0deg))}}
+.wk-bob{animation-duration:7s!important}
+.wk-wiggle{animation-duration:5s!important}
+.wk-pop{animation-duration:4s!important}
+.wk-twinkle{animation-duration:4s!important}
+.wk-blink{animation-duration:3s!important}
+.wk-marquee{animation-duration:34s!important}
+.wk-fill{animation-duration:10s!important}
+
+/* slower + softer */
+.wk-bob{animation-duration:11s!important}
+.wk-wiggle{animation-duration:8s!important}
+.wk-pop{animation-duration:6s!important}
+.wk-twinkle{animation-duration:6s!important}
+.wk-blink{animation-duration:5s!important}
+.wk-marquee{animation-duration:55s!important}
+.wk-draw{animation-duration:8s!important}
+.wk-beat{animation-duration:3s!important}
+.wk-lift{transition-duration:.5s!important}
+.wk-lift:hover{transform:translateY(-3px) rotate(0)!important;box-shadow:0 14px 28px -20px rgba(40,60,120,.45)!important}
+
+h1,h2{font-family:'Instrument Serif',Georgia,serif!important;font-weight:400!important;letter-spacing:-.3px}
+h1 span,h2 span{font-family:inherit}
+
+.wk-bob,.wk-wiggle,.wk-pop,.wk-twinkle,.wk-blink,.wk-beat,.wk-fill,.wk-spin,.wk-draw{animation:none!important}
+.wk-draw{stroke-dasharray:none!important}
+.wk-chip{display:none!important}
+.b-work article,.b-top .wk-lift{transform:none!important}
+.wk-lift:hover{transform:translateY(-2px)!important}
+.ribbon{transform:rotate(-1deg)!important}
+.board{gap:44px!important}
+/* stickers sit still at a small tilt */
+.wk-wiggle{transform:rotate(var(--r,-4deg))}
+
+.berry{display:inline-flex;align-items:flex-start;transform:rotate(var(--r,0deg));line-height:0;pointer-events:none}
+.berry .berry{transform:none}
+.berry{font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-style:normal;font-weight:400;line-height:1;filter:drop-shadow(0 2px 3px rgba(27,44,102,.15))}
+
+/* refined depth */
+.b-work article,.b-top .wk-lift,.b-top>header{box-shadow:0 1px 0 rgba(27,44,102,.05),0 14px 30px -20px rgba(27,44,102,.32)!important}
+h1,h2{color:#2f4a99}
+/* ===== formal pass: refined, still distinctive ===== */
+html body{background:#f6f2e9!important}
+.board,main{background:#f6f2e9!important}
+/* scalloped awnings -> fine double rule */
+div[style*="radial-gradient(circle at 50% 0"]{height:10px!important;background:#fffdf8!important;border-bottom:0!important;border-top:4px solid #2f4a99!important;box-shadow:inset 0 1px 0 #fffdf8,inset 0 2.5px 0 #f0d88a}
+/* hand-drawn wavy underline -> straight hairline */
+path.wk-draw{d:path("M4 8 L142 8");stroke-width:2!important;stroke:#c9a64a!important}
+/* stickers -> straight, refined tags */
+
+/* ribbons straight */
+.ribbon{transform:none!important;margin-left:0!important;margin-right:0!important}
+.ribbon .wk-marquee{font-size:12px!important;letter-spacing:.08em;text-transform:uppercase;padding:8px 0!important}
+/* cards: calm, consistent */
+.b-work article,.b-top .wk-lift,.b-top>header{border-radius:14px!important;border:1px solid #dfe3ef!important;box-shadow:0 1px 2px rgba(27,44,102,.04),0 12px 28px -22px rgba(27,44,102,.35)!important}
+.b-top>header{border-radius:14px!important}
+.wk-num{border-style:solid!important;border-width:1px!important;font-weight:500!important}
+h3{letter-spacing:-.2px}
+/* certificates: one formal palette (navy · butter · paper) */
+[style*="background: #f2d3cd"]{background:#fffdf8!important}
+[style*="background: #dce4f7"]{background:#eef1f8!important}
+/* emoji: keep just two, quieter */
+.berry{opacity:.95}
+.board .berry:not(:first-of-type){}
+
+.b-top .wk-lift svg path[fill="#f2d3cd"],.b-top .wk-lift svg [fill="#f2d3cd"]{fill:#f0d88a!important}
+html body span[style*="background: #f0d88a"][style*="Courier"]{background:transparent!important;border:1px solid #c9a64a!important;border-radius:3px!important}
+
+/* classic stationery contact card */
+.stationery{position:relative;display:grid;place-items:center;padding:34px 10px 40px}
+.st-back{position:absolute;width:min(300px,82%);height:300px;background:#efe9da;border:1px solid #e2dccb;border-radius:4px;transform:rotate(3.5deg) translate(8px,6px);box-shadow:0 18px 30px -24px rgba(27,44,102,.4)}
+.st-card{position:relative;width:min(300px,82%);background:#fffdf8;border-radius:4px;padding:30px 26px 24px;text-align:center;box-shadow:0 1px 0 rgba(27,44,102,.05),0 22px 40px -26px rgba(27,44,102,.45);outline:1px solid #cdd6ee;outline-offset:-8px;transform:rotate(-1.2deg)}
+.st-card::before{content:"";position:absolute;left:26px;right:26px;top:0;height:3px;background:#2f4a99;box-shadow:0 5px 0 -3.5px #c9a64a}
+.st-mono{width:44px;height:44px;margin:4px auto 12px;border-radius:50%;border:1px solid #2f4a99;display:grid;place-items:center;font-family:'Instrument Serif',Georgia,serif;font-size:17px;letter-spacing:.06em;color:#2f4a99}
+.st-name{font-family:'Instrument Serif',Georgia,serif;font-size:34px;line-height:1;color:#2f4a99;letter-spacing:-.3px}
+.st-place{margin-top:8px;font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#6a7396}
+.st-rule{width:46px;height:1px;background:#c9a64a;margin:16px auto}
+.st-lines{margin:0;display:grid;gap:8px;text-align:left}
+.st-lines div{display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-bottom:1px dotted #cdd6ee;padding-bottom:6px}
+.st-lines dt{font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#6a7396}
+.st-lines dd{margin:0;font-family:'Inter',sans-serif;font-size:13px;font-variant-numeric:tabular-nums}
+.st-lines a{color:#1b2c66;text-decoration:none}
+.st-btn{display:inline-block;margin-top:16px;padding:8px 20px;border-radius:99px;background:#2f4a99;color:#fffdf8!important;font-family:'Inter',sans-serif;font-weight:600;font-size:12.5px;letter-spacing:.04em;text-decoration:none}
+.st-btn:hover{background:#243c82}
+.b-top>header p{text-wrap:balance;max-width:34ch;margin-inline:auto!important}
+
+/* ---------- Selected Work: featured + editorial index ---------- */
+.b-work article.feat{position:relative}
+.idx{display:flex;flex-direction:column;border-top:1px solid #cdd6ee}
+.idx-row{border-bottom:1px solid #cdd6ee}
+.idx-row summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;align-items:center;gap:6px 18px;padding:20px 4px;transition:background .3s}
+.idx-row summary::-webkit-details-marker{display:none}
+.idx-row summary:hover{background:rgba(220,228,247,.35)}
+.idx-row summary:focus-visible{outline:2px solid #3a56a5;outline-offset:2px}
+.idx-n{font-family:'Instrument Serif',Georgia,serif;font-size:34px;line-height:1;color:#c9a64a;min-width:44px;font-variant-numeric:tabular-nums}
+.idx-main{display:flex;flex-direction:column;gap:3px;min-width:0}
+.idx-t{font-family:'Instrument Serif',Georgia,serif;font-size:26px;line-height:1.15;color:#2f4a99;position:relative}
+.idx-r{font-size:13.5px;color:#44507e}
+.idx-cat{display:flex;flex-direction:column;align-items:flex-end;gap:3px;font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#6a7396;white-space:nowrap}
+.idx-x{width:26px;height:26px;border-radius:50%;border:1px solid #b9c8ee;position:relative;transition:transform .35s,background .3s}
+.idx-x::before,.idx-x::after{content:"";position:absolute;left:50%;top:50%;width:10px;height:1.4px;background:#3a56a5;transform:translate(-50%,-50%)}
+.idx-x::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .35s}
+.idx-row[open] .idx-x{background:#3a56a5}
+.idx-row[open] .idx-x::before,.idx-row[open] .idx-x::after{background:#fffdf8}
+.idx-row[open] .idx-x::after{transform:translate(-50%,-50%) rotate(0)}
+.idx-body{margin:0;padding:0 4px 22px 66px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 24px}
+.idx-body dt{font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#c9a64a;margin-bottom:4px}
+.idx-body dd{margin:0;font-size:14px;line-height:1.6;color:#1b2c66}
+html body .idx-stk{position:relative;display:inline-block;vertical-align:middle;margin-left:12px;top:-4px;font-size:14px!important;padding:2px 10px!important;animation:none}
+@media (prefers-reduced-motion:no-preference){.idx-row[open] .idx-body{animation:idxin .45s ease}@keyframes idxin{from{opacity:0;transform:translateY(-6px)}}}
+@media (max-width:999px){
+  .idx-row summary{grid-template-columns:auto minmax(0,1fr) auto;padding:16px 2px}
+  .idx-cat{display:none}
+  .idx-n{font-size:28px;min-width:36px}
+  .idx-t{font-size:22px}
+  .idx-body{grid-template-columns:1fr;padding:0 2px 18px 54px;gap:10px}
+}
+@media (min-width:1000px){
+  .b-work article.feat{grid-column:1/-1;display:grid!important;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);column-gap:44px;row-gap:14px;padding:32px 36px!important;align-items:start}
+  .b-work article.feat>div:nth-of-type(1),.b-work article.feat>div:nth-of-type(2){grid-column:1}
+  .b-work article.feat>div:nth-of-type(3){grid-column:2;grid-row:1/3;align-self:center;margin-top:0!important;padding:18px!important}
+  .b-work article.feat>div:nth-of-type(3) a:first-child{width:120px!important;height:120px!important}
+  .b-work article.feat>div:nth-of-type(3) a:first-child svg{width:100%;height:100%}
+  .b-work article.feat h3{font-family:'Instrument Serif',Georgia,serif!important;font-weight:400!important;font-size:34px!important;letter-spacing:-.3px}
+  .b-work .idx{grid-column:1/-1}
+}
+/* ---------- gold wave under the name: draws in, then breathes ---------- */
+html body path.wk-draw{d:path("M4 9c20-6 38 4 58-1s36-5 52 0 22 2 32-2")!important;stroke:#e9c766!important;stroke-width:4!important;stroke-dasharray:170!important;stroke-dashoffset:0}
+@media (prefers-reduced-motion:no-preference){
+  html body path.wk-draw{animation:wkdraw 7s cubic-bezier(.6,0,.2,1) .3s infinite both!important}
+  @keyframes wkdraw{0%{stroke-dashoffset:170}18%{stroke-dashoffset:0}82%{stroke-dashoffset:0;opacity:1}92%{opacity:.35}100%{stroke-dashoffset:0;opacity:1}}
+}
+/* ---------- section headings: a small gold flourish ---------- */
+h2{position:relative}
+h2::after{content:"";display:block;width:54px;height:10px;margin-top:8px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 54 10'%3E%3Cpath d='M2 6c6-4 10 2 16-1s9-4 14 0 8 2 12-1' fill='none' stroke='%23e9c766' stroke-width='2.2' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='4.5' r='1.8' fill='%23e9c766'/%3E%3C/svg%3E") left center/54px 10px no-repeat;clip-path:inset(0 0 0 0)}
+h2[style*="text-align: center"]::after,.b-work>div:first-child h2::after,.b-more h2[style*="center"]::after{margin-inline:auto;background-position:center}
+@media (prefers-reduced-motion:no-preference){h2::after{animation:wkflo 1.4s cubic-bezier(.6,0,.2,1) .5s both}@keyframes wkflo{from{clip-path:inset(0 100% 0 0)}}}
+
+.idx-cat em{font-style:normal;font-weight:500;letter-spacing:.08em;color:#9aa1bd;font-size:9.5px}
+
+/* ---------- featured, refined ---------- */
+.feat2{position:relative;display:grid;grid-template-columns:minmax(0,1fr);gap:22px;background:#fffdf8;border:1px solid #cdd6ee;border-radius:14px;padding:30px 24px 26px;box-shadow:0 1px 2px rgba(27,44,102,.04),0 16px 34px -26px rgba(27,44,102,.45)}
+.feat2::before{content:"";position:absolute;left:24px;right:24px;top:0;height:3px;background:#2f4a99;box-shadow:0 5px 0 -3.5px #c9a64a}
+html body .f2-stk{position:absolute;top:-14px;right:22px;background:#f0d88a;border:1px solid #cdd6ee;border-radius:50%;padding:3px 13px;font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:17px;color:#1b2c66;box-shadow:0 0 0 4px #f6f2e9;transform:rotate(var(--r))!important}
+.f2-eye{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#c9a64a}
+.f2-t{margin:6px 0 0!important;font-family:'Instrument Serif',Georgia,serif!important;font-weight:400!important;font-size:46px!important;line-height:1!important;color:#2f4a99!important;letter-spacing:-.5px}
+.f2-sub{margin:10px 0 0;font-size:15px;color:#44507e;max-width:42ch}
+.f2-kv{margin:20px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 22px;border-top:1px solid #e3e7f2;padding-top:16px}
+.f2-kv dt{font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#c9a64a;margin-bottom:4px}
+.f2-kv dd{margin:0;font-size:13.5px;line-height:1.6;color:#1b2c66}
+.f2-qr{display:flex;flex-direction:column;align-items:center;gap:10px;padding:20px;border:1px solid #e3e7f2;border-radius:10px;background:#f9f7f1}
+.f2-code{display:block;width:128px;height:128px;padding:10px;background:#fffdf8;border:1px solid #cdd6ee;border-radius:6px}
+.f2-code svg{display:block;width:100%!important;height:100%!important}
+.f2-cap{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:17px;color:#2f4a99}
+.f2-btn{display:inline-block;padding:8px 18px;border-radius:99px;background:#2f4a99;color:#fffdf8!important;font-size:12.5px;font-weight:600;letter-spacing:.03em;text-decoration:none}
+.f2-btn:hover{background:#243c82}
+@media (max-width:999px){.f2-kv{grid-template-columns:1fr}.f2-t{font-size:38px!important}}
+@media (min-width:1000px){.b-work .feat2{grid-column:1/-1;grid-template-columns:minmax(0,1fr) 240px;column-gap:40px;padding:36px 40px 32px;align-items:center}}
+
+html body .idx-stk{border:1px solid #cdd6ee;border-radius:50%;font-family:'Instrument Serif',Georgia,serif;font-style:italic;color:#1b2c66;white-space:nowrap;transform:rotate(var(--r))!important;box-shadow:0 0 0 3px #f6f2e9}
+@keyframes wk-marquee-ltr{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+html body .wk-marquee{animation:wk-marquee-ltr 30s linear infinite!important}
+.tl{margin:6px 0 0;display:flex;flex-direction:column}
+.tl div{padding:12px 0;border-bottom:1px dotted #bcc7e6;display:grid;gap:3px}
+.tl div:first-child{padding-top:4px}
+.tl dt{font-family:'Instrument Serif',Georgia,serif;font-size:21px;line-height:1.15;color:#2f4a99}
+.tl dd{margin:0;font-size:13px;line-height:1.55;color:#44507e}
+
+/* quick facts */
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:18px auto 0;max-width:460px;border-top:1px solid #dfe3ef;padding-top:14px}
+.facts div{display:flex;flex-direction:column;align-items:center;gap:2px}
+.facts b{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:30px;line-height:1;color:#2f4a99;font-variant-numeric:tabular-nums}
+.facts span{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6a7396;text-align:center;line-height:1.35}
+@media (max-width:420px){.facts b{font-size:26px}.facts span{font-size:9px;letter-spacing:.08em}}
+
+/* simpler order: hero, work, certificates, tools, contact */
+.b-top>section{display:none!important}
+.b-more>.sec-cert{order:1}.b-more>.sec-tools{order:2}.b-more>.sec-contact{order:3}
+@media (min-width:1000px){
+  .b-top{grid-template-columns:minmax(0,1fr)!important}
+  .b-top>header{grid-column:1/-1!important;width:100%;max-width:620px;margin:0 auto}
+  .sec-cert{grid-row:1!important}.sec-tools{grid-row:2!important}.sec-contact{grid-row:2!important}
+}
+
+.lang-tog{position:fixed;z-index:50;top:calc(12px + env(safe-area-inset-top,0px));right:calc(12px + env(safe-area-inset-right,0px));padding:7px 14px;border-radius:99px;background:#fffdf8;border:1px solid #cdd6ee;color:#2f4a99;font:600 12.5px/1 'WKAr','Inter',sans-serif;text-decoration:none;box-shadow:0 6px 16px -10px rgba(27,44,102,.45)}
+.lang-tog:hover{border-color:#2f4a99}
+html[dir=rtl] .lang-tog{right:auto;left:calc(12px + env(safe-area-inset-left,0px))}
+
+/* Arabic */
+html[dir=rtl] h1,html[dir=rtl] h2,html[dir=rtl] .f2-t,html[dir=rtl] .idx-t,html[dir=rtl] .st-name,html[dir=rtl] .tl dt,html[dir=rtl] .f2-cap{font-family:'WKAr','Instrument Serif',Georgia,serif!important}
+html[dir=rtl] .idx-t,html[dir=rtl] .f2-cap{font-weight:600}
+html[dir=rtl] .idx-t{font-size:22px}
+html[dir=rtl] h2::after{background-position:right center}
+html[dir=rtl] h2[style*="text-align: center"]::after{background-position:center}
+html[dir=rtl] .st-lines{text-align:right}
+html[dir=rtl] .f2-stk{right:auto;left:22px}
+html[dir=rtl] .idx-stk{margin-left:0;margin-right:12px}
+html[dir=rtl] .f2-eye,html[dir=rtl] .idx-cat,html[dir=rtl] .idx-body dt,html[dir=rtl] .f2-kv dt,html[dir=rtl] .st-place,html[dir=rtl] .st-lines dt{letter-spacing:0;text-transform:none;font-size:12px}
+html[dir=rtl] .idx-cat em{letter-spacing:0;font-size:11px}
+html[dir=rtl] .idx-body dd,html[dir=rtl] .f2-kv dd,html[dir=rtl] .idx-r,html[dir=rtl] .f2-sub{line-height:1.8}
+
+html[dir=rtl] .wk-wiggle,html[dir=rtl] .idx-stk,html[dir=rtl] .st-lines dd,html[dir=rtl] .facts b{direction:ltr;unicode-bidi:isolate}
+html[dir=rtl] [style*="Courier Prime"]{font-family:'WKAr','Courier Prime',monospace!important;letter-spacing:0!important}
+</style>
+</head>
+<body>
+<a class="lang-tog" href="index.html" lang="en">English</a>
+<main>
+<div dir="rtl" class="board b-top" style="width: 390px; box-sizing: border-box; background: #f6f1e4; color: #1b2c66; font-family: 'WKAr', 'Inter', 'IBM Plex Sans Arabic', Tahoma, sans-serif; padding: 24px 18px; display: flex; flex-direction: column; gap: 34px; overflow: hidden">
+
+  <header style="position: relative; background: #fffdf8; border: 1px solid #cdd6ee; border-radius: 6px 6px 20px 20px; text-align: center"><span class="berry" aria-hidden="true" style="--r:-14deg;font-size:34px;position:absolute;left:20px;top:64px">🫐</span>
+    <div style="height: 30px; border-bottom: 1.5px solid #3a56a5; background: radial-gradient(circle at 50% 0, #3a56a5 15px, transparent 15.5px) 0 0 / 34px 30px, #fffdf8; border-radius: 5px 5px 0 0"></div>
+    
+    <span class="wk-wiggle" style="--r: 8deg; animation-delay: .8s; position: absolute; top: 52px; right: 10px; background: #dce4f7; border: 1px solid #cdd6ee; border-radius: 50%; padding: 5px 14px; font-size: 12px; font-weight: 600; color: #3a56a5; direction: ltr">portfolio 2026</span>
+    <div style="padding: 70px 20px 24px; display: flex; flex-direction: column; align-items: center; gap: 6px">
+      
+      <h1 style="margin: 0; font-family: 'WKAr', 'Inter', 'Readex Pro', sans-serif; font-weight: 700; font-size: 50px; line-height: 1.1; white-space: nowrap; color: #3a56a5"><span dir="ltr">أنا ود</span></h1>
+      <svg width="150" height="14" viewBox="0 0 150 14" aria-hidden="true" style="margin-top: -6px"><path class="wk-draw" d="M4 9c20-6 38 4 58-1s36-5 52 0 22 2 32-2" fill="none" stroke="#f0d88a" stroke-width="5" stroke-linecap="round"/></svg>
+      <span style="font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: 24px; color: #3a56a5; direction: ltr">نظم المعلومات الإدارية (MIS)</span>
+      <p style="margin: 6px 0 0; font-size: 15px; line-height: 1.8">أحرص على أن يسير العمل المكتبي بسلاسة، وأبحث بهدوء عن طرق أبسط لإنجازه.</p>
+    </div>
+  </header>
+
+  <div class="ribbon" style="margin: 0 -18px; background: #3a56a5; color: #fffdf8; overflow: hidden; transform: rotate(1.5deg)">
+    <div class="wk-marquee" dir="ltr" style="display: flex; gap: 12px; width: max-content; padding: 9px 0; font-family: 'WKAr', 'Inter', 'Readex Pro', sans-serif; font-weight: 600; font-size: 14px; white-space: nowrap"><span>تقارير Excel و Power BI</span><span style="color: #f0d88a">✦</span><span>متابعة الحضور</span><span style="color: #f0d88a">✦</span><span>الأرشفة</span><span style="color: #f0d88a">✦</span><span>متابعة سير العمل</span><span style="color: #f0d88a">✦</span><span>السرية</span><span style="color: #f0d88a">✦</span><span>المراسلات الرسمية</span><span style="color: #f0d88a">✦</span><span>الجدولة</span><span style="color: #f0d88a">✦</span><span>تقارير Excel و Power BI</span><span style="color: #f0d88a">✦</span><span>متابعة الحضور</span><span style="color: #f0d88a">✦</span><span>الأرشفة</span><span style="color: #f0d88a">✦</span><span>متابعة سير العمل</span><span style="color: #f0d88a">✦</span><span>السرية</span><span style="color: #f0d88a">✦</span><span>المراسلات الرسمية</span><span style="color: #f0d88a">✦</span><span>الجدولة</span><span style="color: #f0d88a">✦</span><span>تقارير Excel و Power BI</span><span style="color: #f0d88a">✦</span><span>متابعة الحضور</span><span style="color: #f0d88a">✦</span><span>الأرشفة</span><span style="color: #f0d88a">✦</span><span>متابعة سير العمل</span><span style="color: #f0d88a">✦</span><span>السرية</span><span style="color: #f0d88a">✦</span><span>المراسلات الرسمية</span><span style="color: #f0d88a">✦</span><span>الجدولة</span><span style="color: #f0d88a">✦</span><span>تقارير Excel و Power BI</span><span style="color: #f0d88a">✦</span><span>متابعة الحضور</span><span style="color: #f0d88a">✦</span><span>الأرشفة</span><span style="color: #f0d88a">✦</span><span>متابعة سير العمل</span><span style="color: #f0d88a">✦</span><span>السرية</span><span style="color: #f0d88a">✦</span><span>المراسلات الرسمية</span><span style="color: #f0d88a">✦</span><span>الجدولة</span><span style="color: #f0d88a">✦</span></div>
+  </div>
+
+  <section style="position: relative; display: flex; flex-direction: column; gap: 14px">
+    <div style="display: flex; flex-direction: column">
+      
+      <h2 style="margin: 0; font-family: 'WKAr', 'Inter', 'Readex Pro', sans-serif; font-weight: 700; font-size: 38px; color: #3a56a5; line-height: 1.2"><span dir="ltr">طريقتي في العمل</span></h2>
+      
+    </div>
+    <span class="wk-wiggle" style="--r: -8deg; position: absolute; top: 4px; right: 6px; background: #f2d3cd; border: 1px solid #cdd6ee; border-radius: 50%; padding: 4px 12px; font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: 18px; color: #3a56a5; direction: ltr; box-shadow: 0 0 0 4px #fffdf8">step by step</span>
+
+    <div class="wk-lift" style="display: flex; gap: 12px; align-items: flex-start; background: #fffdf8; border: 1px solid #cdd6ee; border-radius: 16px; padding: 16px">
+      <span class="wk-num" style="width: 46px; height: 46px; flex: none; border-radius: 50%; border: 1px dotted #8ea1d5; display: flex; align-items: center; justify-content: center; font-family: 'WKAr', 'Inter', 'Readex Pro', sans-serif; font-weight: 600; font-size: 19px; color: #3a56a5">1</span>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 2px"><b style="font-family: 'WKAr', 'Inter', 'Readex Pro', sans-serif; font-size: 16.5px; color: #3a56a5">Plan before acting</b><span style="font-size: 13.5px; color: #44507e; line-height: 1.65">I clarify the ask, break it down and set a deadline.</span></div>
+      <svg width="40" height="40" viewBox="0 0 48 48" aria-hidden="true"><path d="M13 8h22a3 3 0 0 1 3 3v28a3 3 0 0 1-3 3H13a3 3 0 0 1-3-3V11a3 3 0 0 1 3-3z M16 18l3 3 5-6 M16 30l3 3 5-6 M28 19h5 M28 31h5" fill="none" stroke="#3a56a5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </div>
+    <div class="wk-lift" style="display: flex; gap: 12px; align-items: flex-start; background: #fffdf8; border: 1px solid #cdd6ee; border-radius: 16px; padding: 16px; transform: rotate(-0.6deg)">
+      <span class="wk-num" style="width: 46px; height: 46px; flex: none; border-radius: 50%; border: 1px dotted #8ea1d5; display: flex; align-items: center; justify-content: center; font-family: 'WKAr', 'Inter', 'Readex Pro', sans-serif; font-weight: 600; font-size: 19px; color: #3a56a5">2</span>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 2px"><b style="font-family: 'WKAr', 'Inter', 'Readex Pro', sans-serif; font-size: 16.5px; color: #3a56a5">Precise documentation</b><span style="font-size: 13.5px; color: #44507e; line-height: 1.65">Every file has a place and a number.</span></div>
+      <svg width="40" height="40" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 14h13l4 4h19v22H6z M6 22h36" fill="none" stroke="#3a56a5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </div>
+    <div class="wk-lift" style="display: flex; gap: 12px; align-items: flex-start; background: #3a56a5; color: #fffdf8; border-radius: 16px; padding: 16px">
+      <span class="wk-num" style="width: 46px; height: 46px; flex: none; border-radius: 50%; border: 1.5px dotted #fffdf8; display: flex; align-items: center; justify-content: center; font-family: 'WKAr', 'Inter', 'Readex Pro', sans-serif; font-weight: 600; font-size: 19px">3</span>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 2px"><b style="font-family: 'WKAr', 'Inter', 'Readex Pro', sans-serif; font-size: 16.5px">Simplify the repetitive</b><span style="font-size: 13.5px; line-height: 1.65; opacity: 0.9">I turn recurring work into ready templates.</span></div>
+      <svg class="wk-beat" width="40" height="40" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 40s-14-8-14-19a8 8 0 0 1 14-5 8 8 0 0 1 14 5c0 11-14 19-14 19z" fill="#f2d3cd" stroke="#fffdf8" stroke-width="1.8" stroke-linejoin="round"></path></svg>
+    </div>
+    <div style="display: flex; justify-content: center; gap: 22px; margin-top: 8px" aria-hidden="true">
+      
+      
+      
+    </div>
+  </section>
+</div>
+<div dir="rtl" class="board b-work" style="width: 390px; box-sizing: border-box; background: #f6f1e4; color: #1b2c66; font-family: 'WKAr', 'Inter', 'IBM Plex Sans Arabic', Tahoma, sans-serif; padding: 28px 18px; display: flex; flex-direction: column; gap: 30px; overflow: hidden">
+  <div style="position: relative; display: flex; flex-direction: column">
+    
+    <h2 style="margin: 0; font-family: 'WKAr', 'Inter', 'Readex Pro', sans-serif; font-weight: 700; font-size: 42px; color: #3a56a5; line-height: 1.2"><span dir="ltr">أعمال مختارة</span><span class="berry" aria-hidden="true" style="--r:12deg;font-size:26px;margin-inline:8px;vertical-align:super">🫐</span></h2>
+    
+    <span style="font-size: 13.5px; color: #44507e; margin-top: 6px"></span>
+    
+  </div>
+  
+    <article class="feat2">
+  <span class="wk-wiggle f2-stk" style="--r:-6deg">my favorite ♡</span>
+  <div class="f2-txt">
+    <span class="f2-eye">مشروع تعلّم شخصي</span>
+    <h3 class="f2-t">AdminEase</h3>
+    <p class="f2-sub">نموذج صغير بنيته في وقتي الخاص لأطبّق ما تعلمته عن تنظيم بيانات الحضور.</p>
+    <dl class="f2-kv"><div><dt>الدافع</dt><dd>التعلم بالتطبيق: أردت أن أطبّق ما درسته، لا أن أكتفي بقراءته.</dd></div><div><dt>ماذا يعرض</dt><dd>يقرأ ملف بصمة تجريبيًا، ويعرض الحضور حسب كل قسم، مع تقرير أسبوعي بسيط.</dd></div><div><dt>ملاحظة</dt><dd>عمل تدريبي ببيانات تجريبية، يوضح طريقة تفكيري، وليس نظامًا أنوي تطبيقه.</dd></div></dl>
+  </div>
+  <div class="f2-qr">
+    <a href="daftar/ar.html" target="_blank" rel="noopener" aria-label="Open AdminEase" class="f2-code"><svg id="qr" width="76" height="76" viewBox="0 0 33 33" shape-rendering="crispEdges" aria-hidden="true"><path d="M0 0h1v1h-1zM1 0h1v1h-1zM2 0h1v1h-1zM3 0h1v1h-1zM4 0h1v1h-1zM5 0h1v1h-1zM6 0h1v1h-1zM8 0h1v1h-1zM9 0h1v1h-1zM10 0h1v1h-1zM12 0h1v1h-1zM16 0h1v1h-1zM18 0h1v1h-1zM19 0h1v1h-1zM20 0h1v1h-1zM23 0h1v1h-1zM26 0h1v1h-1zM27 0h1v1h-1zM28 0h1v1h-1zM29 0h1v1h-1zM30 0h1v1h-1zM31 0h1v1h-1zM32 0h1v1h-1zM0 1h1v1h-1zM6 1h1v1h-1zM8 1h1v1h-1zM10 1h1v1h-1zM12 1h1v1h-1zM14 1h1v1h-1zM16 1h1v1h-1zM17 1h1v1h-1zM20 1h1v1h-1zM21 1h1v1h-1zM23 1h1v1h-1zM26 1h1v1h-1zM32 1h1v1h-1zM0 2h1v1h-1zM2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM6 2h1v1h-1zM9 2h1v1h-1zM10 2h1v1h-1zM13 2h1v1h-1zM14 2h1v1h-1zM15 2h1v1h-1zM16 2h1v1h-1zM18 2h1v1h-1zM19 2h1v1h-1zM20 2h1v1h-1zM22 2h1v1h-1zM24 2h1v1h-1zM26 2h1v1h-1zM28 2h1v1h-1zM29 2h1v1h-1zM30 2h1v1h-1zM32 2h1v1h-1zM0 3h1v1h-1zM2 3h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM6 3h1v1h-1zM8 3h1v1h-1zM11 3h1v1h-1zM12 3h1v1h-1zM15 3h1v1h-1zM18 3h1v1h-1zM22 3h1v1h-1zM26 3h1v1h-1zM28 3h1v1h-1zM29 3h1v1h-1zM30 3h1v1h-1zM32 3h1v1h-1zM0 4h1v1h-1zM2 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM6 4h1v1h-1zM11 4h1v1h-1zM13 4h1v1h-1zM16 4h1v1h-1zM18 4h1v1h-1zM23 4h1v1h-1zM24 4h1v1h-1zM26 4h1v1h-1zM28 4h1v1h-1zM29 4h1v1h-1zM30 4h1v1h-1zM32 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM12 5h1v1h-1zM15 5h1v1h-1zM16 5h1v1h-1zM24 5h1v1h-1zM26 5h1v1h-1zM32 5h1v1h-1zM0 6h1v1h-1zM1 6h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h1v1h-1zM26 6h1v1h-1zM27 6h1v1h-1zM28 6h1v1h-1zM29 6h1v1h-1zM30 6h1v1h-1zM31 6h1v1h-1zM32 6h1v1h-1zM8 7h1v1h-1zM9 7h1v1h-1zM15 7h1v1h-1zM16 7h1v1h-1zM17 7h1v1h-1zM18 7h1v1h-1zM19 7h1v1h-1zM22 7h1v1h-1zM23 7h1v1h-1zM24 7h1v1h-1zM0 8h1v1h-1zM2 8h1v1h-1zM3 8h1v1h-1zM5 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM10 8h1v1h-1zM11 8h1v1h-1zM12 8h1v1h-1zM13 8h1v1h-1zM14 8h1v1h-1zM15 8h1v1h-1zM17 8h1v1h-1zM18 8h1v1h-1zM20 8h1v1h-1zM21 8h1v1h-1zM22 8h1v1h-1zM26 8h1v1h-1zM29 8h1v1h-1zM31 8h1v1h-1zM32 8h1v1h-1zM1 9h1v1h-1zM2 9h1v1h-1zM3 9h1v1h-1zM4 9h1v1h-1zM5 9h1v1h-1zM7 9h1v1h-1zM8 9h1v1h-1zM11 9h1v1h-1zM12 9h1v1h-1zM13 9h1v1h-1zM14 9h1v1h-1zM17 9h1v1h-1zM18 9h1v1h-1zM19 9h1v1h-1zM20 9h1v1h-1zM21 9h1v1h-1zM23 9h1v1h-1zM26 9h1v1h-1zM27 9h1v1h-1zM29 9h1v1h-1zM30 9h1v1h-1zM31 9h1v1h-1zM32 9h1v1h-1zM2 10h1v1h-1zM4 10h1v1h-1zM6 10h1v1h-1zM11 10h1v1h-1zM12 10h1v1h-1zM13 10h1v1h-1zM16 10h1v1h-1zM18 10h1v1h-1zM20 10h1v1h-1zM21 10h1v1h-1zM22 10h1v1h-1zM23 10h1v1h-1zM24 10h1v1h-1zM26 10h1v1h-1zM27 10h1v1h-1zM28 10h1v1h-1zM29 10h1v1h-1zM32 10h1v1h-1zM1 11h1v1h-1zM5 11h1v1h-1zM15 11h1v1h-1zM17 11h1v1h-1zM22 11h1v1h-1zM24 11h1v1h-1zM26 11h1v1h-1zM27 11h1v1h-1zM29 11h1v1h-1zM31 11h1v1h-1zM32 11h1v1h-1zM0 12h1v1h-1zM2 12h1v1h-1zM3 12h1v1h-1zM4 12h1v1h-1zM6 12h1v1h-1zM8 12h1v1h-1zM9 12h1v1h-1zM11 12h1v1h-1zM12 12h1v1h-1zM14 12h1v1h-1zM15 12h1v1h-1zM16 12h1v1h-1zM20 12h1v1h-1zM22 12h1v1h-1zM24 12h1v1h-1zM25 12h1v1h-1zM27 12h1v1h-1zM29 12h1v1h-1zM31 12h1v1h-1zM0 13h1v1h-1zM1 13h1v1h-1zM2 13h1v1h-1zM7 13h1v1h-1zM8 13h1v1h-1zM9 13h1v1h-1zM10 13h1v1h-1zM14 13h1v1h-1zM17 13h1v1h-1zM20 13h1v1h-1zM21 13h1v1h-1zM23 13h1v1h-1zM24 13h1v1h-1zM27 13h1v1h-1zM29 13h1v1h-1zM30 13h1v1h-1zM31 13h1v1h-1zM1 14h1v1h-1zM3 14h1v1h-1zM5 14h1v1h-1zM6 14h1v1h-1zM7 14h1v1h-1zM13 14h1v1h-1zM17 14h1v1h-1zM18 14h1v1h-1zM19 14h1v1h-1zM20 14h1v1h-1zM21 14h1v1h-1zM24 14h1v1h-1zM26 14h1v1h-1zM27 14h1v1h-1zM28 14h1v1h-1zM29 14h1v1h-1zM0 15h1v1h-1zM5 15h1v1h-1zM9 15h1v1h-1zM10 15h1v1h-1zM11 15h1v1h-1zM12 15h1v1h-1zM13 15h1v1h-1zM15 15h1v1h-1zM18 15h1v1h-1zM21 15h1v1h-1zM24 15h1v1h-1zM25 15h1v1h-1zM26 15h1v1h-1zM29 15h1v1h-1zM30 15h1v1h-1zM0 16h1v1h-1zM1 16h1v1h-1zM3 16h1v1h-1zM5 16h1v1h-1zM6 16h1v1h-1zM7 16h1v1h-1zM9 16h1v1h-1zM12 16h1v1h-1zM16 16h1v1h-1zM18 16h1v1h-1zM21 16h1v1h-1zM22 16h1v1h-1zM24 16h1v1h-1zM25 16h1v1h-1zM26 16h1v1h-1zM28 16h1v1h-1zM30 16h1v1h-1zM0 17h1v1h-1zM1 17h1v1h-1zM8 17h1v1h-1zM11 17h1v1h-1zM12 17h1v1h-1zM20 17h1v1h-1zM22 17h1v1h-1zM23 17h1v1h-1zM24 17h1v1h-1zM25 17h1v1h-1zM26 17h1v1h-1zM28 17h1v1h-1zM29 17h1v1h-1zM2 18h1v1h-1zM5 18h1v1h-1zM6 18h1v1h-1zM8 18h1v1h-1zM9 18h1v1h-1zM10 18h1v1h-1zM11 18h1v1h-1zM14 18h1v1h-1zM15 18h1v1h-1zM16 18h1v1h-1zM18 18h1v1h-1zM20 18h1v1h-1zM21 18h1v1h-1zM22 18h1v1h-1zM25 18h1v1h-1zM27 18h1v1h-1zM28 18h1v1h-1zM30 18h1v1h-1zM31 18h1v1h-1zM3 19h1v1h-1zM4 19h1v1h-1zM5 19h1v1h-1zM8 19h1v1h-1zM13 19h1v1h-1zM15 19h1v1h-1zM16 19h1v1h-1zM17 19h1v1h-1zM18 19h1v1h-1zM20 19h1v1h-1zM22 19h1v1h-1zM23 19h1v1h-1zM25 19h1v1h-1zM28 19h1v1h-1zM2 20h1v1h-1zM3 20h1v1h-1zM4 20h1v1h-1zM5 20h1v1h-1zM6 20h1v1h-1zM7 20h1v1h-1zM9 20h1v1h-1zM10 20h1v1h-1zM14 20h1v1h-1zM15 20h1v1h-1zM16 20h1v1h-1zM19 20h1v1h-1zM21 20h1v1h-1zM22 20h1v1h-1zM24 20h1v1h-1zM27 20h1v1h-1zM28 20h1v1h-1zM29 20h1v1h-1zM30 20h1v1h-1zM0 21h1v1h-1zM2 21h1v1h-1zM5 21h1v1h-1zM9 21h1v1h-1zM10 21h1v1h-1zM14 21h1v1h-1zM15 21h1v1h-1zM16 21h1v1h-1zM20 21h1v1h-1zM21 21h1v1h-1zM22 21h1v1h-1zM25 21h1v1h-1zM26 21h1v1h-1zM30 21h1v1h-1zM32 21h1v1h-1zM6 22h1v1h-1zM9 22h1v1h-1zM10 22h1v1h-1zM11 22h1v1h-1zM15 22h1v1h-1zM17 22h1v1h-1zM19 22h1v1h-1zM20 22h1v1h-1zM23 22h1v1h-1zM26 22h1v1h-1zM27 22h1v1h-1zM28 22h1v1h-1zM31 22h1v1h-1zM32 22h1v1h-1zM1 23h1v1h-1zM4 23h1v1h-1zM5 23h1v1h-1zM8 23h1v1h-1zM9 23h1v1h-1zM15 23h1v1h-1zM18 23h1v1h-1zM20 23h1v1h-1zM23 23h1v1h-1zM24 23h1v1h-1zM26 23h1v1h-1zM27 23h1v1h-1zM28 23h1v1h-1zM29 23h1v1h-1zM0 24h1v1h-1zM2 24h1v1h-1zM3 24h1v1h-1zM5 24h1v1h-1zM6 24h1v1h-1zM7 24h1v1h-1zM8 24h1v1h-1zM9 24h1v1h-1zM12 24h1v1h-1zM17 24h1v1h-1zM19 24h1v1h-1zM22 24h1v1h-1zM23 24h1v1h-1zM24 24h1v1h-1zM25 24h1v1h-1zM26 24h1v1h-1zM27 24h1v1h-1zM28 24h1v1h-1zM29 24h1v1h-1zM8 25h1v1h-1zM9 25h1v1h-1zM10 25h1v1h-1zM11 25h1v1h-1zM13 25h1v1h-1zM15 25h1v1h-1zM19 25h1v1h-1zM23 25h1v1h-1zM24 25h1v1h-1zM28 25h1v1h-1zM29 25h1v1h-1zM31 25h1v1h-1zM32 25h1v1h-1zM0 26h1v1h-1zM1 26h1v1h-1zM2 26h1v1h-1zM3 26h1v1h-1zM4 26h1v1h-1zM5 26h1v1h-1zM6 26h1v1h-1zM8 26h1v1h-1zM10 26h1v1h-1zM13 26h1v1h-1zM14 26h1v1h-1zM16 26h1v1h-1zM17 26h1v1h-1zM18 26h1v1h-1zM19 26h1v1h-1zM20 26h1v1h-1zM23 26h1v1h-1zM24 26h1v1h-1zM26 26h1v1h-1zM28 26h1v1h-1zM0 27h1v1h-1zM6 27h1v1h-1zM8 27h1v1h-1zM9 27h1v1h-1zM10 27h1v1h-1zM11 27h1v1h-1zM13 27h1v1h-1zM14 27h1v1h-1zM15 27h1v1h-1zM16 27h1v1h-1zM17 27h1v1h-1zM18 27h1v1h-1zM19 27h1v1h-1zM20 27h1v1h-1zM21 27h1v1h-1zM22 27h1v1h-1zM23 27h1v1h-1zM24 27h1v1h-1zM28 27h1v1h-1zM29 27h1v1h-1zM30 27h1v1h-1zM0 28h1v1h-1zM2 28h1v1h-1zM3 28h1v1h-1zM4 28h1v1h-1zM6 28h1v1h-1zM10 28h1v1h-1zM11 28h1v1h-1zM12 28h1v1h-1zM13 28h1v1h-1zM14 28h1v1h-1zM16 28h1v1h-1zM17 28h1v1h-1zM18 28h1v1h-1zM19 28h1v1h-1zM20 28h1v1h-1zM22 28h1v1h-1zM23 28h1v1h-1zM24 28h1v1h-1zM25 28h1v1h-1zM26 28h1v1h-1zM27 28h1v1h-1zM28 28h1v1h-1zM30 28h1v1h-1zM31 28h1v1h-1zM32 28h1v1h-1zM0 29h1v1h-1zM2 29h1v1h-1zM3 29h1v1h-1zM4 29h1v1h-1zM6 29h1v1h-1zM8 29h1v1h-1zM9 29h1v1h-1zM10 29h1v1h-1zM12 29h1v1h-1zM13 29h1v1h-1zM14 29h1v1h-1zM16 29h1v1h-1zM19 29h1v1h-1zM21 29h1v1h-1zM22 29h1v1h-1zM27 29h1v1h-1zM32 29h1v1h-1zM0 30h1v1h-1zM2 30h1v1h-1zM3 30h1v1h-1zM4 30h1v1h-1zM6 30h1v1h-1zM8 30h1v1h-1zM10 30h1v1h-1zM11 30h1v1h-1zM12 30h1v1h-1zM13 30h1v1h-1zM14 30h1v1h-1zM15 30h1v1h-1zM16 30h1v1h-1zM17 30h1v1h-1zM18 30h1v1h-1zM20 30h1v1h-1zM21 30h1v1h-1zM23 30h1v1h-1zM26 30h1v1h-1zM27 30h1v1h-1zM29 30h1v1h-1zM0 31h1v1h-1zM6 31h1v1h-1zM9 31h1v1h-1zM10 31h1v1h-1zM12 31h1v1h-1zM14 31h1v1h-1zM17 31h1v1h-1zM18 31h1v1h-1zM22 31h1v1h-1zM23 31h1v1h-1zM24 31h1v1h-1zM26 31h1v1h-1zM27 31h1v1h-1zM28 31h1v1h-1zM32 31h1v1h-1zM0 32h1v1h-1zM1 32h1v1h-1zM2 32h1v1h-1zM3 32h1v1h-1zM4 32h1v1h-1zM5 32h1v1h-1zM6 32h1v1h-1zM8 32h1v1h-1zM10 32h1v1h-1zM11 32h1v1h-1zM17 32h1v1h-1zM18 32h1v1h-1zM19 32h1v1h-1zM21 32h1v1h-1zM22 32h1v1h-1zM23 32h1v1h-1zM25 32h1v1h-1zM28 32h1v1h-1zM30 32h1v1h-1z" fill="#1b2c66"></path></svg></a>
+    <span class="f2-cap">امسح للتجربة</span>
+    <a href="daftar/ar.html" target="_blank" rel="noopener" class="f2-btn">افتح AdminEase ↗</a>
+  </div>
+</article>
+<div class="idx">
+  <details class="idx-row" open>
+    <summary><span class="idx-n">01</span><span class="idx-main"><span class="idx-t">سجلات الموظفين والرواتب في Excel<span class="wk-wiggle idx-stk" style="--r:-6deg;background:#f0d88a">Excel pro</span></span><span class="idx-r">ملف واحد مرتب وجاهز للمالية.</span></span><span class="idx-cat">Excel · الرواتب<em>وادي طيبة · 2026</em></span><span class="idx-x" aria-hidden="true"></span></summary>
+    <dl class="idx-body"><div><dt>التحدي</dt><dd>بيانات الحضور والموظفين والرواتب في ملفات متفرقة.</dd></div><div><dt>ما قمت به</dt><dd>نظّمت ملفات الموارد البشرية، وبنيت معادلات لحساب التأمينات الاجتماعية والرواتب.</dd></div><div><dt>النتيجة</dt><dd>ملف واحد مرتب وجاهز للمالية.</dd></div></dl>
+  </details>
+  <details class="idx-row">
+    <summary><span class="idx-n">02</span><span class="idx-main"><span class="idx-t">بيانات المرشحين ودفعات العملاء</span><span class="idx-r">قوائم مرشحين مرتبة وجاهزة للعملاء.</span></span><span class="idx-cat">Excel · التوظيف<em>وادي طيبة · 2026</em></span><span class="idx-x" aria-hidden="true"></span></summary>
+    <dl class="idx-body"><div><dt>التحدي</dt><dd>قوائم مرشحين كبيرة لمشاركتها مع العملاء.</dd></div><div><dt>ما قمت به</dt><dd>رتّبت بيانات المرشحين، وجهّزت الدفعات الأولى والثانية والثالثة.</dd></div><div><dt>النتيجة</dt><dd>قوائم مرشحين مرتبة وجاهزة للعملاء.</dd></div></dl>
+  </details>
+  <details class="idx-row">
+    <summary><span class="idx-n">03</span><span class="idx-main"><span class="idx-t">جدولة مقابلات معرضَي توظيف<span class="wk-wiggle idx-stk" style="--r:5deg;background:#dce4f7">2 fairs · 2 days</span></span><span class="idx-r">قرابة 30 مقابلة، حضوريًا وعن بُعد.</span></span><span class="idx-cat">التنسيق<em>وادي طيبة · 2026</em></span><span class="idx-x" aria-hidden="true"></span></summary>
+    <dl class="idx-body"><div><dt>المهمة</dt><dd>معرضان في الأسبوع نفسه.</dd></div><div><dt>ما قمت به</dt><dd>أتمتة الحجوزات بقاعدة بيانات ونظام جدولة.</dd></div><div><dt>النتيجة</dt><dd>قرابة 30 مقابلة، حضوريًا وعن بُعد.</dd></div></dl>
+  </details>
+  <details class="idx-row">
+    <summary><span class="idx-n">04</span><span class="idx-main"><span class="idx-t">تبسيط تقرير الموارد البشرية الشهري</span><span class="idx-r">اختصار وقت إعداده إلى دقائق.</span></span><span class="idx-cat">التقارير<em>وادي طيبة · 2026</em></span><span class="idx-x" aria-hidden="true"></span></summary>
+    <dl class="idx-body"><div><dt>التحدي</dt><dd>التجميع اليدوي كان يستغرق وقتًا طويلًا.</dd></div><div><dt>ما قمت به</dt><dd>مؤشرات أداء بمعادلات، ودليل للمنهجية.</dd></div><div><dt>النتيجة</dt><dd>اختصار وقت إعداده إلى دقائق.</dd></div></dl>
+  </details>
+  <details class="idx-row">
+    <summary><span class="idx-n">05</span><span class="idx-main"><span class="idx-t">مراجعة سياسة التوظيف</span><span class="idx-r">مراجعة أكثر من 120 بندًا، وتحليل أكثر من 20 بندًا بعمق.</span></span><span class="idx-cat">السياسات · RACI<em>وادي طيبة · 2026</em></span><span class="idx-x" aria-hidden="true"></span></summary>
+    <dl class="idx-body"><div><dt>التحدي</dt><dd>سياسة موارد بشرية طويلة تحتاج مراجعة منظمة.</dd></div><div><dt>ما قمت به</dt><dd>راجعت أكثر من 120 بندًا في 22 فصلًا، ثم حللت أكثر من 20 بندًا بعمق: الوضع الحالي، والفجوات، والتحسينات، ومصفوفة RACI.</dd></div><div><dt>النتيجة</dt><dd>مراجعة أكثر من 120 بندًا، وتحليل أكثر من 20 بندًا بعمق.</dd></div></dl>
+  </details>
+  <details class="idx-row">
+    <summary><span class="idx-n">06</span><span class="idx-main"><span class="idx-t">مقترح إجراءات الحضور</span><span class="idx-r">إجراء واضح رُفع للإدارة العليا.</span></span><span class="idx-cat">السياسات · جسر<em>وادي طيبة · 2026</em></span><span class="idx-x" aria-hidden="true"></span></summary>
+    <dl class="idx-body"><div><dt>التحدي</dt><dd>لا توجد آلية واضحة لتصحيح البصمة.</dd></div><div><dt>ما قمت به</dt><dd>مقترح من صفحة واحدة للرئيس التنفيذي.</dd></div><div><dt>النتيجة</dt><dd>إجراء واضح رُفع للإدارة العليا.</dd></div></dl>
+  </details>
+  <details class="idx-row">
+    <summary><span class="idx-n">07</span><span class="idx-main"><span class="idx-t">توثيق عملية التدريب الصيفي</span><span class="idx-r">مرجع رسمي للأعوام القادمة.</span></span><span class="idx-cat">التوثيق<em>وادي طيبة · 2026</em></span><span class="idx-x" aria-hidden="true"></span></summary>
+    <dl class="idx-body"><div><dt>التحدي</dt><dd>معلومات متفرقة بلا مرجع.</dd></div><div><dt>ما قمت به</dt><dd>وثّقت العملية خطوة بخطوة.</dd></div><div><dt>النتيجة</dt><dd>مرجع رسمي للأعوام القادمة.</dd></div></dl>
+  </details>
+  <details class="idx-row">
+    <summary><span class="idx-n">08</span><span class="idx-main"><span class="idx-t">بوابة الإنجازات</span><span class="idx-r">تقرير شهري تلقائي.</span></span><span class="idx-cat">تحسين الإجراءات<em>وادي طيبة · 2026</em></span><span class="idx-x" aria-hidden="true"></span></summary>
+    <dl class="idx-body"><div><dt>التحدي</dt><dd>إنجازات تُجمع يدويًا ثم تُنسى.</dd></div><div><dt>ما قمت به</dt><dd>أداة تسجيل يومية للموظفين.</dd></div><div><dt>النتيجة</dt><dd>تقرير شهري تلقائي.</dd></div></dl>
+  </details>
+</div>
+
+  <p style="margin: 0; font-size: 12.5px; color: #44507e; text-align: center">أعمال وادي طيبة موصوفة بشكل عام حفاظًا على السرية.</p>
+</div>
+<div dir="rtl" class="board b-more" style="width: 390px; box-sizing: border-box; background: #f6f1e4; color: #1b2c66; font-family: 'WKAr', 'Inter', 'IBM Plex Sans Arabic', Tahoma, sans-serif; padding: 28px 18px; display: flex; flex-direction: column; gap: 46px; overflow: hidden; position: relative">
+
+  <!-- MENU -->
+  
+
+  <!-- STICKER SHEET -->
+  <section class="sec-tools" style="position: relative">
+    <div style="background: #fffdf8; border: 1px solid #cdd6ee; border-radius: 6px 6px 22px 22px; overflow: hidden">
+      <div style="height: 28px; border-bottom: 1.5px solid #3a56a5; background: radial-gradient(circle at 50% 0, #3a56a5 14px, transparent 14.5px) 0 0 / 32px 28px, #fffdf8"></div>
+      <div style="padding: 20px 20px 22px; display: flex; flex-direction: column; gap: 4px">
+        <h2 style="margin: 0; font-family: 'WKAr', 'Inter', 'Readex Pro', sans-serif; font-weight: 700; font-size: 36px; color: #3a56a5; text-align: center; line-height: 1.2"><span dir="ltr">أدواتي</span></h2>
+        
+        <span style="font-size: 13px; color: #44507e; text-align: center; margin-bottom: 12px"></span>
+
+        <dl class="tl"><div><dt>Microsoft Excel</dt></div><div><dt>Power BI</dt></div><div><dt>جسر</dt></div><div><dt>Google Workspace</dt></div><div><dt>Canva</dt></div></dl><div style="margin-top: 16px; border-top: 1.5px dashed #bcc7e6; padding-top: 10px; display: flex; justify-content: space-between; align-items: center; font-size: 12.5px; color: #44507e"><span></span>
+          </div>
+      </div>
+    </div>
+    <span class="wk-wiggle" style="--r: -12deg; position: absolute; top: 40px; left: -6px; background: #f2d3cd; border: 1px solid #cdd6ee; border-radius: 50%; padding: 5px 12px; font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: 18px; color: #3a56a5; direction: ltr; box-shadow: 0 0 0 4px #fffdf8">my tools</span>
+  </section><section class="sec-cert" style="display: flex; flex-direction: column; gap: 14px; position: relative">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; direction: ltr">
+      <h2 style="margin: 0; font-family: 'WKAr', 'Inter', 'Readex Pro', sans-serif; font-weight: 700; font-size: 36px; color: #3a56a5; letter-spacing: -0.5px"><span style="white-space:nowrap">الشهادات<span class="berry" aria-hidden="true" style="--r:-10deg;font-size:26px;margin-inline:10px;vertical-align:middle">🫐</span></span></h2>
+      <span class="wk-wiggle" style="--r: -6deg; display: inline-block; background: #f2d3cd; border: 1px solid #cdd6ee; border-radius: 50%; padding: 4px 12px; font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: 18px; color: #3a56a5; box-shadow: 0 0 0 4px #fffdf8">always learning</span>
+    </div>
+
+    <div class="ribbon" style="margin: 0 -18px; background: #3a56a5; color: #fffdf8; overflow: hidden; border-top: 0; border-bottom: 0; transform: rotate(-1.5deg)">
+      <div class="wk-marquee" dir="ltr" style="display: flex; gap: 12px; width: max-content; padding: 8px 0; font-family: 'WKAr', 'Inter', 'Readex Pro', sans-serif; font-weight: 600; font-size: 13px; direction: ltr; white-space: nowrap"><span>تحليلات الموارد البشرية</span><span style="color: #f0d88a">✦</span><span>مؤشرات الموارد البشرية</span><span style="color: #f0d88a">✦</span><span>Power BI</span><span style="color: #f0d88a">✦</span><span>Excel</span><span style="color: #f0d88a">✦</span><span>لوحات المتابعة</span><span style="color: #f0d88a">✦</span><span>الذكاء الاصطناعي التوليدي</span><span style="color: #f0d88a">✦</span><span>التقارير</span><span style="color: #f0d88a">✦</span><span>العمليات</span><span style="color: #f0d88a">✦</span><span>تصميم الإجراءات</span><span style="color: #f0d88a">✦</span><span>المقابلات</span><span style="color: #f0d88a">✦</span><span>التوظيف</span><span style="color: #f0d88a">✦</span><span>موارد بشرية مبنية على البيانات</span><span style="color: #f0d88a">✦</span><span>تحليلات الموارد البشرية</span><span style="color: #f0d88a">✦</span><span>مؤشرات الموارد البشرية</span><span style="color: #f0d88a">✦</span><span>Power BI</span><span style="color: #f0d88a">✦</span><span>Excel</span><span style="color: #f0d88a">✦</span><span>لوحات المتابعة</span><span style="color: #f0d88a">✦</span><span>الذكاء الاصطناعي التوليدي</span><span style="color: #f0d88a">✦</span><span>التقارير</span><span style="color: #f0d88a">✦</span><span>العمليات</span><span style="color: #f0d88a">✦</span><span>تصميم الإجراءات</span><span style="color: #f0d88a">✦</span><span>المقابلات</span><span style="color: #f0d88a">✦</span><span>التوظيف</span><span style="color: #f0d88a">✦</span><span>موارد بشرية مبنية على البيانات</span><span style="color: #f0d88a">✦</span><span>تحليلات الموارد البشرية</span><span style="color: #f0d88a">✦</span><span>مؤشرات الموارد البشرية</span><span style="color: #f0d88a">✦</span><span>Power BI</span><span style="color: #f0d88a">✦</span><span>Excel</span><span style="color: #f0d88a">✦</span><span>لوحات المتابعة</span><span style="color: #f0d88a">✦</span><span>الذكاء الاصطناعي التوليدي</span><span style="color: #f0d88a">✦</span><span>التقارير</span><span style="color: #f0d88a">✦</span><span>العمليات</span><span style="color: #f0d88a">✦</span><span>تصميم الإجراءات</span><span style="color: #f0d88a">✦</span><span>المقابلات</span><span style="color: #f0d88a">✦</span><span>التوظيف</span><span style="color: #f0d88a">✦</span><span>موارد بشرية مبنية على البيانات</span><span style="color: #f0d88a">✦</span><span>تحليلات الموارد البشرية</span><span style="color: #f0d88a">✦</span><span>مؤشرات الموارد البشرية</span><span style="color: #f0d88a">✦</span><span>Power BI</span><span style="color: #f0d88a">✦</span><span>Excel</span><span style="color: #f0d88a">✦</span><span>لوحات المتابعة</span><span style="color: #f0d88a">✦</span><span>الذكاء الاصطناعي التوليدي</span><span style="color: #f0d88a">✦</span><span>التقارير</span><span style="color: #f0d88a">✦</span><span>العمليات</span><span style="color: #f0d88a">✦</span><span>تصميم الإجراءات</span><span style="color: #f0d88a">✦</span><span>المقابلات</span><span style="color: #f0d88a">✦</span><span>التوظيف</span><span style="color: #f0d88a">✦</span><span>موارد بشرية مبنية على البيانات</span><span style="color: #f0d88a">✦</span></div>
+    </div>
+
+    <div class="wk-bob" style="--r: 0.8deg; position: relative; background: #3a56a5; color: #fffdf8; border-radius: 16px; padding: 14px 16px; margin-top: 4px; box-shadow: 0 10px 24px -18px rgba(40,60,120,.45); direction: ltr; text-align: left; display: flex; gap: 12px; align-items: center">
+      <span style="width: 44px; height: 44px; flex: none; border-radius: 50%; background: #f0d88a; display: flex; align-items: center; justify-content: center"><svg class="wk-wiggle" style="--r: -8deg" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z M6 11v5c3 2.5 9 2.5 12 0v-5 M22 9v6" fill="none" stroke="#3a56a5" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/></svg></span>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 1px">
+        <span style="font-family: 'Courier Prime', monospace; font-size: 10.5px; letter-spacing: 1.2px; color: #f0d88a">بكالوريوس · 2026</span>
+        <b style="font-family: 'WKAr', 'Inter', 'Readex Pro', sans-serif; font-size: 16px; line-height: 1.25">نظم المعلومات الإدارية</b>
+        <span style="font-size: 12px; opacity: 0.85">جامعة طيبة · المدينة المنورة</span>
+      </div>
+      <span class="wk-wiggle" style="--r: 8deg; position: absolute; top: -13px; right: 12px; background: #f2d3cd; color: #3a56a5; border: 1px solid #cdd6ee; border-radius: 50%; padding: 1px 10px; font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: 16px">MIS grad ✦</span>
+    </div>
+
+    <div class="wk-bob" style="--r: -0.8deg; animation-delay: .7s; position: relative; background: #f0d88a; border: 1px solid #cdd6ee; border-radius: 16px; padding: 14px 16px 14px; margin-top: 6px; box-shadow: 0 10px 22px -18px rgba(40,60,120,.45); direction: ltr; text-align: left; display: flex; flex-direction: column; gap: 4px">
+      <div style="display: flex; gap: 12px; align-items: center">
+        <span class="wk-pop" style="width: 52px; height: 52px; flex: none; border-radius: 50%; background: #fffdf8; border: 1px solid #cdd6ee; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1; color: #3a56a5"><b style="font-family: 'WKAr', 'Inter', 'Readex Pro', sans-serif; font-size: 20px">2<sup style="font-size: 10px">nd</sup></b><span style="font-family: 'Courier Prime', monospace; font-size: 8px; font-weight: 700">PLACE</span></span>
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 1px">
+          <span style="font-family: 'Courier Prime', monospace; font-size: 10.5px; letter-spacing: 1.2px; color: #1b2c66">جائزة مشروع التخرج</span>
+          <b style="font-family: 'WKAr', 'Inter', 'Readex Pro', sans-serif; font-size: 18px; line-height: 1.2; color: #3a56a5">يُسر</b>
+        </div>
+      </div>
+      <span style="font-size: 12.5px; color: #1b2c66; line-height: 1.55">تنظيم تدفق الحشود عند بوابات الحرم.</span>
+      <span style="font-size: 11.5px; color: #44507e">شهادة وهدية من جامعة طيبة</span>
+      <div style="display: flex; flex-wrap: wrap; gap: 4px; margin-top: 2px"><span class="wk-chip" style="font-size: 10.5px; font-weight: 600; background: #fffdf8; border: 1px solid #3a56a5; color: #3a56a5; border-radius: 99px; padding: 1px 8px; white-space: nowrap">Operations planning</span><span class="wk-chip" style="font-size: 10.5px; font-weight: 600; background: #fffdf8; border: 1px solid #3a56a5; color: #3a56a5; border-radius: 99px; padding: 1px 8px; white-space: nowrap">Process design</span><span class="wk-chip" style="font-size: 10.5px; font-weight: 600; background: #fffdf8; border: 1px solid #3a56a5; color: #3a56a5; border-radius: 99px; padding: 1px 8px; white-space: nowrap">Crowd management</span></div>
+      <span class="wk-wiggle" style="--r: -7deg; position: absolute; top: -14px; right: 14px; background: #3a56a5; color: #fffdf8; border-radius: 50%; padding: 2px 12px; font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: 17px; box-shadow: 0 0 0 3px #fffdf8">winner ♡</span>
+    </div>
+
+    <div class="wk-bob" style="--r: -1deg; position: relative; background: #fffdf8; border: 1px dashed #bfcae8; border-radius: 14px; padding: 12px 14px 12px 70px; margin-top: 6px; box-shadow: 0 10px 24px -18px rgba(40,60,120,.45); direction: ltr; text-align: left; display: flex; flex-direction: column; gap: 3px">
+      <span class="wk-spin" style="position: absolute; top: 50%; left: 10px; margin-top: -25px; width: 50px; height: 50px; display: block">
+        <svg width="50" height="50" viewBox="0 0 50 50" aria-hidden="true"><defs><path id="wkc" d="M25 25m-17 0a17 17 0 1 1 34 0a17 17 0 1 1-34 0"/></defs><circle cx="25" cy="25" r="24" fill="#f0d88a" stroke="#3a56a5" stroke-width="1.2"/><text font-family="Courier Prime, monospace" font-size="7" font-weight="700" fill="#3a56a5" letter-spacing="1.2"><textPath href="#wkc">THANK YOU · PMU · 2026 ·</textPath></text><path d="M25 18l2 4.4 4.8.5-3.6 3.3 1 4.8-4.2-2.4-4.2 2.4 1-4.8-3.6-3.3 4.8-.5z" fill="#3a56a5"/></svg>
+      </span>
+      <span style="position: absolute; top: -12px; right: 14px; background: #f0d88a; border: 1px solid #cdd6ee; border-radius: 99px; padding: 1px 10px; font-family: 'Courier Prime', monospace; font-size: 11px; font-weight: 700; color: #3a56a5; transform: rotate(3deg)">21.10.2026</span>
+      <span style="font-family: 'Courier Prime', monospace; font-size: 10.5px; letter-spacing: 1.2px; color: #44507e">شهادة شكر وتقدير</span>
+      <b style="font-family: 'WKAr', 'Inter', 'Readex Pro', sans-serif; font-size: 14.5px; line-height: 1.3; color: #3a56a5">جامعة الأمير مقرن</b>
+      <span style="font-size: 11.5px; color: #44507e; line-height: 1.5">مقابلة المرشحين · يوم المقابلات الوظيفية</span>
+    </div>
+
+    <div class="cert-grid" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; padding: 8px 2px 0">
+        <div class="wk-bob" style="--r: -1.4deg; animation-delay: 0s; background: #dce4f7; border: 1px solid #cdd6ee; border-radius: 16px; box-shadow: 0 10px 22px -18px rgba(40,60,120,.45); padding: 12px 12px 12px; display: flex; flex-direction: column; gap: 5px; position: relative">
+          <div style="display: flex; justify-content: space-between; align-items: center"><span style="width: 30px; height: 30px; border-radius: 50%; background: #fffdf8; border: 1px solid #cdd6ee; display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10 M10 20V5 M16 20v-7 M22 20H2" fill="none" stroke="#3a56a5" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></svg></span><span style="font-family: 'Courier Prime', monospace; font-size: 12px; font-weight: 700; color: #3a56a5">2026</span></div>
+          <b style="font-family: 'WKAr', 'Inter', 'Readex Pro', sans-serif; font-size: 15px; line-height: 1.25; direction: ltr; text-align: left; color: #3a56a5">People Analytics</b>
+          <span style="font-size: 11.5px; color: #44507e; direction: ltr; text-align: left">Wharton · UPenn</span>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px; direction: ltr; margin-top: 2px"><span class="wk-chip" style="font-size: 10.5px; font-weight: 600; background: #fffdf8; border: 1px solid #3a56a5; color: #3a56a5; border-radius: 99px; padding: 1px 8px; direction: ltr; white-space: nowrap">HR metrics</span><span class="wk-chip" style="font-size: 10.5px; font-weight: 600; background: #fffdf8; border: 1px solid #3a56a5; color: #3a56a5; border-radius: 99px; padding: 1px 8px; direction: ltr; white-space: nowrap">Workforce data</span></div>
+        </div>
+        <div class="wk-bob" style="--r: 1.4deg; animation-delay: 0.6s; background: #f0d88a; border: 1px solid #cdd6ee; border-radius: 16px; box-shadow: 0 10px 22px -18px rgba(40,60,120,.45); padding: 12px 12px 12px; display: flex; flex-direction: column; gap: 5px; position: relative">
+          <div style="display: flex; justify-content: space-between; align-items: center"><span style="width: 30px; height: 30px; border-radius: 50%; background: #fffdf8; border: 1px solid #cdd6ee; display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c1 6 4 9 10 10-6 1-9 4-10 10-1-6-4-9-10-10 6-1 9-4 10-10z" fill="none" stroke="#3a56a5" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></svg></span><span style="font-family: 'Courier Prime', monospace; font-size: 12px; font-weight: 700; color: #3a56a5">2026</span></div>
+          <b style="font-family: 'WKAr', 'Inter', 'Readex Pro', sans-serif; font-size: 15px; line-height: 1.25; direction: ltr; text-align: left; color: #3a56a5">Generative AI for HR</b>
+          <span style="font-size: 11.5px; color: #44507e; direction: ltr; text-align: left">Vanderbilt University</span>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px; direction: ltr; margin-top: 2px"><span class="wk-chip" style="font-size: 10.5px; font-weight: 600; background: #fffdf8; border: 1px solid #3a56a5; color: #3a56a5; border-radius: 99px; padding: 1px 8px; direction: ltr; white-space: nowrap">AI in HR</span><span class="wk-chip" style="font-size: 10.5px; font-weight: 600; background: #fffdf8; border: 1px solid #3a56a5; color: #3a56a5; border-radius: 99px; padding: 1px 8px; direction: ltr; white-space: nowrap">Prompting</span></div>
+        </div>
+        <div class="wk-bob" style="--r: 1.2deg; animation-delay: 1.2s; background: #f2d3cd; border: 1px solid #cdd6ee; border-radius: 16px; box-shadow: 0 10px 22px -18px rgba(40,60,120,.45); padding: 12px 12px 12px; display: flex; flex-direction: column; gap: 5px; position: relative">
+          <div style="display: flex; justify-content: space-between; align-items: center"><span style="width: 30px; height: 30px; border-radius: 50%; background: #fffdf8; border: 1px solid #cdd6ee; display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6 M10 21h4 M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z" fill="none" stroke="#3a56a5" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></svg></span><span style="font-family: 'Courier Prime', monospace; font-size: 12px; font-weight: 700; color: #3a56a5">2025</span></div>
+          <b style="font-family: 'WKAr', 'Inter', 'Readex Pro', sans-serif; font-size: 15px; line-height: 1.25; direction: ltr; text-align: left; color: #3a56a5">AI Fundamentals</b>
+          <span style="font-size: 11.5px; color: #44507e; direction: ltr; text-align: left">IBM</span>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px; direction: ltr; margin-top: 2px"><span class="wk-chip" style="font-size: 10.5px; font-weight: 600; background: #fffdf8; border: 1px solid #3a56a5; color: #3a56a5; border-radius: 99px; padding: 1px 8px; direction: ltr; white-space: nowrap">AI basics</span><span class="wk-chip" style="font-size: 10.5px; font-weight: 600; background: #fffdf8; border: 1px solid #3a56a5; color: #3a56a5; border-radius: 99px; padding: 1px 8px; direction: ltr; white-space: nowrap">Ethics</span></div>
+        </div>
+        <div class="wk-bob" style="--r: -1.2deg; animation-delay: 1.8s; background: #fffdf8; border: 1px solid #cdd6ee; border-radius: 16px; box-shadow: 0 10px 22px -18px rgba(40,60,120,.45); padding: 12px 12px 12px; display: flex; flex-direction: column; gap: 5px; position: relative">
+          <div style="display: flex; justify-content: space-between; align-items: center"><span style="width: 30px; height: 30px; border-radius: 50%; background: #fffdf8; border: 1px solid #cdd6ee; display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h8v8H3z M13 3h8v8h-8z M3 13h8v8H3z M13 13h8v8h-8z" fill="none" stroke="#3a56a5" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></svg></span><span style="font-family: 'Courier Prime', monospace; font-size: 12px; font-weight: 700; color: #3a56a5">2026</span></div>
+          <b style="font-family: 'WKAr', 'Inter', 'Readex Pro', sans-serif; font-size: 15px; line-height: 1.25; direction: ltr; text-align: left; color: #3a56a5">HR Analytics Toolkit</b>
+          <span style="font-size: 11.5px; color: #44507e; direction: ltr; text-align: left">Udemy</span>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px; direction: ltr; margin-top: 2px"><span class="wk-chip" style="font-size: 10.5px; font-weight: 600; background: #fffdf8; border: 1px solid #3a56a5; color: #3a56a5; border-radius: 99px; padding: 1px 8px; direction: ltr; white-space: nowrap">KPIs</span><span class="wk-chip" style="font-size: 10.5px; font-weight: 600; background: #fffdf8; border: 1px solid #3a56a5; color: #3a56a5; border-radius: 99px; padding: 1px 8px; direction: ltr; white-space: nowrap">Templates</span></div>
+        </div>
+    </div>
+    <div class="cert-wide" style="padding: 0 2px"><div class="wk-bob" style="--r: 0.6deg; animation-delay: 2.4s; background: #dce4f7; border: 1px solid #cdd6ee; border-radius: 16px; box-shadow: 0 10px 22px -18px rgba(40,60,120,.45); padding: 12px 12px 12px; display: flex; flex-direction: column; gap: 5px; position: relative">
+          <div style="display: flex; justify-content: space-between; align-items: center"><span style="width: 30px; height: 30px; border-radius: 50%; background: #fffdf8; border: 1px solid #cdd6ee; display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9h-9z M15 2.5A9 9 0 0 1 21.5 9H15z" fill="none" stroke="#3a56a5" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></svg></span><span style="font-family: 'Courier Prime', monospace; font-size: 12px; font-weight: 700; color: #3a56a5">2026</span></div>
+          <b style="font-family: 'WKAr', 'Inter', 'Readex Pro', sans-serif; font-size: 15px; line-height: 1.25; direction: ltr; text-align: left; color: #3a56a5">Power BI for HR</b>
+          <span style="font-size: 11.5px; color: #44507e; direction: ltr; text-align: left">Udemy</span>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px; direction: ltr; margin-top: 2px"><span class="wk-chip" style="font-size: 10.5px; font-weight: 600; background: #fffdf8; border: 1px solid #3a56a5; color: #3a56a5; border-radius: 99px; padding: 1px 8px; direction: ltr; white-space: nowrap">Dashboards</span><span class="wk-chip" style="font-size: 10.5px; font-weight: 600; background: #fffdf8; border: 1px solid #3a56a5; color: #3a56a5; border-radius: 99px; padding: 1px 8px; direction: ltr; white-space: nowrap">Data viz</span><span class="wk-chip" style="font-size: 10.5px; font-weight: 600; background: #fffdf8; border: 1px solid #3a56a5; color: #3a56a5; border-radius: 99px; padding: 1px 8px; direction: ltr; white-space: nowrap">HR reports</span></div>
+        </div></div>
+
+    
+    
+    
+  </section><section class="sec-contact" style="display: flex; flex-direction: column; gap: 10px; position: relative">
+    <div style="display: flex; align-items: baseline; justify-content: space-between">
+      <h2 style="margin: 0; font-family: 'WKAr', 'Inter', 'Readex Pro', sans-serif; font-weight: 700; font-size: 32px; color: #3a56a5"><span dir="ltr">لنعمل معًا</span></h2>
+    </div>
+    <div class="stationery">
+      <div class="st-back" aria-hidden="true"></div>
+      <div class="st-card">
+        <span class="berry" aria-hidden="true" style="--r:16deg;font-size:28px;position:absolute;top:-14px;right:-10px">🫐</span>
+        <div class="st-mono" aria-hidden="true">WK</div>
+        <div class="st-name">Wed Kaen</div>
+        <div class="st-place">المدينة المنورة · السعودية</div>
+        <div class="st-rule" aria-hidden="true"></div>
+        <dl class="st-lines">
+          <div><dt>الجوال</dt><dd><a href="tel:+966544412257">054 441 2257</a></dd></div>
+          <div><dt>البريد</dt><dd><a href="mailto:wedkaen@gmail.com">wedkaen@gmail.com</a></dd></div>
+        </dl>
+        <a class="st-btn" href="https://www.linkedin.com/in/wed-k-64b438278" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+</section>
+
+</div>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script>
+(function(){try{var u=new URL("daftar/",location.href).href,q=qrcode(0,"M");q.addData(u);q.make();
+var n=q.getModuleCount(),d="";for(var y=0;y<n;y++)for(var x=0;x<n;x++)if(q.isDark(y,x))d+="M"+x+" "+y+"h1v1h-1z";
+var s=document.getElementById("qr");s.setAttribute("viewBox","0 0 "+n+" "+n);s.innerHTML='<path fill="#1b2c66" d="'+d+'"/>';}catch(e){}})();
+</script>
+</body>
+</html>

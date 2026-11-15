@@ -514,7 +514,7 @@ nav.tabs button[aria-current="page"]{border-radius:8px}
 
 /* ===== clarity pass ===== */
 .mode{display:none!important}
-header.top::after{content:"Sample data";margin-inline-start:auto;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#6a7396;border:1px solid #cdd6ee;border-radius:99px;padding:4px 10px;background:var(--paper)}
+header.top::after{content:"Sample data · read-only";margin-inline-start:auto;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#6a7396;border:1px solid #cdd6ee;border-radius:99px;padding:4px 10px;background:var(--paper)}
 #bToday,#bArc{display:none!important}
 .tour{display:grid!important;order:-1;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:0;background:transparent;border:0;margin:2px 0 4px;counter-reset:none}
 .tour button[data-tour]{grid-auto-flow:column;justify-content:start;align-items:center;gap:12px;text-align:left;padding:12px 14px;background:var(--paper);border:1px solid #dfe3ef;border-radius:12px;font-size:13px;color:#44507e;line-height:1.35}
@@ -552,6 +552,36 @@ nav.tabs button[aria-current="page"]::before{display:none!important}
 .band,.export,.col-b,.card,.sheet-list,.lined,.folder,details.add{box-shadow:0 1px 2px rgba(27,44,102,.04),0 14px 30px -24px rgba(27,44,102,.4)!important}
 .notes-h h3,.vh h2{letter-spacing:-.3px}
 section.view{gap:16px}
+
+/* ===== read-only, clearer ===== */
+#v-req details.add,#v-arc details.add,#v-tsk{display:none!important}
+.vh .what{display:block!important;margin:4px 0 0;font-size:13.5px;color:#55608a;max-width:62ch;line-height:1.55}
+.mgr{margin-top:8px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#9a7a2c}
+.welcome{position:relative;grid-column:1/-1;background:#fffdf8;border:1px solid #dfe3ef;border-radius:14px;padding:20px 22px 18px;box-shadow:0 1px 2px rgba(27,44,102,.04),0 14px 30px -24px rgba(27,44,102,.4)}
+.welcome::before{content:"";position:absolute;left:22px;right:22px;top:0;height:3px;background:#2f4a99;box-shadow:0 5px 0 -3.5px #c9a64a}
+.w-eye{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#c9a64a}
+.welcome h3{margin:4px 0 6px;font-family:var(--f-latin);font-weight:400;font-size:24px;color:#2f4a99;letter-spacing:-.2px}
+.welcome p{margin:0;font-size:13.5px;line-height:1.6;color:#44507e;max-width:70ch}
+.w-acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.w-acts button{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:99px;border:1px solid #cdd6ee;background:#f6f8fd;color:#1f2d5c;font:600 12.5px/1 var(--f-body);cursor:pointer;transition:border-color .2s,background .2s}
+.w-acts button:hover{border-color:#2f4a99;background:#eef1f8}
+.w-acts button span{font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:15px}
+.wx{position:absolute;top:10px;right:10px;width:28px;height:28px;border-radius:50%;border:1px solid #dfe3ef;background:#fffdf8;color:#6a7396;cursor:pointer;font-size:12px}
+.welcome:not([hidden])~.tour{display:none!important}
+.dept{margin-top:16px;border-top:1px solid #e3e7f2;padding-top:14px}
+.dept-h{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:8px}
+.dept-h h3{margin:0;font-size:15px;font-weight:600;color:#2f4a99}
+.dr{display:grid;grid-template-columns:92px minmax(0,1fr) 42px;align-items:center;gap:4px 12px;padding:7px 0}
+.dn{font-size:13px;font-weight:500;color:#1f2d5c}
+.db{height:7px;border-radius:99px;background:#e7ebf5;overflow:hidden}
+.db i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#3a56a5,#7d93d1)}
+.dv{font-size:13px;font-weight:600;color:#2f4a99;text-align:right}
+.dm{grid-column:2/4;font-size:11.5px;color:#6a7396;margin-top:-2px}
+@media (max-width:600px){.welcome{padding:18px 16px 16px}.welcome h3{font-size:21px}.w-acts button{flex:1 1 100%;justify-content:flex-start}}
+.dept{order:9}
+@media (min-width:960px){.col-b{display:flex;flex-direction:column}.col-b .notes-h{order:1}.col-b .notes{order:2}}
+@media (max-width:600px){header.top::after{content:"Demo";}}
+#repCard b{font-family:var(--f-latin)!important;font-weight:400;font-size:22px!important;line-height:1.1}
 </style>
 
 <div class="wrap" dir="ltr" lang="en">
@@ -566,9 +596,20 @@ section.view{gap:16px}
 
   <!-- TODAY -->
   <section class="view" id="v-today">
+    <div class="welcome" id="welcome" hidden>
+      <button type="button" class="wx" id="wX" aria-label="Close">✕</button>
+      <span class="w-eye">Welcome</span>
+      <h3>A read-only view of the office day</h3>
+      <p>AdminEase reads the fingerprint file and shows who is in, who is late, which requests are waiting and which documents are expiring. It prepares drafts and reports; it never changes anything on its own.</p>
+      <div class="w-acts">
+        <button type="button" data-w="att"><span>🕘</span>See who's in today</button>
+        <button type="button" data-w="letter"><span>✉️</span>Open a draft letter</button>
+        <button type="button" data-w="exp"><span>📊</span>Export the weekly report</button>
+      </div>
+    </div>
     <ol class="tour" id="tour" aria-label="How it works">
       <li><button type="button" data-tour="up"><b>1</b><span><strong>Upload</strong> <em>the fingerprint file</em></span></button></li>
-      <li><button type="button" data-tour="notes"><b>2</b><span><strong>Review</strong> <em>what needs attention</em></span></button></li>
+      <li><button type="button" data-tour="notes"><b>2</b><span><strong>Review</strong> <em>today's summary</em></span></button></li>
       <li><button type="button" data-tour="exp"><b>3</b><span><strong>Export</strong> <em>the weekly report</em></span></button></li>
     </ol>
 
@@ -592,24 +633,25 @@ section.view{gap:16px}
         <span class="stk stk-exp" aria-hidden="true">1 click</span>
       </button>
 
-      <div class="duo" hidden>
+      <div class="duo">
         <button type="button" class="mini-card" id="otCard"><b class="num" id="otNum">0</b><span>over the weekly hour limit</span><span class="more">View list →</span></button>
-        <button type="button" class="mini-card" id="repCard"><b>Summary</b><span>The week at a glance</span><span class="more">Open →</span></button>
+        <button type="button" class="mini-card" id="repCard"><b>Weekly summary</b><span>The week at a glance</span><span class="more">Open →</span></button>
       </div>
 
     </div>
 
     <div class="col-b" id="colB">
-      <div class="notes-h"><h3>Needs attention <span class="stk stk-h" style="--rt:-4deg;background:var(--blush)">to do</span></h3><span class="what" id="leftCount"></span></div>
+      <div class="notes-h"><h3>To review today <span class="stk stk-h" style="--rt:-4deg;background:var(--blush)">to do</span></h3><span class="what" id="leftCount"></span></div>
       <div class="notes" id="notes"></div>
       <div class="bricks" id="bricks" aria-hidden="true" hidden></div>
+      <div class="dept" id="dept"><div class="dept-h"><h3>By department</h3><span class="what">today</span></div><div id="deptRows"></div></div>
     </div>
     <div class="how" id="how" hidden><button type="button" class="x" id="hideHow">Hide</button></div>
   </section>
 
   <!-- ATTENDANCE -->
   <section class="view" id="v-att" hidden>
-    <div class="vh"><h2>Attendance <span class="stk stk-h" style="--rt:4deg;background:var(--sky)">who's in ✦</span></h2><p class="what">Late counts after a 10-minute grace period.</p></div>
+    <div class="vh"><h2>Attendance <span class="stk stk-h" style="--rt:4deg;background:var(--sky)">who's in ✦</span></h2><p class="what">Who came in today, at what time, and who was late. Late counts after a 10-minute grace period.</p></div>
     <select id="brChips" aria-label="Department"></select>
     <div class="chips" id="stChips" role="group" aria-label="Status"></div>
     <div class="sheet-list" id="attList"></div>
@@ -617,7 +659,7 @@ section.view{gap:16px}
 
   <!-- REQUESTS -->
   <section class="view" id="v-req" hidden>
-    <div class="vh"><h2>Requests <span class="stk stk-h" style="--rt:-5deg;background:var(--butter)">approvals</span></h2><p class="what">Coverage is checked before approval.</p></div>
+    <div class="vh"><h2>Requests <span class="stk stk-h" style="--rt:-5deg;background:var(--butter)">overview</span></h2><p class="what">Leave, shift and punch requests, each with an automatic coverage check. Decisions stay with the manager.</p></div>
     <div class="chips" id="reqChips" role="group" aria-label="Request status"></div>
     <div id="reqList" style="display:grid;gap:12px"></div>
     <details class="add">
@@ -655,9 +697,9 @@ section.view{gap:16px}
 
   <!-- ARCHIVE -->
   <section class="view" id="v-arc" hidden>
-    <div class="vh"><h2>Archive <span class="stk stk-h" style="--rt:-4deg;background:var(--sky)">filed ✦</span></h2><p class="what">Alerts 30 days before a document expires.</p></div>
+    <div class="vh"><h2>Documents <span class="stk stk-h" style="--rt:-4deg;background:var(--sky)">filed ✦</span></h2><p class="what">Company documents, with a flag on anything that expires within 30 days.</p></div>
     <div class="search"><svg viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      <input id="arcQ" type="search" placeholder="Search by name, reference or department" aria-label="Search archive"></div>
+      <input id="arcQ" type="search" placeholder="Search by name, reference or department" aria-label="Search documents"></div>
     <div class="chips" id="arcChips" role="group" aria-label="Category"></div>
     <div class="folders" id="arcList"></div>
     <details class="add">
@@ -695,14 +737,13 @@ section.view{gap:16px}
   <button type="button" data-v="today" aria-current="page"><span class="nav-em" aria-hidden="true">📅</span>Today<span class="badge num" id="bToday" hidden></span></button>
   <button type="button" data-v="att"><span class="nav-em" aria-hidden="true">🕘</span>Attendance</button>
   <button type="button" data-v="req"><span class="nav-em" aria-hidden="true">📨</span>Requests<span class="badge num" id="bReq" hidden></span></button>
-  <button type="button" data-v="tsk"><span class="nav-em" aria-hidden="true">✅</span>Tasks</button>
-  <button type="button" data-v="arc"><span class="nav-em" aria-hidden="true">🗂️</span>Archive<span class="badge num" id="bArc" hidden></span></button>
+  <button type="button" data-v="arc"><span class="nav-em" aria-hidden="true">🗂️</span>Documents<span class="badge num" id="bArc" hidden></span></button>
 </div></nav>
 
 <div class="scrim" id="shLetter" hidden dir="ltr" lang="en"><div class="sheet" role="dialog" aria-modal="true" aria-labelledby="lT">
-  <div class="grab"></div><h2 id="lT">Warning letter, ready</h2><div class="auto" id="lAuto"></div>
+  <div class="grab"></div><h2 id="lT">Draft warning letter</h2><div class="auto" id="lAuto"></div>
   <div class="letter" id="letter"></div>
-  <div class="acts"><button type="button" class="btn teal" id="lOk">Approve &amp; file</button><button type="button" class="btn copy" id="lCopy"><svg class="cpi" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>Copy letter<span class="stk stk-copy">copy ✓</span></button><button type="button" class="btn" data-close>Close</button></div>
+  <div class="acts"><button type="button" class="btn teal" id="lOk" hidden>Approve &amp; file</button><button type="button" class="btn copy teal" id="lCopy"><svg class="cpi" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>Copy draft<span class="stk stk-copy">copy ✓</span></button><button type="button" class="btn" data-close>Close</button></div>
 </div></div>
 
 <div class="scrim" id="shMerge" hidden dir="ltr" lang="en"><div class="sheet" role="dialog" aria-modal="true" aria-labelledby="mT">
@@ -842,12 +883,11 @@ const dueTxt=s=>{const n=daysBetween(todayISO,s);if(n<0)return{t:"Overdue "+(-n)
 function ringSVG(p,col){const r=18,c=2*Math.PI*r;return `<svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="${r}" fill="none" stroke="var(--sunk)" stroke-width="5"/><circle cx="22" cy="22" r="${r}" fill="none" stroke="${col}" stroke-width="5" stroke-linecap="round" stroke-dasharray="${c.toFixed(1)}" stroke-dashoffset="${(c*(1-p/100)).toFixed(1)}" transform="rotate(-90 22 22)"/><text x="22" y="26" text-anchor="middle" font-size="11" font-weight="700" fill="var(--ink)" font-family="Inter, sans-serif">${p}</text></svg>`}
 function alerts(){
   const out=[],t=today();
-  people().filter(p=>needsLetter(p.id)).forEach(p=>out.push({hot:1,col:"var(--bad)",t:`${p.name}: late ${monthLates(p.id).length} times this month. Letter ready`,go:"letter:"+p.id}));
+  people().filter(p=>needsLetter(p.id)).forEach(p=>out.push({hot:1,col:"var(--bad)",t:`${p.name}: late ${monthLates(p.id).length} times this month. Draft letter ready`,go:"letter:"+p.id}));
   branches().forEach(b=>{const c=stats(t.filter(e=>e.br===b));if(c.absent)out.push({hot:1,col:"var(--bad)",t:`${b}: ${c.absent===1?"1 absence":c.absent+" absences"} without leave`,go:"br:"+b})});
   S.docs.forEach(d=>{const s=docState(d);if(s&&s.k!=="ok")out.push({hot:s.k==="bad",col:s.k==="bad"?"var(--bad)":"var(--warn)",t:`${d.title} (${d.br}): ${s.t}`,go:"arc"})});
   const otn=overtime().length;if(otn)out.push({col:"var(--warn)",t:`${otn} ${otn===1?"employee is":"employees are"} over the weekly hour limit`,go:"ot"});
   const pend=S.reqs.filter(r=>r.st==="Pending").length;if(pend)out.push({col:"var(--teal)",t:`${pend} ${pend===1?"request":"requests"} awaiting your reply`,go:"req"});
-  S.tasks.filter(x=>!x.done&&daysBetween(todayISO,x.due)<=0).forEach(x=>out.push({col:"var(--warn)",t:"Due today: "+x.t,go:"tsk"}));
   return out;
 }
 function renderToday(){
@@ -859,7 +899,7 @@ function renderToday(){
     const col=k==="bad"?"var(--bad)":k==="warn"?"#e0b10a":"var(--teal)";
     return `<button type="button" class="ring ${k}" data-br="${esc(b)}" aria-label="${esc(b)}">${ringSVG(s.rate,col)}<span class="n">${esc(b)}</span><span class="s">${s.absent?s.absent+" missing":s.late?s.late+" late":"Complete"}</span></button>`}).join("");
   $("#src").textContent=S.src;
-  const al=alerts(),shown=notesAll?al:al.slice(0,3);const verb=g=>g.startsWith("letter:")?"Letter":g.startsWith("br:")?"View":g==="arc"?"Archive":g==="req"?"Review":g==="tsk"?"Tasks":g==="ot"?"List":"Open";
+  const al=alerts(),shown=notesAll?al:al.slice(0,3);const verb=g=>g.startsWith("letter:")?"Draft":g.startsWith("br:")?"View":g==="arc"?"Documents":g==="req"?"Review":g==="tsk"?"Tasks":g==="ot"?"List":"Open";
   $("#notes").innerHTML=al.length?shown.map(a=>`<button type="button" class="sticky${a.hot?" hot":""}" data-go="${esc(a.go)}"><span class="dot" style="background:${a.col}"></span><span class="nt">${esc(a.t)}</span><span class="go">${verb(a.go)} →</span></button>`).join("")
     :`<div class="win"><svg width="40" height="40" viewBox="0 0 10 10" aria-hidden="true"><path fill="#dce4f7" stroke="#2f4a99" stroke-width=".4" d="M5 .5l1.3 2.9 3.2.3-2.4 2.1.7 3.1L5 7.3 2.2 8.9l.7-3.1L.5 3.7l3.2-.3z"/></svg><b>All clear 🫐</b><span>Nothing pending. Enjoy the calm.</span></div>`;
   $("#leftCount").innerHTML=al.length>3?`<button type="button" class="linkbtn" id="moreNotes">${notesAll?"Show less":"+"+(al.length-3)+" more"}</button>`:(al.length?al.length+(al.length===1?" item":" items"):"");
@@ -893,7 +933,7 @@ function renderAtt(){
       return `<div class="row"><div class="av">${esc(e.name.charAt(0))}</div><div class="main"><div class="t">${esc(e.name)}</div>
       <div class="m num">${esc(e.br)} · in ${fmt12(e.in)}${e.out?" · out "+fmt12(e.out):""}${n?` · <span class="tag${n>=3?" hot":""}">late ×${n} this month</span>`:""}</div></div>
       <span class="c c-br">${esc(e.br)}</span><span class="c c-in num">${e.in?fmt12(e.in):"—"}</span><span class="c c-out num">${e.out?fmt12(e.out):"—"}</span>
-      ${needsLetter(e.id)?`<button type="button" class="btn sm" data-letter="${esc(e.id)}" style="color:var(--teal);border-color:var(--teal)">Warning letter</button>`:`<span class="pill ${s.c}">${s.t}</span>`}</div>`}).join("")});
+      ${needsLetter(e.id)?`<button type="button" class="btn sm" data-letter="${esc(e.id)}" style="color:var(--teal);border-color:var(--teal)">Draft letter</button>`:`<span class="pill ${s.c}">${s.t}</span>`}</div>`}).join("")});
   $("#attList").innerHTML=html;
 }
 $("#brChips").addEventListener("change",e=>{brF=e.target.value;renderAtt()});
@@ -916,7 +956,7 @@ function reqCheck(r){
 }
 function renderReq(){
   const fs=["Pending","Approved","Declined"];
-  $("#reqChips").innerHTML=fs.map(k=>`<button type="button" class="chip" data-f="${k}" aria-pressed="${reqF===k}">${k} <span class="num">${S.reqs.filter(r=>r.st===k).length}</span></button>`).join("");
+  $("#reqChips").innerHTML=fs.map(k=>`<button type="button" class="chip" data-f="${k}" aria-pressed="${reqF===k}">${k==="Pending"?"Awaiting decision":k} <span class="num">${S.reqs.filter(r=>r.st===k).length}</span></button>`).join("");
   const rows=S.reqs.filter(r=>r.st===reqF);
   const pc={"Shift swap":"p-sky","Punch correction":"p-warn","Leave":"p-ok"};
   $("#reqList").innerHTML=rows.length?rows.map(r=>{const p=person(r.emp),ck=r.st==="Pending"?reqCheck(r):null;
@@ -924,7 +964,7 @@ function renderReq(){
     if(r.type==="Shift swap"){const q=person(r.emp2);body=`<div class="swap"><div><b>${esc(p.name)}</b><span>${p.sh} → ${q.sh}</span></div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 7h11l-3-3M17 17H6l3 3"/></svg><div><b>${esc(q.name)}</b><span>${q.sh} → ${p.sh}</span></div></div>`}
     else body=`<div><b>${esc(p.name)}</b> <span class="what">· ${esc(p.br)} · ${dayAr(r.date)}${r.days>1?" · "+r.days+" days":""}</span>${r.note?`<div class="what">${esc(r.note)}</div>`:""}</div>`;
     return `<div class="card"><div class="hd"><span class="pill ${pc[r.type]}">${r.type}</span><span class="ref num">${r.ref}${r.type==="Shift swap"?" · "+dayAr(r.date):""}</span></div>${body}
-      ${ck?`<div class="check ${ck.k}">${esc(ck.t)}</div><div class="acts"><button type="button" class="btn teal" data-a="ok" data-r="${r.ref}">Approve</button><button type="button" class="btn no" data-a="no" data-r="${r.ref}">Decline</button></div>`:""}</div>`}).join("")
+      ${ck?`<div class="check ${ck.k}">${esc(ck.t)}</div><div class="mgr">Awaiting the manager's decision</div>`:""}</div>`}).join("")
     :`<div class="card empty">${reqF==="Pending"?"No requests waiting":"Nothing here yet"}</div>`;
   const n=S.reqs.filter(r=>r.st==="Pending").length,b=$("#bReq");b.hidden=!n;b.textContent=n;
   const ps=people();const opts=ps.map(p=>`<option value="${esc(p.id)}">${esc(p.name)} · ${esc(p.br)}</option>`).join("")||`<option value="">Upload an attendance file first</option>`;
@@ -981,12 +1021,12 @@ $("#resetBtn").addEventListener("click",()=>{S=demo();brF="all";stF="all";arcF="
 /* ---------- LETTER ---------- */
 let curL=null,letterTxt="";
 function openLetter(id){const p=person(id),ds=monthLates(id),ref="ADM-"+TD.getFullYear()+"-"+pad(S.seq.doc).padStart(3,"0"),dstr=dayAr(todayISO);curL=id;
-  $("#lAuto").textContent=`✓ Drafted automatically from attendance records: ${ds.length} late arrivals this month`;
+  $("#lAuto").textContent=`✓ Drafted from attendance records (${ds.length} late arrivals this month). For the HR manager to review and issue.`;
   const body=`Our attendance records show that you arrived after the start of the ${p.sh.toLowerCase()} shift (${fmt12(S.shifts[p.sh])}) ${ds.length} times this month, on: ${ds.map(dayAr).join("; ")}.`;
   const end="We kindly ask you to observe the official working hours. Please note that repeated lateness is subject to the measures set out in the company's internal work regulations.";
   $("#letter").innerHTML=`<div class="lh num"><span>Ref: ${ref}</span><span>${dstr}</span></div><h3>Notice of Late Attendance</h3><p>Dear ${esc(p.name)},<br><span class="what num">${esc(p.id)} · ${esc(p.br)} · ${p.sh} shift</span></p><p class="num">${esc(body)}</p><p>${end}</p><p class="sign">Kind regards,<br>Human Resources</p>`;
   letterTxt=`Ref: ${ref}\nDate: ${dstr}\n\nNotice of Late Attendance\n\nDear ${p.name},\n${p.id} · ${p.br} · ${p.sh} shift\n\n${body}\n\n${end}\n\nKind regards,\nHuman Resources`;
-  openSheet("#shLetter");$("#lOk").focus()}
+  openSheet("#shLetter");$("#lCopy").focus()}
 $("#lCopy").addEventListener("click",()=>copy(letterTxt,"Letter copied"));
 $("#lOk").addEventListener("click",()=>{const p=person(curL);const ref="ADM-"+TD.getFullYear()+"-"+pad(S.seq.doc++).padStart(3,"0");
   S.docs.unshift({ref,title:"Late attendance notice: "+p.name,cat:"Letters",br:p.br});S.warned.push(curL+"@"+month(curDay()));save();closeSheets();renderAll();toast("Approved and filed as "+ref);sparkle($("#notes"))});
@@ -996,11 +1036,11 @@ let repTxt="",otTxt="";
 function buildRep(){
   const t=today(),c=stats(t),ot=overtime(),docs=S.docs.filter(d=>{const s=docState(d);return s&&s.k!=="ok"}),pend=S.reqs.filter(r=>r.st==="Pending"),done=S.tasks.filter(x=>x.done).length;
   const br=branches().map(b=>({b,s:stats(t.filter(e=>e.br===b))})).sort((a,b)=>a.s.rate-b.s.rate);
-  const rows=[["Attendance today",c.rate+"%"],["Lowest department",br[0]?br[0].b+" ("+br[0].s.rate+"%)":"—"],["Late arrivals today",c.late],["Absent without leave",c.absent],["Over hour limit",ot.length],["Pending requests",pend.length],["Tasks completed",done+" of "+S.tasks.length],["Documents to renew",docs.length]];
+  const rows=[["Attendance today",c.rate+"%"],["Lowest department",br[0]?br[0].b+" ("+br[0].s.rate+"%)":"—"],["Late arrivals today",c.late],["Absent without leave",c.absent],["Over hour limit",ot.length],["Pending requests",pend.length],["Documents to renew",docs.length]];
   $("#repKv").innerHTML=rows.map(([k,v])=>`<dt>${k}</dt><dd>${esc(v)}</dd>`).join("");
-  const dec=[...people().filter(p=>needsLetter(p.id)).map(p=>"Warning letter: "+p.name),...docs.map(d=>d.title+" ("+d.br+"): "+docState(d).t),...S.tasks.filter(x=>!x.done&&x.p===0).map(x=>"Urgent: "+x.t)];
-  $("#repDec").innerHTML=`<b style="font-family:var(--f-disp);font-size:17px;color:var(--teal)">Needs a decision</b>`+(dec.length?dec.map(x=>`<span style="font-size:14px">• ${esc(x)}</span>`).join(""):`<span class="what">Nothing pending</span>`);
-  repTxt=`Weekly report: ${dayAr(curDay())}\n\n`+rows.map(([k,v])=>`${k}: ${v}`).join("\n")+`\n\nDepartments:\n`+branches().map(b=>{const s=stats(t.filter(e=>e.br===b));return`- ${b}: attendance ${s.rate}% · late ${s.late} · absent ${s.absent}`}).join("\n")+`\n\nNeeds a decision:\n`+(dec.map(x=>"- "+x).join("\n")||"- None");
+  const dec=[...people().filter(p=>needsLetter(p.id)).map(p=>"Warning letter: "+p.name),...docs.map(d=>d.title+" ("+d.br+"): "+docState(d).t)];
+  $("#repDec").innerHTML=`<b style="font-family:var(--f-disp);font-size:17px;color:var(--teal)">For the manager</b>`+(dec.length?dec.map(x=>`<span style="font-size:14px">• ${esc(x)}</span>`).join(""):`<span class="what">Nothing pending</span>`);
+  repTxt=`Weekly report: ${dayAr(curDay())}\n\n`+rows.map(([k,v])=>`${k}: ${v}`).join("\n")+`\n\nDepartments:\n`+branches().map(b=>{const s=stats(t.filter(e=>e.br===b));return`- ${b}: attendance ${s.rate}% · late ${s.late} · absent ${s.absent}`}).join("\n")+`\n\nFor the manager:\n`+(dec.map(x=>"- "+x).join("\n")||"- None");
 }
 function buildOt(){const all=people().map(p=>({p,h:weekHours(p.id)})).sort((a,b)=>b.h-a.h).slice(0,8);const max=Math.max(S.limit+6,...all.map(x=>x.h));
   $("#otSub").textContent=`Last 7 days of attendance · limit ${S.limit} hrs`;
@@ -1069,7 +1109,7 @@ function exportXlsx(src){
   add("Today",[["ID","Name","Department","Shift","Check-in","Check-out","Status"],...t.map(e=>[e.id,e.name,e.br,e.sh,e.in||"",e.out||"",status(e).t])]);
   add("Overtime",[["Name","Department","Weekly hours","Overtime"],...overtime().map(({p,h})=>[p.name,p.br,h,Math.round((h-S.limit)*10)/10])]);
   add("Requests",[["Ref","Type","Employee","Date","Status"],...S.reqs.map(r=>[r.ref,r.type,person(r.emp).name,r.date,r.st])]);
-  add("Tasks",[["Task","Priority","Due","Status"],...S.tasks.map(x=>[x.t,PRI[x.p][0],x.due,x.done?"Done":"Open"])]);
+  
   add("Renewals",[["Ref","Document","Department","Expires","Status"],...S.docs.filter(d=>{const s=docState(d);return s&&s.k!=="ok"}).map(d=>[d.ref,d.title,d.br,d.exp,docState(d).t])]);
   try{XLSX.writeFile(wb,"AdminEase-Report-"+curDay()+".xlsx");toast("Report exported ✓");sparkle(src)}catch(e){toast("Couldn't download the file here")}}
 $("#expBtn").addEventListener("click",e=>exportXlsx(e.currentTarget));
@@ -1086,10 +1126,18 @@ function sparkle(el){if(!el||matchMedia("(prefers-reduced-motion: reduce)").matc
   const cols=["#dce4f7","#2f4a99","#ebeef8","#9fb0dc"];for(let i=0;i<10;i++){const s=document.createElement("span");s.className="spark";
     s.style.cssText=`left:${cx}px;top:${cy}px;background:${cols[i%4]};--dx:${Math.cos(i/10*6.28)*60}px;--dy:${Math.sin(i/10*6.28)*60}px;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)`;
     document.body.appendChild(s);setTimeout(()=>s.remove(),950)}}
-const views=["today","att","req","tsk","arc"];
+const views=["today","att","req","arc"];
 function show(v){if(!views.includes(v))v="today";views.forEach(k=>$("#v-"+k).hidden=k!==v);$$("nav.tabs button").forEach(b=>b.dataset.v===v?b.setAttribute("aria-current","page"):b.removeAttribute("aria-current"));window.scrollTo(0,0)}
 $("nav.tabs").addEventListener("click",e=>{const b=e.target.closest("[data-v]");if(b)show(b.dataset.v)});
-function renderAll(){renderToday();renderAtt();renderReq();renderTasks();renderArc()}
+function renderDept(){const t=today();const rows=branches().map(b=>({b,s:stats(t.filter(e=>e.br===b))})).sort((a,b)=>b.s.rate-a.s.rate);
+  $("#deptRows").innerHTML=rows.length?rows.map(({b,s})=>`<div class="dr"><span class="dn">${esc(b)}</span><span class="db"><i style="width:${s.rate}%"></i></span><span class="dv num">${s.rate}%</span><span class="dm num">${s.late} late · ${s.absent} absent</span></div>`).join(""):`<div class="what">Upload an attendance file to see departments.</div>`}
+function renderAll(){renderToday();renderAtt();renderReq();renderTasks();renderArc();renderDept()}
+(function(){const w=$("#welcome");if(LS.get("ae-welcome")!=="0")w.hidden=false;
+  $("#wX").addEventListener("click",()=>{w.hidden=true;LS.set("ae-welcome","0")});
+  w.addEventListener("click",e=>{const b=e.target.closest("[data-w]");if(!b)return;const k=b.dataset.w;
+    if(k==="att")show("att");
+    else if(k==="exp")$("#expBtn").click();
+    else{const p=people().find(x=>needsLetter(x.id))||people().find(x=>monthLates(x.id).length);if(p)openLetter(p.id);}});})();
 renderAll();
 })();
 </script>

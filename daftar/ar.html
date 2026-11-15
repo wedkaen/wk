@@ -585,6 +585,18 @@ section.view{gap:16px}
 .lang-tog:hover{background:#243c82}
 header.top::after{margin-inline-start:8px!important}
 .hello h1{white-space:nowrap}
+
+/* ===== simplest, demo-locked ===== */
+.tour,.stk-exp,.stk-today{display:none!important}
+.lockbg{position:fixed;inset:0;z-index:200;background:rgba(27,44,102,.35);display:grid;place-items:center;padding:20px}
+.lockbg[hidden]{display:none!important}
+.lockcard{width:min(360px,100%);background:#fffdf8;border-radius:16px;padding:24px 22px 20px;text-align:center;box-shadow:0 24px 60px -20px rgba(27,44,102,.5)}
+.lockcard h3{margin:6px 0 8px;font-family:var(--f-latin);font-weight:400;font-size:24px;color:#2f4a99}
+.lockcard p{margin:0;font-size:14px;line-height:1.7;color:#44507e}
+.lock-ic{font-size:26px;font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif}
+.lock-mail{margin:10px 0 16px!important;font-weight:600;color:#1f2d5c!important;direction:ltr;user-select:all}
+.lockcard .btn{min-width:120px}
+@media (max-width:600px){.blue-berry{display:none}}
 </style>
 
 <div class="wrap" dir="rtl" lang="ar">
@@ -1098,6 +1110,17 @@ function renderAll(){renderToday();renderAtt();renderReq();renderTasks();renderA
     else{const p=people().find(x=>needsLetter(x.id))||people().find(x=>monthLates(x.id).length);if(p)openLetter(p.id);}});})();
 renderAll();
 })();
+</script>
+<div class="lockbg" id="lockBox" hidden><div class="lockcard" role="dialog" aria-modal="true" aria-labelledby="lockT">
+  <span class="lock-ic" aria-hidden="true">🔒</span><h3 id="lockT">نسخة تجريبية مبدئية</h3><p>رفع الملفات متوقف حاليًا في هذه النسخة. للاستخدام، تواصل مع المطوّرة:</p>
+  <p class="lock-mail">wedkaen@gmail.com</p><button type="button" class="btn teal" id="lockOk">حسنًا</button></div></div>
+
+<script>
+(function(){const box=document.getElementById("lockBox");const show=()=>{box.hidden=false;document.getElementById("lockOk").focus()};
+document.addEventListener("click",e=>{if(e.target.closest("#upLbl,#fileIn,[data-tour=up]")){e.preventDefault();e.stopPropagation();show()}},true);
+["dragover","drop"].forEach(t=>document.addEventListener(t,e=>{e.preventDefault();e.stopPropagation();if(t==="drop")show()},true));
+box.addEventListener("click",e=>{if(e.target===box||e.target.id==="lockOk")box.hidden=true});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")box.hidden=true});})();
 </script>
 </body>
 </html>

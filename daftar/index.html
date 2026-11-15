@@ -554,7 +554,7 @@ nav.tabs button[aria-current="page"]::before{display:none!important}
 section.view{gap:16px}
 
 /* ===== read-only, clearer ===== */
-#v-req details.add,#v-arc details.add,#v-tsk{display:none!important}
+#v-req,#v-req details.add,#v-arc details.add,#v-tsk{display:none!important}
 .vh .what{display:block!important;margin:4px 0 0;font-size:13.5px;color:#55608a;max-width:62ch;line-height:1.55}
 .mgr{margin-top:8px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#9a7a2c}
 .welcome{position:relative;grid-column:1/-1;background:#fffdf8;border:1px solid #dfe3ef;border-radius:14px;padding:20px 22px 18px;box-shadow:0 1px 2px rgba(27,44,102,.04),0 14px 30px -24px rgba(27,44,102,.4)}
@@ -582,6 +582,21 @@ section.view{gap:16px}
 @media (min-width:960px){.col-b{display:flex;flex-direction:column}.col-b .notes-h{order:1}.col-b .notes{order:2}}
 @media (max-width:600px){header.top::after{content:"Demo";}}
 #repCard b{font-family:var(--f-latin)!important;font-weight:400;font-size:22px!important;line-height:1.1}
+
+/* simpler Today */
+.duo{display:none!important}
+#dayLbl{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-top:12px}
+#dayLbl span{display:flex;flex-direction:column;gap:2px;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6a7396}
+#dayLbl b{font-family:var(--f-latin);font-weight:400;font-size:28px;letter-spacing:0;color:#1f2d5c;text-transform:none;line-height:1}
+.dr{grid-template-columns:96px minmax(0,1fr) 52px}
+.dv{font-family:var(--f-latin);font-weight:400;font-size:22px}
+.dm{font-size:11px}
+.sticky .nt{font-size:14px}
+
+.lang-tog{margin-inline-start:auto;padding:5px 12px;border-radius:99px;border:1px solid #cdd6ee;background:#2f4a99;color:#fffdf8!important;font:600 12px/1.2 'WKAr','Inter',sans-serif;text-decoration:none;white-space:nowrap}
+.lang-tog:hover{background:#243c82}
+header.top::after{margin-inline-start:8px!important}
+.hello h1{white-space:nowrap}
 </style>
 
 <div class="wrap" dir="ltr" lang="en">
@@ -592,15 +607,16 @@ section.view{gap:16px}
       <button type="button" data-mode="demo" aria-pressed="true">Demo</button>
       <button type="button" data-mode="mine" aria-pressed="false">My data</button>
     </div>
+    <a class="lang-tog" href="ar.html">عربي</a>
   </header>
 
   <!-- TODAY -->
   <section class="view" id="v-today">
     <div class="welcome" id="welcome" hidden>
       <button type="button" class="wx" id="wX" aria-label="Close">✕</button>
-      <span class="w-eye">Welcome</span>
+      <span class="w-eye">A personal practice project · Wed Kaen</span>
       <h3>A read-only view of the office day</h3>
-      <p>AdminEase reads the fingerprint file and shows who is in, who is late, which requests are waiting and which documents are expiring. It prepares drafts and reports; it never changes anything on its own.</p>
+      <p>It reads the fingerprint file and shows the day at a glance. It drafts and reports, and never changes data.</p>
       <div class="w-acts">
         <button type="button" data-w="att"><span>🕘</span>See who's in today</button>
         <button type="button" data-w="letter"><span>✉️</span>Open a draft letter</button>
@@ -655,27 +671,6 @@ section.view{gap:16px}
     <select id="brChips" aria-label="Department"></select>
     <div class="chips" id="stChips" role="group" aria-label="Status"></div>
     <div class="sheet-list" id="attList"></div>
-  </section>
-
-  <!-- REQUESTS -->
-  <section class="view" id="v-req" hidden>
-    <div class="vh"><h2>Requests <span class="stk stk-h" style="--rt:-5deg;background:var(--butter)">overview</span></h2><p class="what">Leave, shift and punch requests, each with an automatic coverage check. Decisions stay with the manager.</p></div>
-    <div class="chips" id="reqChips" role="group" aria-label="Request status"></div>
-    <div id="reqList" style="display:grid;gap:12px"></div>
-    <details class="add">
-      <summary>+ New request</summary>
-      <form class="f" id="reqForm">
-        <div class="two">
-          <div class="fld"><label for="rType">Type</label><select id="rType"><option>Leave</option><option>Shift swap</option><option>Punch correction</option></select></div>
-          <div class="fld"><label for="rDate">Date</label><input id="rDate" type="date" required></div>
-        </div>
-        <div class="fld"><label for="rEmp">Employee</label><select id="rEmp"></select></div>
-        <div class="fld" id="rEmp2Wrap" hidden><label for="rEmp2">Swap with</label><select id="rEmp2"></select></div>
-        <div class="fld" id="rDaysWrap"><label for="rDays">Days</label><input id="rDays" type="number" min="1" max="60" value="1"></div>
-        <div class="fld"><label for="rNote">Note</label><input id="rNote" placeholder="Optional"></div>
-        <button class="btn teal block" type="submit">Add request</button>
-      </form>
-    </details>
   </section>
 
   <!-- TASKS -->
@@ -736,7 +731,6 @@ section.view{gap:16px}
 <nav class="tabs" aria-label="Sections" dir="ltr"><div class="in">
   <button type="button" data-v="today" aria-current="page"><span class="nav-em" aria-hidden="true">📅</span>Today<span class="badge num" id="bToday" hidden></span></button>
   <button type="button" data-v="att"><span class="nav-em" aria-hidden="true">🕘</span>Attendance</button>
-  <button type="button" data-v="req"><span class="nav-em" aria-hidden="true">📨</span>Requests<span class="badge num" id="bReq" hidden></span></button>
   <button type="button" data-v="arc"><span class="nav-em" aria-hidden="true">🗂️</span>Documents<span class="badge num" id="bArc" hidden></span></button>
 </div></nav>
 
@@ -883,18 +877,18 @@ const dueTxt=s=>{const n=daysBetween(todayISO,s);if(n<0)return{t:"Overdue "+(-n)
 function ringSVG(p,col){const r=18,c=2*Math.PI*r;return `<svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="${r}" fill="none" stroke="var(--sunk)" stroke-width="5"/><circle cx="22" cy="22" r="${r}" fill="none" stroke="${col}" stroke-width="5" stroke-linecap="round" stroke-dasharray="${c.toFixed(1)}" stroke-dashoffset="${(c*(1-p/100)).toFixed(1)}" transform="rotate(-90 22 22)"/><text x="22" y="26" text-anchor="middle" font-size="11" font-weight="700" fill="var(--ink)" font-family="Inter, sans-serif">${p}</text></svg>`}
 function alerts(){
   const out=[],t=today();
-  people().filter(p=>needsLetter(p.id)).forEach(p=>out.push({hot:1,col:"var(--bad)",t:`${p.name}: late ${monthLates(p.id).length} times this month. Draft letter ready`,go:"letter:"+p.id}));
-  branches().forEach(b=>{const c=stats(t.filter(e=>e.br===b));if(c.absent)out.push({hot:1,col:"var(--bad)",t:`${b}: ${c.absent===1?"1 absence":c.absent+" absences"} without leave`,go:"br:"+b})});
+  people().filter(p=>needsLetter(p.id)).forEach(p=>out.push({hot:1,col:"var(--bad)",t:`${p.name} · late ${monthLates(p.id).length}× this month`,go:"letter:"+p.id}));
+  branches().forEach(b=>{const c=stats(t.filter(e=>e.br===b));if(c.absent)out.push({hot:1,col:"var(--bad)",t:`${b} · ${c.absent} absent`,go:"br:"+b})});
   S.docs.forEach(d=>{const s=docState(d);if(s&&s.k!=="ok")out.push({hot:s.k==="bad",col:s.k==="bad"?"var(--bad)":"var(--warn)",t:`${d.title} (${d.br}): ${s.t}`,go:"arc"})});
-  const otn=overtime().length;if(otn)out.push({col:"var(--warn)",t:`${otn} ${otn===1?"employee is":"employees are"} over the weekly hour limit`,go:"ot"});
-  const pend=S.reqs.filter(r=>r.st==="Pending").length;if(pend)out.push({col:"var(--teal)",t:`${pend} ${pend===1?"request":"requests"} awaiting your reply`,go:"req"});
+  const otn=overtime().length;if(otn)out.push({col:"var(--warn)",t:`${otn} over the weekly hour limit`,go:"ot"});
+
   return out;
 }
 function renderToday(){
   const h=TD.getHours();$("#greet").textContent=(h<12?"Good morning":h<17?"Good afternoon":"Good evening")+", Wed";
   const t=today(),c=stats(t);
   if(t.length){countUp(c.rate,dayAr(curDay()));$("#meter").style.width=c.rate+"%"}else{$("#rate").innerHTML=`—<small>Start by uploading an attendance file</small>`;$("#meter").style.width="0"}
-  $("#dayLbl").textContent=t.length?`${c.present+c.late} present · ${c.late} late · ${c.absent} absent`:"No data yet";
+  $("#dayLbl").innerHTML=t.length?`<span><b>${c.present+c.late}</b>present</span><span><b>${c.late}</b>late</span><span><b>${c.absent}</b>absent</span><span><b>${c.leave}</b>on leave</span>`:"No data yet";
   $("#rings").style.gridTemplateColumns=`repeat(${Math.min(5,Math.max(1,branches().length))},minmax(0,1fr))`;$("#rings").innerHTML=branches().map(b=>{const s=stats(t.filter(e=>e.br===b));const k=s.absent?"bad":s.late?"warn":"ok";
     const col=k==="bad"?"var(--bad)":k==="warn"?"#e0b10a":"var(--teal)";
     return `<button type="button" class="ring ${k}" data-br="${esc(b)}" aria-label="${esc(b)}">${ringSVG(s.rate,col)}<span class="n">${esc(b)}</span><span class="s">${s.absent?s.absent+" missing":s.late?s.late+" late":"Complete"}</span></button>`}).join("");
@@ -954,31 +948,7 @@ function reqCheck(r){
   const n=r.days||1;for(let i=0;i<n;i++){const d=addDays(r.date,i);const o=onLeave(p.br,p.sh,d,r.ref);if(o.length)return{k:"warn",t:`Overlaps with ${o.map(x=>person(x.emp).name).join(", ")}'s leave on ${dayAr(d)}`}}
   return{k:"ok",t:`✓ ${p.br} stays covered during the leave`};
 }
-function renderReq(){
-  const fs=["Pending","Approved","Declined"];
-  $("#reqChips").innerHTML=fs.map(k=>`<button type="button" class="chip" data-f="${k}" aria-pressed="${reqF===k}">${k==="Pending"?"Awaiting decision":k} <span class="num">${S.reqs.filter(r=>r.st===k).length}</span></button>`).join("");
-  const rows=S.reqs.filter(r=>r.st===reqF);
-  const pc={"Shift swap":"p-sky","Punch correction":"p-warn","Leave":"p-ok"};
-  $("#reqList").innerHTML=rows.length?rows.map(r=>{const p=person(r.emp),ck=r.st==="Pending"?reqCheck(r):null;
-    let body="";
-    if(r.type==="Shift swap"){const q=person(r.emp2);body=`<div class="swap"><div><b>${esc(p.name)}</b><span>${p.sh} → ${q.sh}</span></div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 7h11l-3-3M17 17H6l3 3"/></svg><div><b>${esc(q.name)}</b><span>${q.sh} → ${p.sh}</span></div></div>`}
-    else body=`<div><b>${esc(p.name)}</b> <span class="what">· ${esc(p.br)} · ${dayAr(r.date)}${r.days>1?" · "+r.days+" days":""}</span>${r.note?`<div class="what">${esc(r.note)}</div>`:""}</div>`;
-    return `<div class="card"><div class="hd"><span class="pill ${pc[r.type]}">${r.type}</span><span class="ref num">${r.ref}${r.type==="Shift swap"?" · "+dayAr(r.date):""}</span></div>${body}
-      ${ck?`<div class="check ${ck.k}">${esc(ck.t)}</div><div class="mgr">Awaiting the manager's decision</div>`:""}</div>`}).join("")
-    :`<div class="card empty">${reqF==="Pending"?"No requests waiting":"Nothing here yet"}</div>`;
-  const n=S.reqs.filter(r=>r.st==="Pending").length,b=$("#bReq");b.hidden=!n;b.textContent=n;
-  const ps=people();const opts=ps.map(p=>`<option value="${esc(p.id)}">${esc(p.name)} · ${esc(p.br)}</option>`).join("")||`<option value="">Upload an attendance file first</option>`;
-  ["#rEmp","#rEmp2"].forEach(s=>{const v=$(s).value;$(s).innerHTML=opts;if(v)$(s).value=v});
-  if(!$("#rDate").value)$("#rDate").value=todayISO;
-}
-$("#reqChips").addEventListener("click",e=>{const b=e.target.closest("[data-f]");if(b){reqF=b.dataset.f;renderReq()}});
-$("#reqList").addEventListener("click",e=>{const b=e.target.closest("[data-a]");if(!b)return;const r=S.reqs.find(x=>x.ref===b.dataset.r);if(!r)return;
-  r.st=b.dataset.a==="ok"?"Approved":"Declined";save();renderAll();toast(r.st==="Approved"?"Approved ✓":"Request declined");if(r.st==="Approved")sparkle(b)});
-$("#rType").addEventListener("change",()=>{const t=$("#rType").value;$("#rEmp2Wrap").hidden=t!=="Shift swap";$("#rDaysWrap").hidden=t!=="Leave"});
-$("#reqForm").addEventListener("submit",e=>{e.preventDefault();if(!$("#rEmp").value){toast("Upload an attendance file first to list employees");return}
-  const t=$("#rType").value,r={ref:"REQ-"+(S.seq.req++),type:t,emp:$("#rEmp").value,date:$("#rDate").value,st:"Pending",note:$("#rNote").value.trim()};
-  if(t==="Shift swap")r.emp2=$("#rEmp2").value; if(t==="Leave")r.days=Math.max(1,+$("#rDays").value||1);
-  S.reqs.unshift(r);$("#rNote").value="";reqF="Pending";save();renderAll();toast("Request "+r.ref+" added");e.target.closest("details").open=false});
+function renderReq(){}
 
 /* ---------- TASKS ---------- */
 const PRI=[["Urgent","var(--bad)"],["Important","var(--teal-2)"],["Normal","var(--line)"]];
@@ -1036,7 +1006,7 @@ let repTxt="",otTxt="";
 function buildRep(){
   const t=today(),c=stats(t),ot=overtime(),docs=S.docs.filter(d=>{const s=docState(d);return s&&s.k!=="ok"}),pend=S.reqs.filter(r=>r.st==="Pending"),done=S.tasks.filter(x=>x.done).length;
   const br=branches().map(b=>({b,s:stats(t.filter(e=>e.br===b))})).sort((a,b)=>a.s.rate-b.s.rate);
-  const rows=[["Attendance today",c.rate+"%"],["Lowest department",br[0]?br[0].b+" ("+br[0].s.rate+"%)":"—"],["Late arrivals today",c.late],["Absent without leave",c.absent],["Over hour limit",ot.length],["Pending requests",pend.length],["Documents to renew",docs.length]];
+  const rows=[["Attendance today",c.rate+"%"],["Lowest department",br[0]?br[0].b+" ("+br[0].s.rate+"%)":"—"],["Late arrivals today",c.late],["Absent without leave",c.absent],["Over hour limit",ot.length],["Documents to renew",docs.length]];
   $("#repKv").innerHTML=rows.map(([k,v])=>`<dt>${k}</dt><dd>${esc(v)}</dd>`).join("");
   const dec=[...people().filter(p=>needsLetter(p.id)).map(p=>"Warning letter: "+p.name),...docs.map(d=>d.title+" ("+d.br+"): "+docState(d).t)];
   $("#repDec").innerHTML=`<b style="font-family:var(--f-disp);font-size:17px;color:var(--teal)">For the manager</b>`+(dec.length?dec.map(x=>`<span style="font-size:14px">• ${esc(x)}</span>`).join(""):`<span class="what">Nothing pending</span>`);
@@ -1108,7 +1078,7 @@ function exportXlsx(src){
   add("Departments",[["Department","Attendance","Present","Late","Absent","Leave"],...branches().map(b=>{const s=stats(t.filter(e=>e.br===b));return[b,s.rate+"%",s.present,s.late,s.absent,s.leave]})]);
   add("Today",[["ID","Name","Department","Shift","Check-in","Check-out","Status"],...t.map(e=>[e.id,e.name,e.br,e.sh,e.in||"",e.out||"",status(e).t])]);
   add("Overtime",[["Name","Department","Weekly hours","Overtime"],...overtime().map(({p,h})=>[p.name,p.br,h,Math.round((h-S.limit)*10)/10])]);
-  add("Requests",[["Ref","Type","Employee","Date","Status"],...S.reqs.map(r=>[r.ref,r.type,person(r.emp).name,r.date,r.st])]);
+
   
   add("Renewals",[["Ref","Document","Department","Expires","Status"],...S.docs.filter(d=>{const s=docState(d);return s&&s.k!=="ok"}).map(d=>[d.ref,d.title,d.br,d.exp,docState(d).t])]);
   try{XLSX.writeFile(wb,"AdminEase-Report-"+curDay()+".xlsx");toast("Report exported ✓");sparkle(src)}catch(e){toast("Couldn't download the file here")}}
@@ -1126,7 +1096,7 @@ function sparkle(el){if(!el||matchMedia("(prefers-reduced-motion: reduce)").matc
   const cols=["#dce4f7","#2f4a99","#ebeef8","#9fb0dc"];for(let i=0;i<10;i++){const s=document.createElement("span");s.className="spark";
     s.style.cssText=`left:${cx}px;top:${cy}px;background:${cols[i%4]};--dx:${Math.cos(i/10*6.28)*60}px;--dy:${Math.sin(i/10*6.28)*60}px;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)`;
     document.body.appendChild(s);setTimeout(()=>s.remove(),950)}}
-const views=["today","att","req","arc"];
+const views=["today","att","arc"];
 function show(v){if(!views.includes(v))v="today";views.forEach(k=>$("#v-"+k).hidden=k!==v);$$("nav.tabs button").forEach(b=>b.dataset.v===v?b.setAttribute("aria-current","page"):b.removeAttribute("aria-current"));window.scrollTo(0,0)}
 $("nav.tabs").addEventListener("click",e=>{const b=e.target.closest("[data-v]");if(b)show(b.dataset.v)});
 function renderDept(){const t=today();const rows=branches().map(b=>({b,s:stats(t.filter(e=>e.br===b))})).sort((a,b)=>b.s.rate-a.s.rate);
